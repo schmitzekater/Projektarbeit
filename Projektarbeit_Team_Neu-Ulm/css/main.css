@@ -1,45 +1,45 @@
-body{
-	 font-family: Arial, Helvetica, sans-serif;
-	 font-size: 100.01%;
-	 font-weight: normal;
-	 color: #000000;
-	 background-color: #F2F2F2;
-	 margin:10px;
-	 padding: 5px;
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100.01%;
+	font-weight: normal;
+	color: #000000;
+	background-color: #F2F2F2;
+	margin: 10px;
+	padding: 5px;
 }
-p{
-	font-size:0.9em;
+p {
+	font-size: 0.9em;
 	font-weight: normal;
 }
 
 article {
-	position:fixed;
+	position: fixed;
 	top: 10%;
 	width: 80%;
 	left: 15%;
 	margin-top: 1;
 }
-aside{
-	position:fixed;
-	float:left;
+aside {
+	position: fixed;
+	float: left;
 	top: 10%;
 	width: 15%;
-	padding:5px;
+	padding: 5px;
 }
-article > div#main	{
-	text-align:justify;
-	float:left;
-	width:70%;
-	padding:1%;
+article > div#main {
+	text-align: justify;
+	float: left;
+	width: 70%;
+	padding: 1%;
 }
-article > div#subside	{
-	float:left;
+article > div#subside {
+	float: left;
 	width: 25%;
-	padding:1%;
+	padding: 1%;
 }
 
 header {
-	font-size:1.5em;
+	font-size: 1.5em;
 	font-weight: bolder;
 	text-align: center;
 	height: 10%;
@@ -57,15 +57,26 @@ footer {
 	bottom: 1px;
 	width: 100%;
 }
-table	{
-	background:#BDBDBD;
-	border:#FFFFFF;
-	border-style:double;
+table {
+	background: #BDBDBD;
+	border: #FFFFFF;
+	border-style: double;
 }
-th	{
-	background:#EEEEEE;
+th {
+	background: #EEEEEE;
 }
-td	{
+td {
 	border-style: solid;
 	border-radius: 2;
+}
+#time {
+	position: fixed;
+	font-size:0.7em;
+	bottom: 10px;
+	background: #ff9999;
+	left: 10px;
+	width: 120px;
+	z-index: 10;
+	color: #567;
+	border: 1px solid
 }
