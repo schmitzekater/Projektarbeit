@@ -2,10 +2,13 @@
 	<!-- Hier könnte ihr Menu stehen -->
 	<h1>Linksmenu</h1>
 	<ul>
-		<li>Punkt 1</li>
-		<li>Punkt 2</li>
-		<li>Punkt 3</li>
-		<li>Punkt 12</li>
+		<li><a href="index.php">Start</a></li>
+		<li><a href="upload.php">Upload</a></li>
+		<li><a href="browse.php">Durchsuchen</a></li>
+		<li><a href="admin.php">Administration</a></li>
+		<li></li>
+		<li></li>
+		<li><a href="login.php">Login</a>
 	</ul>
 	<div id="time">
 	<?php

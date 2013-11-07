@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <!-- Der HTML5-Doctype ist wirklich so simpel. ;) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>Genetikum - GenetikumDb</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" href="./css/menu.css" />
-		<link rel="stylesheet" type="text/css" href="./css/main.css" />
-	</head>
+	<?php include './head.php';?>
 	<body>
-		<header>
-			Projektstartseite
-		</header>
+		
+			<?php
+		include ("./php/links.php");
+		include "./php/static.php"
+		?>
 
 		<article>
 			<div id="main">
@@ -75,12 +72,6 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 				</p>
 			</div>
 		</article>
-		<?php
-		include ("./php/links.php");
-		?>
 		
-		<footer>
-			Hier unser Footer, tolles Ding! Quasi ein Quantensprung.
-		</footer>
 	</body>
 </html>
