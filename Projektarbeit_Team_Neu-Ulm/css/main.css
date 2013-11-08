@@ -37,6 +37,12 @@ article > div#subside {
 	width: 25%;
 	padding: 1%;
 }
+div table	{
+	border-style: none;
+	background: none;
+	border:none;
+}
+div table tr{
 
 header {
 	font-size: 1.5em;
