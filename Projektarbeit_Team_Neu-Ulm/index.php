@@ -6,19 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./css/menu.css" />
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
-	<!--  
-	<script type="text/javascript">
-		function checkFormular() 
-		{ 
-			if(document.login.name.value.length<1) 
-				{
-					document.login.name.select(); document.logon.name.value="Gib was ein";
-					return false; 
-				} 
-			return true; 
-		}
-	</script>
-	-->
+	<script type="text/javascript" src="checks.js">	</script>
 </head>
 <body>
 
@@ -26,7 +14,6 @@
 	include ("./php/links.php");
 	include "./php/static.php"
 	?>
-
 	<article>
 		<div id="main">
 			<h1>Überschrift 1</h1>
@@ -107,9 +94,7 @@
 			<h1>Login</h1>
 			<table border="none">
 				<form name="login" method="get" action="x"
-					onsubmit="return checkFormular();">
-
-
+					onsubmit="popuptest();">
 					<tr>
 						<td>Benutzername</td>
 						<td><input type="text" name="name" length="16"></td>
