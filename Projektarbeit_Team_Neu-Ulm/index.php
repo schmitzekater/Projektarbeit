@@ -82,7 +82,7 @@
 				</tr>
 				<tr>
 					<td rowspan="2" colspan="2">4er Kasten</td>
-					<td colspan="2">2er Kasten</td>
+					<td colspan="2">2er Kaokgpowrkgopwekgpowekopgkfsten</td>
 				</tr>
 				<tr>
 					<td>Vorletzter</td>
