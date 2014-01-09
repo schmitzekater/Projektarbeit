@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Mein Läufer-Applet</title>
+</head>
+<body bgcolor = #DDDDDD>
+	<form name="Appletform">
+		<table border  = 0>
+			<tr>
+				<td>Alter:</td>
+				<td><input type="text" name="alter" size=3></td>
+			</tr>
+			<tr>
+				<td>Zeit:</td>
+				<td><input type="text" name="zeit" size=3></td>
+			</tr>
+			<tr>
+				<td><input type ="button" name="knopf" value="Eintragen" onClick="document.applet.neueWerte(document.Appletform.alter.value,document.Appletform.zeit.value)"></td>
+				<td><applet code="LaeuferApplet" name="applet" codebase="." width=800 height=800>
+					<param name = breite value=1000>
+					<param name = hoehe value=200>
+					</applet></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+	

@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Yet another Zinsrechner (YAZR!)</title>
+	<script type="text/javascript">
+		function zins(kapital,zins,jahr)
+		{
+			var kap = kapital;
+			var zinssatz=zins;
+			var jahre = jahr;
+			var i = 0;
+			while(i<jahre)
+			{
+				kap = kap*(1+zinssatz/100.0);
+				kap = kap*100;
+				document.formular.ausgabe.add("Jahr: "+i+" Kapital: "+kap);
+			}
+		}

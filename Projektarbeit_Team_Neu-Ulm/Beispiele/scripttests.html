@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Tests</title>
+	<script type="text/javascript">
+		function zeigeQuadrat(x)
+		{
+			var quad = x*x;
+			document.formular.quadrat.value=quad;
+		}
+		function setzeText(x)
+		{
+			document.formular.knopp2.value=x;
+		}
+	</script>
+</head>
+<body>
+	<form name ="formular">
+	zahl: <input type="text" name ="zahl" size=3>
+	quadrat: <input type="text" name ="quadrat" size=3>
+	<input type="button" name ="knopf" value="quadrat" onClick="zeigeQuadrat(document.formular.zahl.value)" 
+	onMouseover="document.formular.knopf.value='QUADRAT!'" onMouseout ="this.value='quadrat'">
+	<input type="button" name ="knopp2" value="Default" onMouseover="setzeText('Hover')" onClick="setzeText('gedrückt')" onMouseout="setzeText('Default')">
+	</form>
+</body>
+</html>
+
+

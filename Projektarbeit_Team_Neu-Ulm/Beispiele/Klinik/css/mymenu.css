@@ -1,0 +1,49 @@
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.stunicholls.com/menu/tree_frog_vertical.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+
+#outer {width:504px; height:510px; position:relative; background:url(red_frog.jpg) no-repeat 0px 160px;}
+
+#outer #content {clear:left; position:absolute; left:230px; top:10px; width:250px; z-index:10;}
+
+#menu {list-style-type:none; padding:0; margin:0; width:125px; position:absolute; top:120px; left:10; border:1px solid #fff; border-width:0 1px 1px; z-index:100;}
+#menu ul {list-style-type:none; padding:0; margin:0; width:125px;}
+#menu li {float:left; background:#657; position:relative; border-top:1px solid #fff;}
+
+#menu li.sub {background:#666666;} /* Überschrift */
+
+#menu li, #menu li a {background: #aaaaaa; display:block; color:#fff; font-family:arial, sans-serif; font-size:11px; line-height:24px; width:125px; text-decoration:none;  cursor:pointer; font-weight:bold; text-indent:5px;}
+
+
+#menu ul,
+#menu li.click ul ul,
+#menu li.click ul li.hover ul ul {display:none;}
+
+#menu li.hover {color:#ff0; z-index:500;} /*Menufarben beim Hover Top-Level */
+#menu li.click {color:#ff0;}
+
+#menu li.click ul {display:block;background: #ff99ff;}
+#menu li.click ul li.hover ul,
+#menu li.click ul li.hover ul li.hover ul {display:block; position:absolute; left:110px; top:-1px; border:1px solid #fff; border-width:0 1px 1px;}
+
+#menu li.click ul li.fly {background: #bbbbbb url(frog_arrow.gif) no-repeat top right;}
+#menu li.click ul li.hover {background:#aaaaaa;}
+
+#menu li.click ul li.hover ul li {background:#cccccc;}
+#menu li.click ul li.hover ul li.hover ul li {background:#bbbbbb; z-index:500;}
+
+#menu li.click ul li.hover ul li.fly {background: #bbbbbb url(frog_arrow.gif) no-repeat top right;}
+#menu li.click ul li.hover ul li.hover {z-index:500; background:#fa4;}
+#menu li.click ul li.hover ul li.hover a {color:#dddddd;}
+
+#menu li.click ul li.hover ul li.hover ul li.hover {background:#cccccc;}
+#menu li.click ul li.hover ul li.hover ul li.hover a {color:#cccccc;}
+
+#outer img {display:block; float:right;}
+#outer p {margin:0px; padding:17px 0 0 0; color:#000; font-size:12px; font-family:arial, sans-serif; text-align:justify;}
