@@ -20,7 +20,8 @@
 	<article>
 		<div id="main">
 			<h1>Überschrift 1</h1>
-			<p>Erster Absatz. Hier tipper ich mal was in main</p>
+			<p>Erster Absatz. Hier tipper ich mal was in main
+			Caro is der Hammer!!!</p>
 			<p>
 				Link: <a href="imprint.html">Impressum </a>
 			</p>
