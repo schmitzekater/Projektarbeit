@@ -1,4 +1,3 @@
-
 html,body,content,article {
 	width:100%;
 	height:100%;
@@ -6,6 +5,7 @@ html,body,content,article {
 }
 
 body {
+	z-index: 1;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 100.01%;
 	font-weight: normal;
@@ -26,7 +26,7 @@ header > div#menu{
 	
 }
 header{
-	
+	z-index: 2;
 	border-bottom-left-radius:7px;
 	border-bottom-right-radius:7px;
 	margin-bottom:15px;
@@ -36,11 +36,12 @@ header{
 	
 }
 article {
+	
 	position: relative;
 	top: 10%;
-	width: 80%;
+	width: 65%;
 	left: 15%;
-	margin-top: 200px;
+	margin-top: 0px;
 	
 }
 aside {
@@ -64,6 +65,8 @@ article > div#subside {
 	padding: 1%;
 	
 }
+
+
 div table	{
 	border-style: none;
 	background: none;
@@ -80,12 +83,17 @@ header {
 	top: 0.5%;
 	width: 100%;
 }
+
+
+	
+	
 footer {
 	font-size: 1.1em;
 	font-weight: bolder;
 	text-align: center;
 	text-shadow: 3px;
 	height: 5%;
+	margin-left:70px;
 	font-family: "Lucida Console", "Courier New";
 	bottom: 1px;
 	width: 100%;
@@ -102,15 +110,4 @@ th {
 td {
 	border-style: solid;
 	border-radius: 2;
-}
-#time {
-	position: fixed;
-	font-size:0.7em;
-	bottom: 10px;
-	background: #ff9999;
-	left: 10px;
-	width: 120px;
-	z-index: 10;
-	color: #567;
-	border: 1px solid
 }

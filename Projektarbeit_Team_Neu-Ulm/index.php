@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <!-- Der HTML5-Doctype ist wirklich so simpel. ;) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,18 +6,63 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="./css/menu.css" />
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 	<script type="text/javascript" src="checks.js">	</script>
 	
-	
 </head>
-<body>
-	
-<header>
-	<img src ="Bilder/bg_header_start_01.jpg" 
-	header id="headerpicture">
-</header>	
 
-	<article>
+<body>
+<header>
+
+<img src ="Bilder/bg_header_start_01.jpg" 
+	header id="headerpicture">
+
+</header>
+<ul id="nav">
+        <li class="current"><a href="http://www.script-tutorials.com/">Home</a></li>
+        <li><a href="http://www.script-tutorials.com/">Funktionen</a>
+            <ul>
+                <li><a href="http://www.script-tutorials.com/category/html-css/">Gen laden</a></li>
+                <li><a href="http://www.script-tutorials.com/category/jquery/">Mutationslisten laden</a>
+                    <ul>
+                        <li><a href="http://www.script-tutorials.com/category/jquery/">Missense/Nonsense</a></li>
+                        <li><a href="http://www.script-tutorials.com/category/javascript/">Deletionen</a></li>
+                        <li><a href="http://www.genetikum.de/">Duplikationen</a></li>
+                        <li><a href="http://www.kuschelmich.de/">Splicing</a></li>
+                    </ul>
+                </li>
+          
+            </ul>
+        </li>
+        <li><a href="http://www.script-tutorials.com/category/resources/">Resources</a>
+            <ul>
+                <li><a href="http://www.script-tutorials.com/category/resources/">By category</a>
+                    <ul>
+                        <li><a href="http://www.script-tutorials.com/category/php/">PHP</a></li>
+                        <li><a href="http://www.script-tutorials.com/category/mysql/">MySQL</a></li>
+                        <li><a href="http://www.script-tutorials.com/category/xslt/">XSLT</a></li>
+                        <li><a href="http://www.script-tutorials.com/category/ajax/">Ajax</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://www.script-tutorials.com/category/resources/">By tag name</a>
+                    <ul>
+                        <li><a href="http://www.script-tutorials.com/tag/captcha/">captcha</a></li>
+                        <li><a href="http://www.script-tutorials.com/tag/gallery/">gallery</a></li>
+                        <li><a href="http://www.script-tutorials.com/tag/animation/">animation</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="http://www.script-tutorials.com/about/">About</a></li>
+        <li><a href="http://www.script-tutorials.com/creating-css3-dropdown-menu/">Go Back To The Tutorial</a></li>
+ </ul>
+
+</body>
+
+<article>
+
+	
+	
 		<div id="main">
 			<h1>Überschrift 1</h1>
 			<p>Erster Absatz. Hier tipper ich mal was in main
@@ -96,7 +141,10 @@
 				 </p>
 		</div>
 	</article>
+	
+<footer>
 
+<p>und was steht hier?</p>
+</footer>
 
-</body>
 </html>
