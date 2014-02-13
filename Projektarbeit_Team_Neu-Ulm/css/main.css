@@ -11,7 +11,7 @@ body {
 	font-weight: normal;
 	color: #808080;
 	background-color: #FFFFFF;
-	margin-top: 50px;
+	margin-top: 0px;
 	margin-bottom:50px;
 	padding: 5px;
 	overflow:visible;
@@ -26,19 +26,19 @@ header > div#menu{
 	
 }
 header{
-	z-index: 2;
+	z-index: 0;
 	border-bottom-left-radius:7px;
 	border-bottom-right-radius:7px;
 	margin-bottom:15px;
 	margin-left:200px;
-	width:790px;
-	height:170px;
+	width:80%;
+	height:150px;
 	
 }
 article {
 	
 	position: relative;
-	top: 10%;
+	top: 1%;
 	width: 65%;
 	left: 15%;
 	margin-top: 0px;
