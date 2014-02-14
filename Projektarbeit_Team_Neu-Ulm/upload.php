@@ -17,6 +17,9 @@
 		} else {
 		  alert('The File APIs are not fully supported in this browser.');
 		}
+		function startUpload(){
+			alert('Jetzt kann es los gehen!');
+		}
 		</script>
 </head>
 
@@ -30,6 +33,7 @@
 			<p>Jetzt wollen wir mal was importieren!</p>
 			<input type="file" id="files" name="files[]" multiple />
 			<output id="list"></output>
+			<hr>
 
 			<script>
  				 function handleFileSelect(evt) {
@@ -43,9 +47,15 @@
 					                  f.lastModifiedDate.toLocaleDateString(), '</li>');
 					    }
 				    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+				    if (files.length > 0 ){
+				    	document.getElementById('upload').disabled = false;
+				    	alert('SOllte aktiviert sein!');
+				    }
 				  }
   				document.getElementById('files').addEventListener('change', handleFileSelect, false);
 			</script>
+			<input type="button" id="upload" value="Upload" disabled="true" onclick="">
+			<input type="button" id="upload_cancel" value="Abbrechen" onclick="document.getElementById('list').clear">
 		</div>
 		<div id="subside">
 		<!-- Idee von mir: In dieses Menu per Script automatisch die Links generieren lassen durch
@@ -59,9 +69,9 @@
 			 <li> <a href =element.url>element.text</a></li>
 			 Beende Liste </ul>
 			 
-			 Vorteil: Text wird Ã¼bersichtlicher. Danke XML einfaches Parsen der Quellen.
-			 		  Wenn sich Links Ã¤ndern, einfach die XML austauschen, und das war's.
-			 		  Ausserdem habe ich keinen Bock stÃ¤ndig <li> und <a> zu schreiben.... :)
+			 Vorteil: Text wird übersichtlicher. Dank XML einfaches Parsen der Quellen.
+			 		  Wenn sich Links ändern, einfach die XML austauschen, und das war's.
+			 		  Ausserdem habe ich keinen Bock ständig <li> und <a> zu schreiben.... :)
 			  -->
 			<h1>Quellen</h1>
 			<ul>
