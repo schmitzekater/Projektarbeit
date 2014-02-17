@@ -1,6 +1,14 @@
 <configuration>
-	<element type="link">
+	<link>
 		<text>Quelle 1</text>
 		<url>http://blablabla.com</url>
-	</element>
+	</link>
+	<link>
+		<text>Quelle 2</text>
+		<url>http://blablabla.com</url>
+	</link>
+	<link>
+		<text>Quelle 3</text>
+		<url>http://blablabla.com</url>
+	</link>
 </configuration>
