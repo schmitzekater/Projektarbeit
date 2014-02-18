@@ -19,8 +19,8 @@
 
 </header>
 <ul id="nav">
-        <li class="current"><a href="http://www.script-tutorials.com/">Home</a></li>
-        <li><a href="http://www.script-tutorials.com/">Funktionen</a>
+        <li class="current"><a href="http://www.carolinschwerdtfeger.de/">Home</a></li>
+        <li><a href="http://www.carolinschwerdtfeger.de/Funtionen/">Funktionen</a>
             <ul>
                 <li><a href="http://www.script-tutorials.com/category/html-css/">Gen laden</a></li>
                 <li><a href="http://www.script-tutorials.com/category/jquery/">Mutationslisten laden</a>
@@ -57,7 +57,7 @@
         <li><a href="http://www.script-tutorials.com/creating-css3-dropdown-menu/">Go Back To The Tutorial</a></li>
  </ul>
 
-</body>
+
 
 <article>
 
@@ -141,10 +141,12 @@
 				 </p>
 		</div>
 	</article>
+</body>
+
 	
 <footer>
 
-<p>und was steht hier?</p>
+und was steht hier?
 </footer>
 
 </html>
