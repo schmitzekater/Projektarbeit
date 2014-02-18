@@ -1,7 +1,7 @@
-html,body,content,article {
-	width:100%;
-	height:100%;
-	overflow:visible;
+html, body, content, article {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
 }
 
 body {
@@ -12,37 +12,34 @@ body {
 	color: #808080;
 	background-color: #FFFFFF;
 	margin-top: 0px;
-	margin-bottom:50px;
+	margin-bottom: 50px;
 	padding: 5px;
-	overflow:visible;
+	overflow: visible;
 }
 p {
 	font-size: 0.9em;
 	font-weight: normal;
-	
 }
 
-header > div#menu{
-	
+header > div#menu {
+
 }
-header{
+header {
 	z-index: 0;
-	border-bottom-left-radius:7px;
-	border-bottom-right-radius:7px;
-	margin-bottom:15px;
-	margin-left:200px;
-	width:80%;
-	height:150px;
-	
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	margin-bottom: 15px;
+	margin-left: 200px;
+	width: 80%;
+	height: 150px;
 }
 article {
-	
+
 	position: relative;
 	top: 1%;
 	width: 65%;
 	left: 15%;
 	margin-top: 0px;
-	
 }
 aside {
 	position: fixed;
@@ -50,31 +47,25 @@ aside {
 	top: 10%;
 	width: 15%;
 	padding: 5px;
-	
 }
 article > div#main {
 	text-align: justify;
 	float: left;
 	width: 70%;
-	padding: 1%;
-	o
-}
-article > div#subside {
+	padding: 1%;o
+	}
+	article > div#subside {
 	float: left;
 	width: 25%;
 	padding: 1%;
-	
 }
 
-
-div table	{
+div table {
 	border-style: none;
 	background: none;
-	border:none;
+	border: none;
 }
-div table tr{
-
-header {
+div table tr {header {
 	font-size: 1.5em;
 	font-weight: bolder;
 	text-align: center;
@@ -84,16 +75,13 @@ header {
 	width: 100%;
 }
 
-
-	
-	
 footer {
 	font-size: 1.1em;
 	font-weight: bolder;
 	text-align: center;
 	text-shadow: 3px;
 	height: 5%;
-	margin-left:70px;
+	margin-left: 70px;
 	font-family: "Lucida Console", "Courier New";
 	bottom: 1px;
 	width: 100%;
@@ -110,4 +98,11 @@ th {
 td {
 	border-style: solid;
 	border-radius: 2;
+}
+#dialog {
+	background: rgba(153, 255, 153, 0.8);
+}
+
+progress#pgrStatus {
+	width: 100%;
 }

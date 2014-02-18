@@ -1,0 +1,94 @@
+<!doctype html>
+<!--
+@author ComFreek
+@copyright (C) ComFreek, 2011
+Written as a tutorial for www.tutorials.de
+-->
+<html>
+  <head>
+    <title>JavaScript File Upload</title>
+    
+    <meta charset="utf-8" />
+    
+    <!-- jQuery and jQuery UI -->
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" />
+    
+    <!-- End: jQuery and jQuery UI -->
+    
+    <!-- MD5 and SHA1 implementation for JavaScript by Paul Johnston (BSD license) -->
+    <script type="text/javascript" src="js/sha1.js"></script>
+    <script type="text/javascript" src="js/md5.js"></script>
+    
+    <!-- Our JavaScript file -->
+    <script type="text/javascript" src="js/js_file_upload.js"></script>
+    
+    <style type="text/css">
+      body
+      {
+        background: #EFEFEF;
+      }
+      
+      html, body
+      {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin: 0px;
+      }
+      #author
+      {
+        top: 0px;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        margin-left: -1em;
+        margin-right: -0.5em;
+        border: 1px solid green;
+        background: rgb(153, 255, 153);
+      }
+      
+      #dialog
+      {
+        background: rgba(153, 255, 153, 0.8);
+      }
+      
+      progress#pgrStatus
+      {
+        width: 100%;
+      }
+    </style>
+    
+    
+  </head>
+  
+  <body>
+  
+    <div id="author">By ComFreek &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&copy; ComFreek, 2011 &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp; Written as a tutorial for <a href="http://www.tutorials.de">Tutorials.de</a></div>
+  
+    <div id="dialog" title="File upload with JavaScript">
+	    <p>
+        <span id="statusWrapper" class="ui-state-highlight">Status: <span id="status">Ready</span></span>
+        
+        <br />
+        <progress value="0" max="100" id="pgrStatus"></progress>
+        <hr />
+      
+        <form action="all.php" method="post" id="frmUpload" enctype="multipart/form-data">
+          <input type="file" name="file" id="file_input" />
+          <br />
+          <input type="checkbox" id="cbUseIFrame" checked="checked" />Use the form and iFrame for large files
+          <br />
+          <input type="checkbox" id="cbNotSupported" />Use also when File API isn't supported
+          <br /><br />
+          <input type="submit" id="btnUpload" value="Upload with JS" />
+        </form>
+      </p>
+    </div>
+    
+    
+  </body>
+</html>

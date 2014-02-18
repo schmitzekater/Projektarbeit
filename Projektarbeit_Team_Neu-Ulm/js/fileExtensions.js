@@ -18,8 +18,6 @@ function displayAcceptedExtensions() {
 }
 
 function handleFileSelect(evt) {
-    alert('Bin im Filehandler!');
-
     /*
      * This functions set the upload.interface.
      * It accepts files depending on the file format.
@@ -44,9 +42,9 @@ function handleFileSelect(evt) {
     if (files.length > 0) {
         document.getElementById('upload').disabled = false;
     }
-    //else {
-    //     document.getElementById('upload').disabled = true;
-    //}
+    else {
+         document.getElementById('upload').disabled = true;
+    }
 
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
 }

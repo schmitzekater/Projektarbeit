@@ -1,0 +1,108 @@
+<!doctype html>
+<!--
+@author ComFreek
+@copyright (C) ComFreek, 2011
+Written as a tutorial for www.tutorials.de
+-->
+<html>
+  <head>
+    <title>JavaScript File Upload</title>
+    
+    <style type="text/css">
+      html, body
+      {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        margin: 0px;
+      }
+      #author
+      {
+        top: 0px;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        margin-left: -1em;
+        margin-right: -0.5em;
+        border: 1px solid green;
+        background: rgb(153, 255, 153);
+      }
+    </style>
+    
+    <script type="text/javascript">
+      function readFile(file, callback)
+      {
+        var reader = new FileReader();
+        reader.onload = function(evt)
+        {
+          document.getElementById('status').innerHTML = "Ready";
+          if (typeof callback=="function")
+            callback(file, evt);
+        };
+        reader.onprogress = updateProgress;
+        reader.onerror = errorHandler;
+        reader.readAsBinaryString( file );
+      }
+      function updateProgress(evt)
+      {
+        document.getElementById('status').innerHTML = "Processing";
+      }
+       
+      function errorHandler(evt)
+      {
+        document.getElementById('status').innerHTML = "Error ("+evt.target.error.code+")";
+      }
+      
+      window.onload = function()
+      {          
+        document.getElementById("btnUpload").onclick = function()
+        {
+          var input = document.getElementById("file_input");
+          
+          if ( typeof FileReader=="undefined" || !input.files)
+          {
+            alert("Your browser doesn't support the HTML 5 File API!");
+            return;
+          }
+          if ( input.files.length < 1 )
+          {
+            alert("Please select a file!");
+            return;
+          }
+          readFile(input.files[0], function(file, evt)
+                   {
+                     var xhr = new XMLHttpRequest();
+                     xhr.onreadystatechange = function()
+                     {
+                       if (xhr.readyState==4 && xhr.status==200)
+                       {
+                         document.getElementById("status").innerHTML = xhr.responseText;
+                       }
+                     }
+                           
+                     xhr.open("POST", "minimal.php");
+                     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                     xhr.send("file="+ encodeURIComponent(evt.target.result) );
+                   });
+        }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="author">By ComFreek &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&copy; ComFreek, 2011 &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp; Written as a tutorial for <a href="http://www.tutorials.de">Tutorials.de</a></div>
+    
+    <h1>File upload with JavaScript</h1>
+    
+    <hr />
+    Status: <span id="status">Ready</span>
+    <hr />
+      
+    <form action="" method="post">
+      <input type="file" id="file_input" />
+      <br />
+      <button type="button" id="btnUpload">Upload with JS</button>
+    </form>
+  </body>
+</html>
