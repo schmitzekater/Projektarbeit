@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <header>
 
 <img src ="Bilder/bg_header_start_01.jpg" 
@@ -58,6 +59,13 @@
  </ul>
 
 
+=======
+<?php
+	include ("./php/links.php");
+	include ("./php/static.php");
+	?>
+</body>
+>>>>>>> 397bfc9c22d63203d5b86b814b1bf53fc33f402b
 
 <article>
 
@@ -144,9 +152,12 @@
 </body>
 
 	
+<<<<<<< HEAD
 <footer>
 
 und was steht hier?
 </footer>
 
+=======
+>>>>>>> 397bfc9c22d63203d5b86b814b1bf53fc33f402b
 </html>
