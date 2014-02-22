@@ -8,7 +8,7 @@ PHP-Tutorials & Tipps:
 
 
 JavaScript-Tutorials & Tipps:
-
+JS und jQuery Tutorial: http://www.mediaevent.de/javascript/framework-jquery.html
 
 CSS-Tipps und Tricks:
 
