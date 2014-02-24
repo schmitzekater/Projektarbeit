@@ -14,7 +14,11 @@ function displayAcceptedExtensions() {
             display.push(a, ', ');
     }
     display.push('</p>');
-    document.getElementById('extensions').innerHTML = display.join('');
+    //document.getElementById('extensions').innerHTML = display.join('');
+    $( "#acceptedExtensions" ).append(display.join(''));  // ACHTUNG!! Laesst sich mehrfach anhaengen! 
+    /*
+     * TODO: Abfrage, ob schon angehangen wurde, dann nicht mehr!!
+     */
 }
 
 function handleFileSelect(evt) {
@@ -48,7 +52,9 @@ function handleFileSelect(evt) {
 
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
 }
-
+function toggleElement(elementName) {
+            $(elementName).slideToggle(150);
+        }
 function clearUploadList() {
     /**
      * This function clears the Upload List. It deactivates the Upload-Button on empty list.
