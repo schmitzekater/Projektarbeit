@@ -3,7 +3,7 @@ html, body, content, article {
 	height: 100%;
 	overflow: visible;
 }
-
+.box { height: 50px; width: 50px; background: #f00; border: 1px solid #000;}
 body {
 	z-index: 1;
 	font-family: Arial, Helvetica, sans-serif;
