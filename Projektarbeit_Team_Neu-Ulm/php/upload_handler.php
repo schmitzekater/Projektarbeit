@@ -74,14 +74,12 @@ else {
 		} else {
 			$json['size'] = strlen($_POST['file']);
 		}
-
 		$json['md5'] = md5($_POST['file']);
 		$json['sha1'] = sha1($_POST['file']);
 		/*
 		 * Zeilenweises einlesen der Datei
 		 */
 		//readFile($_POST['file']);
-
 	}
 	exit(json_encode($json));
 }
