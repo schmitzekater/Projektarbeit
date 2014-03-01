@@ -1,3 +1,14 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//conflicts/index.php=UTF-8
 encoding//php/Impressum.php=UTF-8
+=======
+encoding//css/Seite.css=UTF-8
+encoding//css/main.css=UTF-8
+encoding//php/Impressum.php=UTF-8
+encoding//php/static.php=UTF-8
+encoding/Index.php=UTF-8
+encoding/Kontakt.html=UTF-8
+encoding/geheim_einfach.php=UTF-8
+encoding/imprint.html=UTF-8
+>>>>>>> f0114200cf97e34ac14d3969ee3a74c747751d3d
