@@ -58,8 +58,15 @@
 				<p>
 					Jetzt wollen wir mal was importieren!
 				</p>
-				<span id="statusWrapper" class="ui-state-highlight">Status:<span id="status">Ready<br /></span></span>
-				<span id="testwrapper"><span id="acceptedExtensions"></span></span>
+				<span id="statusWrapper" class="ui-state-highlight">
+					Status:
+					<span id="status">
+						Ready<br />
+					</span>
+				</span>
+				<span id="testwrapper">
+					<span id="acceptedExtensions"></span>
+				</span>
 				<!-- <output id="extensions"></output> --></-->
 				<form action="all.php" method="post" id="frmUpload" enctype="multipart/form-data">
 					<input type="button" id="test" value="Dateitypen anzeigen" onclick="toggleElement('#acceptedExtensions')" />
@@ -68,13 +75,15 @@
 					<script type="text/javascript" src="./js/fileExtensions.js"></script>
 					<script>
 						document.getElementById('files').addEventListener('change', handleFileSelect, false);
-						
-                displayAcceptedExtensions();
+						displayAcceptedExtensions();
 					</script>
 					<hr>
 					<input type="button" id="upload" 		value="Upload" disabled="true" />
 					<input type="button" id="upload_cancel" value="Abbrechen" onclick="clearUploadList()" />
 					<input type="button" id="toggle_list"   value="Liste verbergen" onclick="toggleElement('#ListWrapper')" />
+					<span id="previewWrapper">
+						<output id="preview"></output>
+					</span>
 				</form>
 			</div>
 			<div id="subside">

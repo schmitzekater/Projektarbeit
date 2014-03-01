@@ -64,6 +64,16 @@ function sendFile(file)
                   json['sha1'] == sha1_hash)
               {
                 setStatus("Finished!", 1);
+                /*
+                 * Hier kommt der Code rein, der das File ausliest
+                 */
+                preview = "<p>Hier der Preview<br />"+json['header']+"</p>";
+                //preview += "<ul>";
+        //        for(i = 0; i<10;++i){
+          //      	preview += "<li>"+json['line'+i]+"</li>";
+            //    }
+              //  preview += "</ul>";
+                setPreview(preview);
               }
               else
               {
@@ -199,6 +209,12 @@ function setStatus(msg, value, error)
   * This function is called from output source of all.php in the IFrame (only when size was greater than maxSize)
   * @param json The JSON
   */
+function setPreview(msg)
+{
+  msg = msg.replace(/\n/g, "<br />");
+  $("#preview").html(msg);
+} 
+ 
 function iframeLoaded(json)
 {
   // If an error occurred

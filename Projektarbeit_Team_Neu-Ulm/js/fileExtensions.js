@@ -50,7 +50,7 @@ function handleFileSelect(evt) {
          document.getElementById('upload').disabled = true;
     }
 
-    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    //document.getElementById('files').addEventListener('change', handleFileSelect, false);
 }
 function toggleElement(elementName) {
             $(elementName).slideToggle(150);
