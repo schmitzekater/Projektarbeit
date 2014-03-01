@@ -78,28 +78,7 @@
 			<p>Bei Problemen oder Fragen bezüglich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>	
 				
 				
-			<table>
-				<tr>
-					<th>Header 1</th>
-					<th>Header 2</th>
-					<th>Header 3</th>
-					<th>Header 4</th>
-				</tr>
-				<tr>
-					<td>Spalte 1</td>
-					<td>Spalte 2</td>
-					<td>Spalte 3</td>
-					<td>Spalte 2ue0riwjepfjwepjfpew4</td>
-				</tr>
-				<tr>
-					<td rowspan="2" colspan="2">4er Kasten</td>
-					<td colspan="2">2er Kaokgpowrkgopwekgpowekopgkfsten</td>
-				</tr>
-				<tr>
-					<td>Vorletzter</td>
-					<td>Letzter</td>
-				</tr>
-			</table>
+			
 		</div>
 
   </article>
@@ -142,7 +121,8 @@
 </aside>
 
 <footer>		
-    <h2>&lt;footer&gt;</h2>
+ <img src ="Bilder/dna-Strang.jpg" 
+	div id="footerpic">
 
 
 Copyright
