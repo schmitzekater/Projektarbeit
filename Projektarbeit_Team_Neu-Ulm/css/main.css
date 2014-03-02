@@ -36,7 +36,7 @@ margin: 0 0 20px;
 img.download {vertical-align:middle;}
 img{border:none;}
 
-	
+
 /* ----------container zentriert das layout-------------- */
 
 #container {
@@ -98,18 +98,22 @@ width: 25%;
 
 /* -----------footer--------------------------- */
 footer {
-opacity: 0.5;
-filter:Alpha(Opacity=50);
+margin:0,0,50,60;
 padding: 20px;
 clear:both;
 background-color: #F5F5F5;
-color:#fff;
+color:#000000;
 }
 
-footerpic {
-width:40%;
-margin-left:20px;
-		
-}
+/*------------------Bilder----------------------*/
+
+
+.DNABild
+{
+float:left;
+margin: 0px 15px 15px 15px;
+border: 1px solid #666666;
+padding: 2px;
+}	
 /* -----------footer--------------------------- */
 

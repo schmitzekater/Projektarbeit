@@ -49,10 +49,6 @@
 		<li><a href="imprint.html" class="last">Impressum</a></li>
 	</ul>
 </nav>
-
-</body>
-</html>
-
 </nav>
 
 <section id="content">
@@ -121,10 +117,13 @@
 </aside>
 
 <footer>		
- <img src ="Bilder/dna-Strang.jpg" 
-	div id="footerpic">
 
-
+<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
+<p>für weitere DNA-Info´s nutzen Sie bitte</p>
+<p></p>
+<p>----------------------------------------------------------------------------------------------------------------------------</p>
+<p>fdasdsda</p>
+<p>fdasdsda</p>
 Copyright
  </footer>
 </div>

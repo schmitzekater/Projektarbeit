@@ -1,17 +1,70 @@
-<!DOCTYPE html>
-<!-- Der HTML5-Doctype ist wirklich so simpel. ;) -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<!doctype html>
+<html lang="en">
+
+<head>
+	
 		<title>Genetikum - GenetikumDb</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="./css/menu.css" />
-		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<link rel="stylesheet" type="text/css" href="./css/Seite.css" />
+		<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="./css/style.css" 	media="screen"> -->
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script src="./js/upload.js" type="text/javascript"></script>
 		<script type="text/javascript" src="./js/sha1.js"></script>
         <script type="text/javascript" src="./js/md5.js"></script>
-		<!--	<script type="text/javascript">
+        
+</head>
+
+<body>
+	<div id="container">
+
+<header>
+	<img src ="Bilder/bg_header_start_01.jpg" 
+	header id="headerpicture">
+
+</header>
+
+<nav>
+   
+
+<nav id="nav">
+	<ul id="navigation">
+		<li><a href="index.php" class="first">Home</a></li>
+		<li><a href="#">Services &raquo;</a>
+			<ul>
+				<li><a href="upload.php">Patentendatenupload</a></li>
+				<li><a href="#">MutDatenbankupload</a></li>
+				<li><a href="#">Ergebnisse speichern &raquo;</a>			
+				
+			</ul>
+		</li>
+		<li><a href="#">Weiterführende Links &raquo;</a>
+			<ul>
+				<li><a href="http://genome.ucsc.edu/">UCSC</a></li>
+				<li><a href="http://www.ncbi.nlm.nih.gov/">NCBI</a></li>
+				<li><a href="http://www.genenames.org/">HGNC</a></li>
+				
+				
+				
+			</ul>				
+		</li>
+		
+		<li><a href="Kontakt.html" class="last">Kontakt</a></li>
+		<li><a href="imprint.html" class="last">Impressum</a></li>
+	</ul>
+</nav>
+</nav>
+
+<section id="content">
+		  <article>
+		  <p></p>
+		  <p></p>
+		  <p></p>
+		  <p></p>
+		  <p>Laden Sie bitte die Dateien hoch. Akzeptiert werden ....</p>
+		  <p>Bei fehlerhaften Dateien werden Sie benachrichtigt.</p>
+	<!--	<script type="text/javascript">
 		//http://www.html5rocks.com/de/tutorials/file/dndfiles/
 		// Check for the various File API support.
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -46,14 +99,12 @@
 				});
 			});
 		</script>
-	</head>
-
-	<body>
+		
 		<?php
 		include "./php/links.php";
 		include "./php/static.php";
 		?>
-		<article>
+	
 			<div id="main">
 				<p>
 					Jetzt wollen wir mal was importieren!
@@ -81,6 +132,58 @@
 				<h1>Quellen</h1>
 				<!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
 			</div>
-		</article>
-	</body>
+	
+		
+
+  </article>
+  </section>
+
+  <aside>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+	<h1>Login</h1>
+			<table border="none">
+				<form name="login" method="get" action="x"
+					onsubmit="popuptest();">
+					<tr>
+						<td>Benutzername</td>
+						<td><input type="text" name="name" length="16"></td>
+					</tr>
+					<tr>
+						<td>Passwort</td>
+						<td><input type="text" name="password" length="16"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" name="knopf" value="speichern"></td>
+					</tr>
+				</form>
+			</table>
+			<p></p>
+		    <p></p>
+			<h1>Subside</h1>
+			<p>Hier könnte noch erklärender Text zu main stehen. Lorem ipsum
+				dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+				tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+				voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+				Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+				dolor sit amet. Lorem ipsum dolor sit amet, 
+				 </p>
+
+</aside>
+
+<footer>		
+
+<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
+<p>für weitere DNA-Info´s nutzen Sie bitte</p>
+<p></p>
+<p>----------------------------------------------------------------------------------------------------------------------------</p>
+<p>fdasdsda</p>
+<p>fdasdsda</p>
+Copyright
+ </footer>
+</div>
+</body>
 </html>
