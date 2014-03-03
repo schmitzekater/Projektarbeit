@@ -1,5 +1,10 @@
 <?php
-$handle = fopen('C:\Users\schmitza\git\Projektarbeit\Projektarbeit_Team_Neu-Ulm\Datenbank\CVS Dateien\BAG3CVS', "r");
+$server="localhost";
+$user="dbuser";
+$password="dbuser";
+$dbase="genbank";
+$handle = fopen('C:\Users\schmitza\git\Projektarbeit\Projektarbeit_Team_Neu-Ulm\Datenbank\Projekt\CVS Dateien\BAG3CVS', "r");
+
 $array = array();
 while (!feof($handle)) {
 	$buffer = fgets($handle);							// Zeile einlesen
@@ -17,7 +22,36 @@ foreach ($array as $line)								// Aufteilen des Arrays in Zeilen
 	for ($i = 0; $i < count($elements); ++$i) {
 		echo $header[$i], ": ", $elements[$i], "\n";	// Ausgabe Überschrift: Element
 	}
+	writeToDB($elements, "mutdat");
 	echo "---- End of Element ----\n";
+}
+
+function writeToDb($elements, $table)
+{
+	global $server, $user, $password, $dbase;
+		$sql = mysql_connect($server, $user, $password);
+		echo("Status:");
+		if($sql)
+			{echo("Connection to $server ok \n");}
+		else
+			{echo("No Connection to $server ! \n");}
+		
+		//Datenbank checken
+		$db = mysql_select_db($dbase);
+		if($db)
+			{echo("Datenbank $dbase ok \n");}
+		else
+			{echo("Datenbankfehler: $dbase\n");}
+		$query = 	"insert into $table values( 0, '$elements[0]','$elements[1]','$elements[2]','$elements[3]','$elements[4]','$elements[5]', '$elements[6]',1 )";
+		$result = mysql_query($query);
+		if(!$result){
+			echo("Fehler in der Abfrage.\nQuery: ".$query."\n".mysql_error()."\n");
+		}
+		else{
+			echo("Geänderte Zeilen: ".mysql_affected_rows()."\n");
+		}
+		
+		mysql_close();
 }
 
 function stripLinefeed($text)

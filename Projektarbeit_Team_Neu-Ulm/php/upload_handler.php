@@ -12,7 +12,7 @@ function stripLinefeed($text) {
 	return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
 }
 
-function readFile($file) {
+function readFile($file, $json) {
 	$handle = fopen($file, "r");
 	$array = array();
 	while (!feof($handle)) {
@@ -79,7 +79,7 @@ else {
 		/*
 		 * Zeilenweises einlesen der Datei
 		 */
-		//readFile($_POST['file']);
+		readFile($_POST['file'], $json);
 	}
 	exit(json_encode($json));
 }
