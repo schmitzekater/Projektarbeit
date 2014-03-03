@@ -3,107 +3,120 @@
 
 /* reset */
 * {
-margin: 0;
-padding: 0;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 /* HTML5 für Blockelemente  */
 
-header, footer, section, aside, nav, article { display: block;}
+header, footer, section, aside, nav, article {
+	display: block;
+}
 
-body {	
-background-color: #D3D3D3;
-font-size: 0.95em;
-font-family: Arial, SunSans-Regular, Sans-Serif;
-color:#000000;
+body {
+	background-color: #D3D3D3;
+	font-size: 0.95em;
+	font-family: Arial, SunSans-Regular, Sans-Serif;
+	color: #000000;
 }
 pre, code {
-font-size: 1.3em;
+	font-size: 1.3em;
 }
-a {color: #DB7093;}
-a:visited {color:#DB7093;}
-a:hover {color: #564b47;}
-a:active { color:#000000;}
+a {
+	color: #DB7093;
+}
+a:visited {
+	color: #DB7093;
+}
+a:hover {
+	color: #564b47;
+}
+a:active {
+	color: #000000;
+}
 
 h1, h2 {
-font-size:1.8em;
-font-weight: normal;
-margin: 0 0 20px;
+	font-size: 1.8em;
+	font-weight: normal;
+	margin: 0 0 20px;
 }
 
-img.download {vertical-align:middle;}
-img{border:none;}
+img.download {
+	vertical-align: middle;
+}
+img {
+	border: none;
+}
 
-	
 /* ----------container zentriert das layout-------------- */
 
 #container {
-max-width: 1200px;
-min-width:960px;
-margin:10px  auto;
-background-color:#F5F5F5;
+	max-width: 1200px;
+	min-width: 960px;
+	margin: 10px auto;
+	background-color: #F5F5F5;
 }
 
 /* ----------header fÜr Logo-------------- */
 header {
-	
-	padding:10px;
-	background:#FAFAFA ;
-}
-	
-header p{
-	text-transform:uppercase;
-	font-size:11px;
 
+	padding: 10px;
+	background: #FAFAFA;
 }
-header img{
-	width:100%; 
-	padding: 0 0 20px;}
 
+header p {
+	text-transform: uppercase;
+	font-size: 11px;
+}
+header img {
+	width: 100%;
+	padding: 0 0 20px;
+}
 
 /* -------------- Navigavtion------------- */
 
 nav {
-font-size: 16px;
-background:#F5F5F5;
-color:#fff;
+	position: relative;
+	font-size: 16px;
+	background: #F5F5F5;
+	color: #fff;
 }
 
 /* ----------------- content--------------------- */
 
-
 section#content {
-float: left;
-width: 75%;
-padding: 20px;
-background-color: #fff;
-min-height:600px;
+	margin-top: 6%;
+	float: left;
+	width: 75%;
+	padding: 20px;
+	background-color: #fff;
+	min-height: 600px;
 }
-p, pre{
-padding:  0 0 20px;
-line-height:1.5em;
+p, pre {
+	padding: 0 0 20px;
+	line-height: 1.5em;
 }
-
 
 /* -------------- side infos ------------- */
 
 aside {
-background-color:#F5F5F5;
-padding:20px;
-float:right;
-width: 25%;
+	margin-top: 6%;
+	background-color: #F5F5F5;
+	padding: 20px;
+	float: right;
+	width: 25%;
 }
 
 /* -----------footer--------------------------- */
 footer {
-opacity: 0.5;
-filter:Alpha(Opacity=50);
-padding: 20px;
-clear:both;
-background-color: #F5F5F5;
-color:#fff;
+	opacity: 0.5;
+	filter: Alpha(Opacity=50);
+	padding: 20px;
+	clear: both;
+	background-color: #F5F5F5;
+	color: #fff;
 }
 
 /* -----------footer--------------------------- */
