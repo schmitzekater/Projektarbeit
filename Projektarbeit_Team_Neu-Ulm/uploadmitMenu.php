@@ -39,17 +39,13 @@
 
 	</head>
 
-	<body>
-	    <?php
-	     include "./php/nav.php";
-	    ?>
+	<body>			
 		<div id="container">
-
 			<header>
 				<img src ="Bilder/bg_header_start_01.jpg"
 				header id="headerpicture">
-
 			</header>
+			<?php include "./php/nav.php"; ?>
 
 			<section id="content">
 				<article>
