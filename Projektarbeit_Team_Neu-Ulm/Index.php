@@ -22,7 +22,7 @@
 
 <nav>
    
-<body>
+
 <nav id="nav">
 	<ul id="navigation">
 		<li><a href="index.php" class="first">Home</a></li>
@@ -64,7 +64,7 @@
 			<p>
 				Link: <a href="imprint.html">Impressum </a>
 			</p>
-			<p>Beschreibung:
+			<p> Beschreibung:
 				Um diese Seite nutzen zu können ist es notwendig, sich als Nutzer zu authorisieren.
 				Hierzu nutzen Sie bitte die Eingabemaske an der rechten Seite.
 				Anschließend können Sie unter der Uploadseite eine Liste der gewünschten / gefundenen Mutationen hochladen.
@@ -81,21 +81,24 @@
   </section>
 
   <aside>
+  
+  
   <p></p>
   <p></p>
   <p></p>
   <p></p>
-<h1>Login</h1>
+
+  <h1>Login</h1>
 			<table border="none">
 				<form name="login" method="get" action="x"
 					onsubmit="popuptest();">
 					<tr>
 						<td>Benutzername</td>
-						<td><input type="text" name="name" length="16"></td>
+						<td><input type="text" name="name" length="10"></td>
 					</tr>
 					<tr>
 						<td>Passwort</td>
-						<td><input type="text" name="password" length="16"></td>
+						<td><input type="text" name="password" length="10"></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -113,19 +116,25 @@
 				Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
 				dolor sit amet. Lorem ipsum dolor sit amet, 
 				 </p>
+  
+
+
+
 
 </aside>
+
 
 <footer>		
 
 <img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
 <p>für weitere DNA-Info´s nutzen Sie bitte</p>
+
 <p></p>
 <p>----------------------------------------------------------------------------------------------------------------------------</p>
 <p>fdasdsda</p>
 <p>fdasdsda</p>
 Copyright
- </footer>
+</footer>
 </div>
 </body>
 </html>
