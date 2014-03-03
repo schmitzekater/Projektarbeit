@@ -2,7 +2,7 @@
 /* Main Navigation */
 #nav {
 	position:absolute;
-	width:75%;
+	width:80%;
 	padding:18px;
 }
 
@@ -10,8 +10,8 @@ ul#navigation {
 	margin:0px auto;
 	position:relative;
 	float:left;
-	border-left:1px solid #c4dbe7;
-	border-right:1px solid #c4dbe7;
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
 }
 
 ul#navigation li {
@@ -23,8 +23,11 @@ ul#navigation li {
 	padding:0;
 	float:left;
 	position:relative;
-	border-top:1px solid #c4dbe7;
-	border-bottom:2px solid #c4dbe7;
+	border-top:0.5px solid #000000;
+	border-bottom:0.5px solid #000000;
+	-moz-box-shadow:0.7px 1px 1px #777777;
+	-webkit-box-shadow:0.7px 1px 1px #777777;
+	box-shadow:0.7px 1px 1px #777777; 
 }
 
 ul#navigation li a {
@@ -37,6 +40,8 @@ ul#navigation li a {
 	border-left:1px solid #C2C2C2;
 	border-top:1px solid #fff;
 	background: #F5F5F5;
+	
+	
 	
 	-webkit-transition:color 0.2s linear, background 0.2s linear;	
 	-moz-transition:color 0.2s linear, background 0.2s linear;	

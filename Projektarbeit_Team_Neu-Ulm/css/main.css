@@ -1,8 +1,5 @@
-/* css released under Creative Commons License -  http://creativecommons.org/licenses/by/2.0/deed.en  */
-/* html5 + CSS 3 Template created by miss monorom  http://intensivstation.ch 2013 */
 
-/* reset */
-* {
+ *{
 margin: 0;
 padding: 0;
 -moz-box-sizing: border-box;
@@ -90,10 +87,12 @@ line-height:1.5em;
 /* -------------- side infos ------------- */
 
 aside {
+
 background-color:#F5F5F5;
 padding:20px;
 float:right;
 width: 25%;
+
 }
 
 /* -----------footer--------------------------- */
