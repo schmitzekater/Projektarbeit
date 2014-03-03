@@ -20,7 +20,7 @@
 
 </header>
 
-<nav>
+
    
 
 <nav id="nav">
@@ -49,7 +49,7 @@
 		<li><a href="imprint.html" class="last">Impressum</a></li>
 	</ul>
 </nav>
-</nav>
+
 
 <section id="content">
 		  <article>
