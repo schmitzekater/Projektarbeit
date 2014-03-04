@@ -4,8 +4,6 @@ $user="dbuser";
 $password="dbuser";
 $dbase="genbank";
 
-open('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
-
 $array = array();
 try{
 	$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
