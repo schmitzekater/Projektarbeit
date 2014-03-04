@@ -3,7 +3,7 @@ $server="localhost";
 $user="dbuser";
 $password="dbuser";
 $dbase="genbank";
-$handle = fopen('C:\Users\schmitza\git\Projektarbeit\Projektarbeit_Team_Neu-Ulm\Datenbank\Projekt\CVS Dateien\BAG3CVS', "r");
+$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
 
 $array = array();
 while (!feof($handle)) {
