@@ -2,8 +2,8 @@
 $server="localhost";
 $user="dbuser";
 $password="dbuser";
-$dbase="genbank";
-$handle = fopen('C:\Users\schmitza\git\Projektarbeit\Projektarbeit_Team_Neu-Ulm\Datenbank\Projekt\CVS Dateien\BAG3CVS', "r");
+$dbase="GenBank";
+$handle = fopen('./Datenbank/Projekt/CVS Dateien/BAG3CVS', "r");
 
 $array = array();
 while (!feof($handle)) {
@@ -13,16 +13,16 @@ while (!feof($handle)) {
 		array_push($array, $buffer);					//Zeile in Array pushen
 	}
 }
-fclose($handle);										// Datei schließen
-$firstLine = stripLinefeed(array_shift($array));        // Zeilenumbruch entfernen und erste Zeile aus Datei als Überschrift
+fclose($handle);										// Datei schlieï¿½en
+$firstLine = stripLinefeed(array_shift($array));        // Zeilenumbruch entfernen und erste Zeile aus Datei als ï¿½berschrift
 $header = explode("|", $firstLine);						// Header aus erster Zeile erstellen
 foreach ($array as $line)								// Aufteilen des Arrays in Zeilen
 {
 	$elements = stripLinefeed(explode("|", $line));   	// Aufteilen der Zeile in Elemente die durch | getrennt sind.
 	for ($i = 0; $i < count($elements); ++$i) {
-		echo $header[$i], ": ", $elements[$i], "\n";	// Ausgabe Überschrift: Element
+		echo $header[$i], ": ", $elements[$i], "\n";	// Ausgabe ï¿½berschrift: Element
 	}
-	writeToDB($elements, "mutdat");
+	writeToDB($elements, "MutDat");
 	echo "---- End of Element ----\n";
 }
 
@@ -48,7 +48,7 @@ function writeToDb($elements, $table)
 			echo("Fehler in der Abfrage.\nQuery: ".$query."\n".mysql_error()."\n");
 		}
 		else{
-			echo("Geänderte Zeilen: ".mysql_affected_rows()."\n");
+			echo("Geï¿½nderte Zeilen: ".mysql_affected_rows()."\n");
 		}
 		
 		mysql_close();
