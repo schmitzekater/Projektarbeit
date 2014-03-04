@@ -40,14 +40,10 @@
 	</head>
 
 	<body>			
-		<div id="container">
-			<header>
-				<img src ="Bilder/bg_header_start_01.jpg"
-				header id="headerpicture">
-			</header>
-			<?php include "./php/nav.php"; ?>
+		
+<?php include "./php/nav.php"; ?>
 
-			<section id="content">
+<section id="content">
 				<article>
 					<p>
 						Laden Sie bitte die Dateien hoch. Akzeptiert werden ....

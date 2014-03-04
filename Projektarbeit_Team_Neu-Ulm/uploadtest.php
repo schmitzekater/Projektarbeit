@@ -4,13 +4,15 @@ $user="dbuser";
 $password="dbuser";
 $dbase="genbank";
 
+open('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
+
 $array = array();
 try{
 	$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
 	
 } catch(Exception $e)
 {
-	setStatus("Fehler beim Öffnen der Datei.\n".$e->getMessage());
+	setStatus("Fehler beim ï¿½ffnen der Datei.\n".$e->getMessage());
 }
 
 try{
@@ -27,16 +29,16 @@ while (!feof($handle)) {
 		array_push($array, $buffer);					//Zeile in Array pushen
 	}
 }
-fclose($handle);										// Datei schließen
-$firstLine = stripLinefeed(array_shift($array));        // Zeilenumbruch entfernen und erste Zeile aus Datei als Überschrift
+fclose($handle);										// Datei schlieï¿½en
+$firstLine = stripLinefeed(array_shift($array));        // Zeilenumbruch entfernen und erste Zeile aus Datei als ï¿½berschrift
 $header = explode("|", $firstLine);						// Header aus erster Zeile erstellen
 foreach ($array as $line)								// Aufteilen des Arrays in Zeilen
 {
 	$elements = stripLinefeed(explode("|", $line));   	// Aufteilen der Zeile in Elemente die durch | getrennt sind.
 	for ($i = 0; $i < count($elements); ++$i) {
-		echo $header[$i], ": ", $elements[$i], "\n";	// Ausgabe Überschrift: Element
+		echo $header[$i], ": ", $elements[$i], "\n";	// Ausgabe ï¿½berschrift: Element
 	}
-	writeToDB($elements, "mutdat");
+	writeToDB($elements, "MutDat");
 	echo "---- End of Element ----\n";
 }
 
@@ -62,7 +64,7 @@ function writeToDb($elements, $table)
 			echo("Fehler in der Abfrage.\nQuery: ".$query."\n".mysql_error()."\n");
 		}
 		else{
-			echo("Geänderte Zeilen: ".mysql_affected_rows()."\n");
+			echo("Geï¿½nderte Zeilen: ".mysql_affected_rows()."\n");
 		}
 		
 		mysql_close();
