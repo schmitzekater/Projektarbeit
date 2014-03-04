@@ -3,9 +3,23 @@ $server="localhost";
 $user="dbuser";
 $password="dbuser";
 $dbase="genbank";
-$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
 
 $array = array();
+try{
+	$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
+	
+} catch(Exception $e)
+{
+	setStatus("Fehler beim Öffnen der Datei.\n".$e->getMessage());
+}
+
+try{
+	$filename = PATHINFO_BASENAME($handle);
+	$fileExtension = PATHINFO_EXTENSION($handle);
+} catch (Exception $e)
+{
+	setStatus("Fehler in Dateinamenerkennung.\n".$e->getMessage());
+}
 while (!feof($handle)) {
 	$buffer = fgets($handle);							// Zeile einlesen
 	if(strlen($buffer)>0)								// Leere Zeilen auslassen
@@ -52,6 +66,10 @@ function writeToDb($elements, $table)
 		}
 		
 		mysql_close();
+}
+function setStatus($msg)
+{
+	echo("Status:" . $msg);
 }
 
 function stripLinefeed($text)
