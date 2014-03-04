@@ -2,8 +2,13 @@
 $server="localhost";
 $user="dbuser";
 $password="dbuser";
+<<<<<<< HEAD
 $dbase="GenBank";
 $handle = fopen('./Datenbank/Projekt/CVS Dateien/BAG3CVS', "r");
+=======
+$dbase="genbank";
+$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
+>>>>>>> 5b762236ec443812e0fdb07039ae4f21bec1ae80
 
 $array = array();
 while (!feof($handle)) {
