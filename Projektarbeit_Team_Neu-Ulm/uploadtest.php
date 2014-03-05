@@ -1,16 +1,20 @@
 <?php
-global $server, $user, $password, $dbase, $handle;
-$server = "localhost";
-$user = "dbuser";
-$password = "dbuser";
-$dbase = "genbank";
-$sep = "|";
-$mutTable = "mutdat";
-$genTable = "genname";
+$server 	= "localhost";
+$user 		= "dbuser";
+$password 	= "dbuser";
+$dbase 		= "genbank";
+$sep 		= "|";
+$mutTable	= "mutdat";
+$genTable 	= "genname";
+$debug 		= 1;
+/*
+ * Debug:
+ */
+$datei =  '.\Datenbank\Projekt\CSV\BAG3.csv';
 
 $array = array();
 try {
-	$handle = fopen('.\Datenbank\Projekt\CSV\BAG3.csv', "r");
+	$handle = fopen($datei, "r");
 
 } catch(Exception $e) {
 	setStatus("Fehler beim Öffnen der Datei.\n" . $e -> getMessage());
@@ -18,11 +22,14 @@ try {
 }
 
 try {
-	$fileInfo = pathinfo($handle);
+	$fileInfo = pathinfo($datei);
 	//Filename = Genname
 	$filename = $fileInfo['basename'];
-	echo("FIlename:".$filename);
 	$fileExtension = $fileInfo['extension'];
+	$gen = $fileInfo['filename'];
+	echo("Full filename:".$filename."\n");
+	echo("Extension:".$fileExtension."\n");
+	echo("Filename:".$gen."\n");
 } catch (Exception $e) {
 	setStatus("Fehler in Dateinamenerkennung.\n" . $e -> getMessage());
 	//return;
@@ -57,50 +64,65 @@ foreach ($array as $line)// Aufteilen des Arrays in Zeilen
 		echo $header[$i], ": ", $elements[$i], "\n";
 		// Ausgabe Überschrift: Element
 	}
-	$mysqli = connectDB();
-	if ($mysqli -> ping()) {
-		$genId = checkGen($mysqli, $filename);
-		if ($genId < 1) {//es gibt das Gen noch nicht in der Datenbank
-			$genId = writeGenToDb($mysqli, $gen);
-		} else
-			;
-		writeMutToDB($elements, $table, $genId);
+	$mysqli = connectDB($server, $user, $password, $dbase);		//Verbindung zur DB aufbauen
+	if ($mysqli -> ping()) {									//Verbindung noch aktiv?
+		$genId = checkGen($mysqli, $gen, $genTable);			//Prüfe, ob das Gen bereits in der Datenbank ist.
+		writeMutToDB($mysqli, $elements, $mutTable, $genId);	//Mutation in die DB schreiben
 	} else {
 			setStatus("Verbindung zur Datenbank unterbrochen.\n" . $mysqli -> error);
 			//return;
 	}
-	echo "---- End of Element ----\n";
-}
-function writeGenToDb($mysqli, $gen) {
-	$query = "insert into $genTable values( 1, '$gen' )";
-	//Auto-Inkrement ist an. 1 ist Dummy.
-	$result = mysqli_query($mysqli, $query);
-	if (!$result) {
-		setStatus("Fehler in der Abfrage.\nQuery: " . $query . "\n" . mysql_error() . "\n");
-	} else {
-		setStatus("Geänderte Zeilen: " . mysql_affected_rows() . "\n");
+	try{
+			$mysqli->close();
 	}
-	$row = $result -> fetch_assoc();
-	$id = $row["idG"];
+	catch(Exception $e)
+	{
+		setStatus("Fehler beim Beenden der Datenbankverbindung.\n".$e->getMessage."\n");
+	}
+}
+function writeGenToDb($mysqli, $gen, $genTable) {
+	$query = "insert into $genTable ( `Name`) values( '$gen' )";
+	//Auto-Inkrement ist an. 
+	//$result = mysqli_query($mysqli, $query);
+	if($result = $mysqli->query($query))
+	{
+		$id = $mysqli->insert_id;
+		setStatus("Neue ID: ".$id."\n");
+	}
+	else {
+		setStatus("Fehler beim Einfügen in die Datenbank.\nQuery: " . $query . "\n" . mysql_error() . "\n");
+	}
+	$mysqli->close();
 	return $id;
-
 }
 
-function checkGen($mysqli, $gen) {
-	$query = "select idG from $genTable where Name like '$gen';";
-	$result = mysqli_query($mysqli, $query);
-	$row = $result -> fetch_assoc();
-	$id = $row["idG"];
+function checkGen($mysqli, $gen, $gentable) {
+	/*
+	 * This function tries to retrieve the id of a unique gen.
+	 * If the Gen is not present in the database, a new ID will be generated.
+	 * @param $mysqli 
+	 * @param $gen
+	 * @param $gentable
+	 */
+	$query = 'select idG from '.$gentable.' where Name = "'.$gen.'";';
+	if(($result = $mysqli->query($query))&&($result2 = $mysqli->affected_rows) ==1)				//ID war bereits vorhanden
+	{
+		$row = $result->fetch_assoc();
+		$id = $row['idG'];
+	}
+	else {
+		$id = writeGenToDb($mysqli, $gen, $gentable);	//Gen in die Datenbank schreiben
+	}
 	return $id;
 }
 
-function connectDB() {
+function connectDB($server, $user, $password, $dbase) {
 	try {
 		$sql = new mysqli($server, $user, $password, $dbase);
 		if ($sql -> connect_errno) {
-			setStatus("No Connection to $server ! \n" . $sql -> connect_error);
+			setStatus("No Connection to $server ! \n" . $sql -> connect_error . "\n");
 		} else {
-			setStatus("Connection to $server ok \n" . $sql -> host_info . "\n");
+			setStatus("Connection to $server ok. \n" . $sql -> host_info . "\n");
 		}
 	} catch (Exception $e) {
 		setStatus("Fehler beim Verbinden mit der Datenbank.\n" . $e -> getMessage());
@@ -108,26 +130,25 @@ function connectDB() {
 	return $sql;
 }
 
-function writeMutToDb($elements, $table) {
+function writeMutToDb($mysqli, $elements, $table, $genId) {
 
-	//Datenbank checken ueberfluessig!
-	//$db = mysql_select_db($dbase);
-	//if ($db) {echo("Datenbank $dbase ok \n");
-	//} else {echo("Datenbankfehler: $dbase\n");
-	//}
-	$query = "insert into $table values( 0, '$elements[0]','$elements[1]','$elements[2]','$elements[3]','$elements[4]','$elements[5]', '$elements[6]',1 )";
-	$result = mysql_query($query);
-	if (!$result) {
-		echo("Fehler in der Abfrage.\nQuery: " . $query . "\n" . mysql_error() . "\n");
-	} else {
-		echo("Ge�nderte Zeilen: " . mysql_affected_rows() . "\n");
+	$query = "insert into $table values( 0, '$elements[0]','$elements[1]','$elements[2]','$elements[3]','$elements[4]','$elements[5]', '$elements[6]',$genId )";
+	if($result = $mysqli->query($query))
+	{
+		setStatus("Geänderte Zeilen: " . $mysqli->affected_rows . "\n");
+	}
+	 else {
+		setStatus("Fehler in der Abfrage.\nQuery: " . $query . "\n" . $mysqli->error . "\n");
 	}
 
-	mysql_close();
 }
 
 function setStatus($msg) {
-	echo("Status:" . $msg);
+	if($GLOBALS['debug']=1)
+	{
+		echo("Status:" . $msg);
+	}
+	else;
 }
 
 function stripLinefeed($text) {
