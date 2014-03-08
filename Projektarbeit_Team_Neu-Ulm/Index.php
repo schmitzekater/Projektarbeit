@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
 
 
 </head>
@@ -65,14 +66,9 @@
 
 <footer>		
 
-<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
-<p>für weitere DNA-Info´s nutzen Sie bitte</p>
 
-<p></p>
-<p>----------------------------------------------------------------------------------------------------------------------------</p>
-<p>fdasdsda</p>
-<p>fdasdsda</p>
-Copyright
+<?php include "./php/footer.php"; ?>
+
 </footer>
 </div>
 </body>
