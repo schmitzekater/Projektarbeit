@@ -50,39 +50,15 @@
   <p></p>
   <p></p>
   <p></p>
-
-  <h1>Login</h1>
-			<table border="none">
-				<form name="login" method="get" action="x"
-					onsubmit="popuptest();">
-					<tr>
-						<td>Benutzername</td>
-						<td><input type="text" name="name" length="10"></td>
-					</tr>
-					<tr>
-						<td>Passwort</td>
-						<td><input type="text" name="password" length="10"></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><input type="submit" name="knopf" value="speichern"></td>
-					</tr>
-				</form>
-			</table>
+  <p></p>
+			<H2>Information</H2>
 			<p></p>
-		    <p></p>
-			<h1>Subside</h1>
-			<p>Hier könnte noch erklärender Text zu main stehen. Lorem ipsum
-				dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-				tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-				voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-				Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-				dolor sit amet. Lorem ipsum dolor sit amet, 
-				 </p>
+		  
+			<p>Um die Funktionen dieser Seite nutzen zu können, ist ein Login notwendig. </p>
+			<p><a href="login.php">Login </a></p>
+			<p>Falls Sie noch nicht registriert sind, können Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
+			<p>Wir wünschen viel Freude mit dieser Webseite</p>
   
-
-
-
 
 </aside>
 

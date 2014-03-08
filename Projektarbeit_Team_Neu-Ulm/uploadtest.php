@@ -2,15 +2,15 @@
 $server 	= "localhost";
 $user 		= "dbuser";
 $password 	= "dbuser";
-$dbase 		= "genbank";
+$dbase 		= "GenBank";
 $sep 		= "|";
-$mutTable	= "mutdat";
-$genTable 	= "genname";
+$mutTable	= "MutDat";
+$genTable 	= "Genname";
 $debug 		= 1;
 /*
  * Debug:
  */
-$datei =  '.\Datenbank\Projekt\CSV\BAG3.csv';
+$datei =  '/Users/carolindressel/Desktop/Projekt/CVS Dateien/BAG3.csv';
 
 $array = array();
 try {

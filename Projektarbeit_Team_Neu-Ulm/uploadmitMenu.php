@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 	<head>
 
 		<title>Genetikum - GenetikumDb</title>
@@ -45,7 +46,12 @@
 
 <section id="content">
 				<article>
-					<p>
+				
+
+
+<p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
+
+<p>
 						Laden Sie bitte die Dateien hoch. Akzeptiert werden ....
 					</p>
 					<p>
@@ -77,6 +83,9 @@
 							<input type="button" id="toggle_list"   value="Liste verbergen" onclick="toggleElement('#ListWrapper')" />
 						</form>
 					</div>
+
+				
+					
 				</article>
 			</section>
 			<aside>
