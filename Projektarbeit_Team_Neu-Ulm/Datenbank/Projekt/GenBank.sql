@@ -52,7 +52,7 @@ ENGINE = InnoDB;
 -- Table `GenBank`.`Genname`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `GenBank`.`Genname` (
-  `idG` INT NOT NULL,
+  `idG` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NULL,
   PRIMARY KEY (`idG`))
 ENGINE = InnoDB;
