@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/menu.css" />
 		<link rel="stylesheet" type="text/css" href="./css/Seite.css" />
 		<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="./style.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="./css/style.css" 	media="screen"> -->
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script src="./js/upload.js" type="text/javascript"></script>
@@ -46,17 +47,43 @@
 
 <section id="content">
 				<article>
-				
+
+<div id="wrapper">
+
+<?php
+  session_start();
+
+  // Wenn Sitzungsvariablen nicht gesetzt sind, versuchen sie über Cookies zu setzen
+    if (!isset($_SESSION['id'])) {
+    if (isset($_COOKIE['id']) && isset($_COOKIE['nutzername'])) {
+      $_SESSION['id'] = $_COOKIE['id'];
+      $_SESSION['nutzername'] = $_COOKIE['nutzername'];
+    }
+  }
+?>
+<?php
+	require_once('includes/header.php');
+	require_once('includes/menu.php');
+?>
+
+	<?php
+		if (!isset($_SESSION['id'])) {
+			echo '<p class="fail">Um auf diese Seite zugreifen, m&uuml;ssen Sie sich <a href="login.php">einloggen</a>.</p>';
+			exit();
+		}
+	?>
+
+
+
 
 
 <p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
 
-<p>
-						Laden Sie bitte die Dateien hoch. Akzeptiert werden ....
-					</p>
-					<p>
-						Bei fehlerhaften Dateien werden Sie benachrichtigt.
-					</p>
+<?php require_once('includes/footer.php'); ?>
+
+<p>Laden Sie bitte die Dateien hoch. Akzeptiert werden ....</p>
+
+<p>Bei fehlerhaften Dateien werden Sie benachrichtigt.</p>
 
 					<div id="main">
 						<p>
@@ -100,7 +127,7 @@
 
 				<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
 				<p>
-					fÃ¼r weitere DNA-InfoÂ´s nutzen Sie bitte
+					für weitere DNA-Info´s nutzen Sie bitte
 				</p>
 				<p></p>
 				<p>
