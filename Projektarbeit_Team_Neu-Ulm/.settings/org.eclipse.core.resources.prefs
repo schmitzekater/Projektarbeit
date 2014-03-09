@@ -2,15 +2,8 @@
 <<<<<<<=HEAD
 >>>>>>>=df3d7f90e1cb6498cf4eca8c6283bee090a2730b
 eclipse.preferences.version=1
-encoding//Beispiele/PHP-Seiten/Klinik=ISO-8859-1
-encoding//Beispiele/PHP-Seiten/Klinik/besitzer_anlegen.php=ISO-8859-1
-encoding//conflicts/index.php=UTF-8
-encoding//css/Seite.css=UTF-8
-encoding//css/main.css=UTF-8
-encoding//php/nav.php=UTF-8
-encoding//php/static.php=UTF-8
-encoding//php/upload_handler.php=UTF-8
 encoding/<project>=UTF-8
+<<<<<<< HEAD
 encoding/Impressum.php=UTF-8
 encoding/Index.php=UTF-8
 encoding/Kontakt.php=UTF-8
@@ -18,3 +11,6 @@ encoding/upload.php=UTF-8
 encoding/upload_gen.php=UTF-8
 encoding/upload_pat.php=UTF-8
 encoding/uploadmitMenu.php=UTF-8
+=======
+encoding/geheim_einfach.php=UTF-8
+>>>>>>> 0cb056620aad6af11f07490989f8338d4a905647
