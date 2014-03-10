@@ -1,13 +1,13 @@
 <?php
 		$seitentitel = 'Aktivieren';
-		require_once('includes/zugang.php');
+		require_once('./php/zugang.php');
 ?>
 	
 <div id="wrapper">
 	
 	<?php
-		require_once('includes/header.php');
-		require_once('includes/menu.php');
+		require_once('./php/header.php');
+		require_once('./php/menu.php');
 
 		// Mit Datenbank verbinden
 		$db = mysqli_connect("localhost", "dbuser", "dbuser", "GenBank");
@@ -47,9 +47,9 @@
 	<h2>Account aktivieren</h2>
 
 	<p>Sie m&uuml;ssen ihren Account noch aktivieren. Sie sollten eine E-Mail mit dem entsprechenden Code erhalten haben.
-	Falls dies nicht der Fall sein sollte wenden sie sich bitten an unseren Support, den Sie �ber das Kontaltformular erreichen k�nnen.</p>
+	Falls dies nicht der Fall sein sollte wenden sie sich bitten an unseren Support, den Sie ���ber das Kontaltformular erreichen k���nnen.</p>
 
-	<form method="post" action="aktivierung.php">
+	<form method="post" action="./Admin/aktivierung.php">
 
 		<label for="nutzername">Benutzername:</label>
 		<input type="text" name="nutzername"/>
@@ -61,6 +61,6 @@
 	
 	</form>
   
-	<?php require_once('includes/footer.php'); ?>
+	<?php include "./php/footer_Seite.php"; ?>
 
 </div><!-- #wrapper -->

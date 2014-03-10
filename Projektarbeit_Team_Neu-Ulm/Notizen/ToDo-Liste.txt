@@ -1,0 +1,47 @@
+Übersicht der Dinge, die noch zu tun sind.
+
+Webseite:
+	- CSS Anpassen für alle Seiten
+	- CSS anpassen für mobile Seiten (responsives Design)
+	- Top Navigation entwerfen (Oberes Linkmenu) (JavaScript?)
+	- Sitemenu links entwerfen					 (JavaScript?)
+		- muss sich der gewählten Seite in der Top-Navigation anpassen
+	- eventuell: Seitenmenu /-bereich rechts entwerfen.
+		- hier zum Beispiel weitere Infos, externe Links o.ä.
+		
+	Upload-Seite:
+		- Prüfung des Dokumentes, das hochgeladen wird, per JavaScript im Browser
+			- Richtige Dateiendung
+			- Größer als 0 Byte
+			- Richtige Spaltenanordnung
+		- Hochladen an den Server
+		- Auf Server per PHP Dokument einlesen (eventuell in temporäres Array oder ähnliche Collection)
+		- Per SQL die Daten in die DB einfügen
+		- Per SQL eingetragene Daten Stichprobenweise abfragen und vergleichen (--> QUATSCH!)
+		- Rückgabe-Code der DB abfragen
+		- User informieren ob Import geklappt hat (Auslesen des Rückgabe-Wertes der DB)
+		
+	Suche-Seite:
+		- Formular anbieten für verschiedene Suchkriterien
+		- Per JavaScript SQL-Befehl erstellen und an Server senden (OPTIONAL!!)
+		- Auf dem Server die SQL-Abfrage durchführen
+		- Rückgabe der Werte an Webseite, Darstellung in einer Tabelle
+			- Bei vielen Werten aufteilen der Seite in mehrere Seiten
+				- eventuell mit Möglichkeit Anzeige von Listenitems zu ändern (zeige 20, 50, 100, alle Einträge)
+			- OPTIONAL und BONUS: Einbau eines Links, in dem das Ergebnis von extern zu erreichen ist
+			
+	Footer:
+		- Was soll in den Footer?
+			- Impressum?
+			- Adresse?
+			- Unser Foto? :D
+			
+	OPTIONAL Adminsitrations (Userverwaltungs-) Seite
+		- Anlegen und Bearbeiten von Usern
+	
+Datenbank
+	- Modell entwerfen (MySQL)
+	- DB anlegen (lokal auf den Rechnern und evtl. online)
+	- Tabellen anlegen, Dumy-Daten einfügen
+	- Das war's. ;)
+	
