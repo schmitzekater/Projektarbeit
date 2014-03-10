@@ -141,12 +141,12 @@
 
 			</aside>
 
-			<footer>
-<?php include "./php/footer.php"; ?>
-			</footer>
-		</div>
+<footer>
+<?php include "./php/footer_Seite.php"; ?>
+</footer>
+</div>
 
-	</body>
+</body>
 </html>
 
 

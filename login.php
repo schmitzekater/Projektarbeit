@@ -116,7 +116,7 @@
 
 
 <footer>		
-<?php include "./php/footer.php"; ?>
+<?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>
 </body>

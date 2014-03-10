@@ -29,13 +29,13 @@
 				Link: <a href="imprint.html">Impressum </a>
 			</p>
 			<p> Beschreibung:
-				Um diese Seite nutzen zu können ist es notwendig, sich als Nutzer zu authorisieren.
+				Um diese Seite nutzen zu k��nnen ist es notwendig, sich als Nutzer zu authorisieren.
 				Hierzu nutzen Sie bitte die Eingabemaske an der rechten Seite.
-				Anschließend können Sie unter der Uploadseite eine Liste der gewünschten / gefundenen Mutationen hochladen.
-				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Veränderungen
+				Anschlie��end k��nnen Sie unter der Uploadseite eine Liste der gew��nschten / gefundenen Mutationen hochladen.
+				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver��nderungen
 				gefunden wird, wird diese ausgegeben.</p>
 				
-			<p>Bei Problemen oder Fragen bezüglich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>	
+			<p>Bei Problemen oder Fragen bez��glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>	
 				
 				
 			
@@ -55,10 +55,10 @@
 			<H2>Information</H2>
 			<p></p>
 		  
-			<p>Um die Funktionen dieser Seite nutzen zu können, ist ein Login notwendig. </p>
+			<p>Um die Funktionen dieser Seite nutzen zu k��nnen, ist ein Login notwendig. </p>
 			<p><a href="login.php">Login </a></p>
-			<p>Falls Sie noch nicht registriert sind, können Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
-			<p>Wir wünschen viel Freude mit dieser Webseite</p>
+			<p>Falls Sie noch nicht registriert sind, k��nnen Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
+			<p>Wir w��nschen viel Freude mit dieser Webseite</p>
   
 
 </aside>
@@ -67,7 +67,7 @@
 <footer>		
 
 
-<?php include "./php/footer.php"; ?>
+<?php include "./php/footer_Seite.php"; ?>
 
 </footer>
 </div>

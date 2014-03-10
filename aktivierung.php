@@ -61,6 +61,6 @@
 	
 	</form>
   
-	<?php require_once('php/footer.php'); ?>
+	<?php include "./php/footer_Seite.php"; ?>
 
 </div><!-- #wrapper -->
