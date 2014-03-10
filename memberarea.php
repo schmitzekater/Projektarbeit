@@ -9,6 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/menu.css" />
 		<link rel="stylesheet" type="text/css" href="./css/Seite.css" />
 		<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="./css/footer.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="./css/style.css" 	media="screen"> -->
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script src="./js/upload.js" type="text/javascript"></script>

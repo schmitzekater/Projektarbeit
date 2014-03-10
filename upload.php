@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="./css/menu.css" />
 		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<link rel="stylesheet" type="text/css" href="./css/footer.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="./css/style.css" 	media="screen"> -->
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script src="./js/upload.js" type="text/javascript"></script>
