@@ -68,7 +68,7 @@
 			<p></p>
 		    <p></p>
 			<h1>Subside</h1>
-			<p>Hier könnte noch erklärender Text zu main stehen. Lorem ipsum
+			<p>Hier k��nnte noch erkl��render Text zu main stehen. Lorem ipsum
 				dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
 				tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 				voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
@@ -79,10 +79,7 @@
 </aside>
 
 <footer>		
-    <h2>&lt;footer&gt;</h2>
-
-
-Copyright
+    <?php include "./php/footer.php"; ?>
  </footer>
 </div>
 </body>

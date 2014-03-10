@@ -1,15 +1,15 @@
 	<?php
 	
 		$seitentitel = 'Passwort zur&uuml;cksetzen';
-		require_once('includes/zugang.php');
+		require_once('./php/zugang.php');
 	?>
 	
 <div id="wrapper">
 	
 	<?php
 	
-		require_once('includes/header.php');
-		require_once('includes/menu.php');
+		require_once('./php/header.php');
+		require_once('./php/menu.php');
  
 		if (isset($_POST['submit'])) {
 
@@ -38,7 +38,7 @@
 						mysqli_query($db, "UPDATE nutzer SET vergessen = '$code' WHERE nutzername = '$nutzername'")
 							or die(mysqli_error());
 		
-						echo '<p class="pass">Passwort wurde erfolgreich ge�ndert. Sie k�nnen sich nun mit dem neuen Kennwort <a href="login.php">hier</a> einloggen.</p>';
+						echo '<p class="pass">Passwort wurde erfolgreich ge���ndert. Sie k���nnen sich nun mit dem neuen Kennwort <a href="login.php">hier</a> einloggen.</p>';
 						
 						mysqli_close($db);
 					}
@@ -52,7 +52,7 @@
 				}
 			}
 			else {
-				echo '<p class="fail">Sie m�ssen Daten eingeben.</p>';
+				echo '<p class="fail">Sie m���ssen Daten eingeben.</p>';
 			}
 		}
  ?>
@@ -74,6 +74,6 @@
 		<input type="submit" value="Passwort &auml;ndern" name="submit" />
 	</form>
   
-	<?php require_once('includes/footer.php'); ?>
+	<?php require_once('./php/footer.php'); ?>
 
 </div><!-- #wrapper -->

@@ -52,9 +52,9 @@
 
 <?php
 
-	require_once('includes/sitzungsstart.php');
+	require_once('./php/sitzungsstart.php');
 	$seitentitel = 'Memberarea';
-	require_once('includes/zugang.php');
+	require_once('./php/zugang.php');
 		
 	if(isset($_SESSION['nutzername'])) {
 		$user = $_SESSION['nutzername'];
@@ -80,8 +80,8 @@
 <div id="wrapper">
 
 <?php
-	require_once('includes/header.php');
-	require_once('includes/menu.php');
+	require_once('./php/header.php');
+	require_once('./php/menu.php');
 ?>
 
 	<?php
@@ -93,7 +93,7 @@
 
 <p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
 
-<?php require_once('includes/footer.php'); ?>
+<?php require_once('./php/footer.php'); ?>
 
 </div><!-- #wrapper -->
 <p>Laden Sie bitte die Dateien hoch. Akzeptiert werden ....</p>
@@ -139,18 +139,7 @@
 			</aside>
 
 			<footer>
-
-				<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
-				<p>
-					für weitere DNA-Info´s nutzen Sie bitte
-				</p>
-				<p></p>
-				<p>
-					----------------------------------------------------------------------------------------------------------------------------
-				</p>
-				<p>
-					fdasdsda
-				</p>
+<?php include "./php/footer.php"; ?>
 				<p>
 					fdasdsda
 				</p>

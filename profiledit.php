@@ -21,9 +21,9 @@
 <h1>&nbsp;</h1>
 <div id="main">
 			<?php
-		require_once('includes/sitzungsstart.php');
+		require_once('./php/sitzungsstart.php');
         $seitentitel = 'Profil bearbeiten';
-		require_once('includes/zugang.php');  
+		require_once('./php/zugang.php');  
   
     ?>
 	
@@ -31,8 +31,8 @@
 	
 	<?php
 	
-		require_once('includes/header.php');  
-		require_once('includes/menu.php');
+		require_once('./php/header.php');  
+		require_once('./php/menu.php');
 				
 		if (!isset($_SESSION['id'])) {
 			echo '<p class="fail">Um auf diese Seite zugreifen zu k&ouml;nnen, m&uuml;ssen Sie sich <a href="login.php">einloggen</a>.</p>';
@@ -63,11 +63,11 @@
 							
 						mysqli_close($db);
 		 
-						echo '<p class="pass">Ihr Passwort wurde erfolgreich ge�ndert.</p>';
+						echo '<p class="pass">Ihr Passwort wurde erfolgreich ge���ndert.</p>';
 		 
 					}
 					else {
-						echo '<p class="fail">Die beiden neuen Passw�rter stimmen nicht �berein.</p>';
+						echo '<p class="fail">Die beiden neuen Passw���rter stimmen nicht ���berein.</p>';
 					}
                 }
 				else {
@@ -75,7 +75,7 @@
 				}
 			}
 			else {
-				echo '<p class="fail">Sie haben die ben�tigten Felder nicht ausgef�llt.</p>';
+				echo '<p class="fail">Sie haben die ben���tigten Felder nicht ausgef���llt.</p>';
 			}  
 		}  
 	?>
@@ -95,7 +95,7 @@
 	
 	</form>
   
-	<?php require_once('includes/footer.php'); ?>
+	<?php require_once('./php/footer.php'); ?>
   
 </div> <!-- #wrapper -->
   </article>
@@ -112,25 +112,17 @@
 			<H2>Information</H2>
 			<p></p>
 		  
-			<p>Um die Funktionen dieser Seite nutzen zu können, ist ein Login notwendig. </p>
+			<p>Um die Funktionen dieser Seite nutzen zu k��nnen, ist ein Login notwendig. </p>
 			<p><a href="login.php">Login </a></p>
-			<p>Falls Sie noch nicht registriert sind, können Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
-			<p>Wir wünschen viel Freude mit dieser Webseite</p>
+			<p>Falls Sie noch nicht registriert sind, k��nnen Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
+			<p>Wir w��nschen viel Freude mit dieser Webseite</p>
   
 
 </aside>
 
 
 <footer>		
-
-<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
-<p>für weitere DNA-Info´s nutzen Sie bitte</p>
-
-<p></p>
-<p>----------------------------------------------------------------------------------------------------------------------------</p>
-<p>fdasdsda</p>
-<p>fdasdsda</p>
-Copyright
+<?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>
 </body>

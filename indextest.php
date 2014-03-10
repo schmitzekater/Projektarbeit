@@ -1,7 +1,7 @@
 <?php
 
-		require_once('includes/sitzungsstart.php');
-		require_once('includes/zugang.php');
+		require_once('./php/sitzungsstart.php');
+		require_once('./php/zugang.php');
 		$seitentitel = 'Loginsystem';
 
 		if(isset($_SESSION['nutzername'])) {
@@ -28,8 +28,8 @@
 	<div id="wrapper">
 	
 		<?php
-			require_once('includes/header.php');  
-			require_once('includes/menu.php');
+			require_once('./php/header.php');  
+			require_once('./php/menu.php');
 		?>
 
    <!-- ==================
@@ -72,6 +72,6 @@
 	
 	</form>
   
-		<?php require_once('includes/footer.php'); ?>
+		<?php require_once('./php/footer.php'); ?>
 
 	</div><!-- #wrapper -->

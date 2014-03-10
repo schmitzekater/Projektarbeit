@@ -18,7 +18,7 @@
 				
 			</ul>
 		</li>
-		<li><a href="#">Weiterführende Links &raquo;</a>
+		<li><a href="#">Weiterf��hrende Links &raquo;</a>
 			<ul>
 				<li><a href="http://genome.ucsc.edu/">UCSC</a></li>
 				<li><a href="http://www.ncbi.nlm.nih.gov/">NCBI</a></li>
@@ -29,7 +29,7 @@
 			</ul>				
 		</li>
 		<li><a href="login.php" class="last">Login</a></li>
-		<li><a href="Kontakt.html" class="last">Kontakt</a></li>
+		<li><a href="Kontakt.php" class="last">Kontakt</a></li>
 		<li><a href="Impressum.php" class="last">Impressum</a></li>
 	</ul>
 </nav>

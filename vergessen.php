@@ -1,14 +1,14 @@
 	<?php
 
 		$seitentitel = 'Passwort vergessen';
-		require_once('includes/zugang.php');
+		require_once('./php/zugang.php');
 	?>
 	
 <div id="wrapper">
 
 	<?php
-        require_once('includes/header.php');  
-        require_once('includes/menu.php');
+        require_once('./php/header.php');  
+        require_once('./php/menu.php');
 
 		if (isset($_POST['submit'])) {
 			// Mit der Datenbank verbinden
@@ -35,20 +35,20 @@
 					$absender = 'admin@neispiel.de';
 					$betreff = "Beispiel - Haben Sie Ihr Passwort vergessen?";
 					$msg = "Hallo $nutzername,\n" .
-					"wenn Sie ihr Passwort vergessen haben besuchen Sie bitte http://localhost/zuruecksetzen.php und �ndern Sie ihr vergessenes Passwort in ein neues gew�nschtes Passwort um.\n" .
-					"Dazu ben�tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl�ssel ( $vergessencode ). \n" .
+					"wenn Sie ihr Passwort vergessen haben besuchen Sie bitte http://localhost/zuruecksetzen.php und ���ndern Sie ihr vergessenes Passwort in ein neues gew���nschtes Passwort um.\n" .
+					"Dazu ben���tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl���ssel ( $vergessencode ). \n" .
 					"Falls Sie Ihr Passwort nicht vergessen haben ignorieren Sie diese E-Mail bitte einfach. \n" . 
-					"Mit freundlichen Gr��en\n" .
+					"Mit freundlichen Gr������en\n" .
 					"Beispielseite";
 
 					mail($email, $betreff, $msg, 'From:' . $absender);
 		
-					echo '<p class="pass">Sie haben einen entsprechenden Sicherheitscode an Ihre E-Mail Adresse erhalten. Sie k�nnen <a href="zuruecksetzen.php">hier</a> Ihr Passwort zur�cksetzen.</p>';
+					echo '<p class="pass">Sie haben einen entsprechenden Sicherheitscode an Ihre E-Mail Adresse erhalten. Sie k���nnen <a href="zuruecksetzen.php">hier</a> Ihr Passwort zur���cksetzen.</p>';
 					
 					mysqli_close($db);
 				}
 				else {
-					echo '<p class="fail">E-Mail und Nutzername stimmen nicht �berein.</p>';
+					echo '<p class="fail">E-Mail und Nutzername stimmen nicht ���berein.</p>';
 				}
 			}
 			else {
@@ -57,7 +57,7 @@
 		}
 	?>
 	
-	<h2>Passwort�nderung anfordern</h2>
+	<h2>Passwort���nderung anfordern</h2>
 
 	<form method="post" action="vergessen.php">
 
@@ -71,6 +71,6 @@
 	
 	</form>
   
-	<?php require_once('includes/footer.php'); ?>
+	<?php require_once('./php/footer.php'); ?>
 
 </div><!-- #wrapper -->

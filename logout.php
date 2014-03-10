@@ -25,23 +25,23 @@
 
 <p>Sie haben sich ausgeloggt....</p>
 
-<p>Um sich wieder einzuloggen verwenden Sie diesen Link ... oder wählen Sie im Menü LOGIN</p>
+<p>Um sich wieder einzuloggen verwenden Sie diesen Link ... oder w��hlen Sie im Men�� LOGIN</p>
 
 			<?php	
 		session_start();
 		if (isset($_SESSION['id'])) {
 		
-			// Sitzungsvariablen löschen
+			// Sitzungsvariablen l��schen
 			$_SESSION = array();
 
-			// Sitzungs-Cookie löschen
+			// Sitzungs-Cookie l��schen
 			if (isset($_COOKIE[session_name()])) {
 				setcookie(session_name(), '', time() - 3600);
 			}
 			session_destroy();
 		}
 
-		// Cookies löschen
+		// Cookies l��schen
 		setcookie('id', '', time() - 3600);
 		setcookie('nutzername', '', time() - 3600);
 
@@ -64,25 +64,17 @@
 			<H2>Information</H2>
 			<p></p>
 		  
-			<p>Um die Funktionen dieser Seite nutzen zu können, ist ein Login notwendig. </p>
+			<p>Um die Funktionen dieser Seite nutzen zu k��nnen, ist ein Login notwendig. </p>
 			<p><a href="login.php">Login </a></p>
-			<p>Falls Sie noch nicht registriert sind, können Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
-			<p>Wir wünschen viel Freude mit dieser Webseite</p>
+			<p>Falls Sie noch nicht registriert sind, k��nnen Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
+			<p>Wir w��nschen viel Freude mit dieser Webseite</p>
   
 
 </aside>
 
 
 <footer>		
-
-<img class="DNABild" src="Bilder/dna-Strang.jpg" width="40" high="50">
-<p>für weitere DNA-Info´s nutzen Sie bitte</p>
-
-<p></p>
-<p>----------------------------------------------------------------------------------------------------------------------------</p>
-<p>fdasdsda</p>
-<p>fdasdsda</p>
-Copyright
+<?php include "./php/footer.php"; ?>
 </footer>
 </div>
 </body>
