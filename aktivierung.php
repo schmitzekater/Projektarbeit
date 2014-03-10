@@ -10,7 +10,7 @@
 		require_once('./php/menu.php');
 
 		// Mit Datenbank verbinden
-		$db = mysqli_connect("localhost", "dbuser", "dbuser", "GenBank");
+		$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
 			mysqli_set_charset($db, "utf8");
 
 			if (isset($_POST['submit'])) {
@@ -47,9 +47,9 @@
 	<h2>Account aktivieren</h2>
 
 	<p>Sie m&uuml;ssen ihren Account noch aktivieren. Sie sollten eine E-Mail mit dem entsprechenden Code erhalten haben.
-	Falls dies nicht der Fall sein sollte wenden sie sich bitten an unseren Support, den Sie ���ber das Kontaltformular erreichen k���nnen.</p>
+	Falls dies nicht der Fall sein sollte wenden sie sich bitten an unseren Support, den Sie ���������ber das Kontaltformular erreichen k���������nnen.</p>
 
-	<form method="post" action="./Admin/aktivierung.php">
+	<form method="post" action="aktivierung.php">
 
 		<label for="nutzername">Benutzername:</label>
 		<input type="text" name="nutzername"/>

@@ -87,7 +87,7 @@
 	<h2>Registrieren</h2>
 	<p>W&auml;hlen Sie einen Benutzernamen und ein Passwort, um sich f&uuml;r Mutfinder zu registrieren.</p>
 
-	<form method="post" action="./Admin/registrieren.php">
+	<form method="post" action="registrieren.php">
 
 		<label for="nutzername">Benutzername:</label>
 		<input type="text" name="nutzername" />

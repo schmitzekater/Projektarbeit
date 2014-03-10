@@ -81,7 +81,7 @@
 		}  
 	?>
 
-	<form method="post" action="./Admin/profiledit.php">
+	<form method="post" action="profiledit.php">
  
 		<label for="nutzername">Aktuelles Passwort:</label>
 		<input type="password" id="password" name="password"/>

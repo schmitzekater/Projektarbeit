@@ -57,7 +57,7 @@
 	if(isset($_SESSION['nutzername'])) {
 		$user = $_SESSION['nutzername'];
 
-		$db = mysqli_connect("localhost", "dbuser", "dbuser", "GenBank");
+		$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
 			mysqli_set_charset($db, "utf8");
 
 		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
