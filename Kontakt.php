@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 <title>GenBank</title>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="./css/Seite.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
 
@@ -44,44 +44,27 @@
   </section>
 
   <aside>
+  
+  
   <p></p>
   <p></p>
   <p></p>
   <p></p>
-<h1>Login</h1>
-			<table border="none">
-				<form name="login" method="get" action="x"
-					onsubmit="popuptest();">
-					<tr>
-						<td>Benutzername</td>
-						<td><input type="text" name="name" length="16"></td>
-					</tr>
-					<tr>
-						<td>Passwort</td>
-						<td><input type="text" name="password" length="16"></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td><input type="submit" name="knopf" value="speichern"></td>
-					</tr>
-				</form>
-			</table>
+  <p></p>
+			<H2>Information</H2>
 			<p></p>
-		    <p></p>
-			<h1>Subside</h1>
-			<p>Hier k��nnte noch erkl��render Text zu main stehen. Lorem ipsum
-				dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-				tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-				voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-				Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-				dolor sit amet. Lorem ipsum dolor sit amet, 
-				 </p>
+		  
+			<p>Um die Funktionen dieser Seite nutzen zu k��nnen, ist ein Login notwendig. </p>
+			<p><a href="login.php">Login </a></p>
+			<p>Falls Sie noch nicht registriert sind, k��nnen Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
+			<p>Wir w��nschen viel Freude mit dieser Webseite</p>
+  
 
 </aside>
 
 <footer>		
 <?php include "./php/footer_Seite.php"; ?>
- </footer>
+</footer>
 </div>
 </body>
 </html>
