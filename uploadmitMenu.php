@@ -91,7 +91,7 @@
 			exit();
 		}
 	?>
-
+<p></p>
 <p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
 
 <?php require_once('./php/footer.php'); ?>
@@ -131,21 +131,19 @@
 					
 				</article>
 			</section>
-			<aside>
+		<aside>
 				<div id="subside">
 					<h1>Quellen</h1>
 					<!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
 				</div>
+				<?php include "./php/aside.php"; ?>
 
-			</aside>
+		</aside>
 
-			<footer>
-<?php include "./php/footer.php"; ?>
-				<p>
-					fdasdsda
-				</p>
-				Copyright
-			</footer>
+		<footer>
+		<?php include "./php/footer_Seite.php"; ?>
+			
+		</footer>
 		</div>
 
 	</body>

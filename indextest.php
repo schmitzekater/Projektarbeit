@@ -38,7 +38,7 @@
 		
 		<h2>Login</h2>
 
-		<form method="post" action="login.php">
+		<form method="post" action="./Admin/login.php">
 		
 			<label for="nutzername">Benutzername:</label>
 			<input type="text" id="nutzername" name="nutzername" />
@@ -54,7 +54,7 @@
   
 		<h2>Registrieren</h2>
   
-	<form method="post" action="registrieren.php">
+	<form method="post" action="./Admin/registrieren.php">
 
 		<label for="nutzername">Benutzername:</label>
 		<input type="text" name="nutzername" />

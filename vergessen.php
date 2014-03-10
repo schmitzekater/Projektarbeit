@@ -59,7 +59,7 @@
 	
 	<h2>Passwort���nderung anfordern</h2>
 
-	<form method="post" action="vergessen.php">
+	<form method="post" action="./Admin/vergessen.php">
 
 		<label for="nutzername">Benutzername:</label>
 		<input type="text" id="nutzername" name="nutzername"/>

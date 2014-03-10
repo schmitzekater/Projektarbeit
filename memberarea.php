@@ -139,6 +139,7 @@
 					<h1>Quellen</h1>
 					<!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
 				</div>
+				<?php include "./php/aside.php"; ?>
 
 			</aside>
 

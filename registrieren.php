@@ -87,7 +87,7 @@
 	<h2>Registrieren</h2>
 	<p>W&auml;hlen Sie einen Benutzernamen und ein Passwort, um sich f&uuml;r Mutfinder zu registrieren.</p>
 
-	<form method="post" action="registrieren.php">
+	<form method="post" action="./Admin/registrieren.php">
 
 		<label for="nutzername">Benutzername:</label>
 		<input type="text" name="nutzername" />
@@ -113,22 +113,7 @@
   </section>
 
   <aside>
-  
-  
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-			<H2>Information</H2>
-			<p></p>
-		  
-			<p>Um die Funktionen dieser Seite nutzen zu k��nnen, ist ein Login notwendig. </p>
-			<p><a href="login.php">Login </a></p>
-			<p>Falls Sie noch nicht registriert sind, k��nnen Sie dies unter  <a href="registrieren.php">Registrieren </a> tun.</p>
-			<p>Wir w��nschen viel Freude mit dieser Webseite</p>
-  
-
+<?php include "./php/aside.php"; ?>
 </aside>
 
 
