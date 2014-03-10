@@ -30,7 +30,7 @@
 		if (!isset($_SESSION['id'])) {
 			if (isset($_POST['submit'])) {
 
-				$db = mysqli_connect("localhost", "dbuser", "dbuser", "GenBank");
+				$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
 					mysqli_set_charset($db, "utf8");
       
 				$nutzername = mysqli_real_escape_string($db, trim($_POST['nutzername']));
@@ -47,8 +47,8 @@
 						// Login erfolgreich, also die Cookies setzen und den Benutzer zur Hauptseite umleiten
 						$_SESSION['id'] = $zeile['id'];
 						$_SESSION['nutzername'] = $zeile['nutzername'];
-						setcookie('id', $zeile['id'], time() + (60 * 60 * 24 * 30));    // Verf��llt in 30 Tagen
-						setcookie('nutzername', $zeile['nutzername'], time() + (60 * 60 * 24 * 30));  // Verf��llt in 30 Tagen
+						setcookie('id', $zeile['id'], time() + (60 * 60 * 24 * 30));    // Verf������llt in 30 Tagen
+						setcookie('nutzername', $zeile['nutzername'], time() + (60 * 60 * 24 * 30));  // Verf������llt in 30 Tagen
 						$hauptseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/uploadmitMenu.php';
 							header('Location: ' . $hauptseite);
 							

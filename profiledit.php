@@ -42,7 +42,7 @@
 		
 		if (isset($_POST['submit'])) {
  
-			$db = mysqli_connect("localhost", "dbuser", "dbuser", "GenBank");
+			$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
 				mysqli_set_charset($db, "utf8");
   
 			$passwort = mysqli_real_escape_string($db, trim($_POST['password']));
@@ -64,11 +64,11 @@
 							
 						mysqli_close($db);
 		 
-						echo '<p class="pass">Ihr Passwort wurde erfolgreich ge���ndert.</p>';
+						echo '<p class="pass">Ihr Passwort wurde erfolgreich ge���������ndert.</p>';
 		 
 					}
 					else {
-						echo '<p class="fail">Die beiden neuen Passw���rter stimmen nicht ���berein.</p>';
+						echo '<p class="fail">Die beiden neuen Passw���������rter stimmen nicht ���������berein.</p>';
 					}
                 }
 				else {
@@ -76,7 +76,7 @@
 				}
 			}
 			else {
-				echo '<p class="fail">Sie haben die ben���tigten Felder nicht ausgef���llt.</p>';
+				echo '<p class="fail">Sie haben die ben���������tigten Felder nicht ausgef���������llt.</p>';
 			}  
 		}  
 	?>

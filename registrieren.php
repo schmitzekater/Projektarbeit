@@ -34,7 +34,7 @@
 		require_once('./php/header.php');
 		require_once('./php/menu.php');
 
-		$db = mysqli_connect("localhost", "dbuser", "dbuser", "GenBank");
+		$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
 			mysqli_set_charset($db, "utf8");
   
 		if (isset($_POST['submit'])) {
@@ -60,9 +60,9 @@
 					$absender = 'admin@neispiel.de';
 					$betreff = "Beispiel - Aktivieren Sie Ihr Konto";
 					$msg = "Hallo $nutzername,\n" .
-					"Nur noch ein Schritt bis zu Ihrer Aktivierung ist n��tig.\n" .
+					"Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������tig.\n" .
 					"Besuchen sie http://beispiel.de/aktivierung.php und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" .
-					"Mit freundlichen Gr����en\n" .
+					"Mit freundlichen Gr������������en\n" .
 					"Beispielseite";
 
 					mail($email, $betreff, $msg, 'From:' . $absender);
