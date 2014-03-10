@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 $server 	= "localhost";
 $user 		= "dbuser";
 $password 	= "dbuser";
@@ -12,20 +11,7 @@ $debug 		= 1;
  * Debug:
  */
 $datei =  '/Users/carolindressel/Desktop/Projekt/CVS Dateien/BAG3.csv';
-=======
-$server = "localhost";
-$user = "dbuser";
-$password = "dbuser";
-$dbase = "genbank";
-$sep = "|";
-$mutTable = "mutdat";
-$genTable = "genname";
-$debug = 1;
-/*
- * Debug:
- */
-$datei = '.\Datenbank\Projekt\CSV\BAG3.csv';
->>>>>>> ed0f782c6d1c31f43a5672f4e7e3df2fb225e09b
+
 
 $array = array();
 try {
