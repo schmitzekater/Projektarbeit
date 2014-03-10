@@ -1,0 +1,26 @@
+Change|AA Change|nucleotide|protein|Phenotype|Reference|extraInfo
+cCGG-TGG|Arg71Trp|c.211C>T|p.R71W|Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN CpG 
+cCGA-TGA|Arg90Term|c.268C>T|p.R90*|Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN CpG 
+cATT-TTT|Ile94Phe|c.280A>T|p.I94F|Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN dbSNP FREQ
+CAC-CGC|His109Arg|c.326A>G|p.H109R|Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN 
+tCCC-TCC|Pro115Ser|c.343C>T|p.P115S|Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN 
+cCGA-TGA|Arg123Term|c.367C>T|p.R123*|Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN CpG 
+gTGT-CGT|Cys151Arg|c.451T>C|p.C151R|Cardiomyopathy, dilated, reduced risk|Villard (2011) Eur Heart J 32,1065|DP GEN dbSNP FREQ
+CCG-CTG|Pro209Leu|c.626C>T|p.P209L|Myofibrillar myopathy|Selcen (2009) Ann Neurol 65,83,Jaffer (2012) J Peripher Nerv Syst17:210 [Additional phenotype]|DM GEN CpG dbSNP 
+cCGG-TGG|Arg218Trp|c.652C>T|p.R218W|Cardiomyopathy, dilated|Arimura (2011) Hum Mutat 32,1481Ng (2013)Circ Cardiovasc Genet6:337[Additional report]|DM GEN CpG 
+cCGG-TGG|Arg258Trp|c.772C>T|p.R258W|Myofibrillar myopathy|Lee (2012) Clin Genet 81,394|DM GEN CpG dbSNP FREQ
+gGCG-ACG|Ala262Thr|c.784G>A|p.A262T|Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN 
+tCGA-TGA|Arg309Term|c.925C>T|p.R309*|Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN CpG 
+cCCT-TCT|Pro380Ser|c.1138C>T|p.P380S|Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN dbSNP FREQ
+CCT-CTT|Pro407Leu|c.1220C>T|p.P407L|Cardiomyopathy, dilated, increased risk|Villard (2011) Eur Heart J 32,1065|DP GEN dbSNP FREQ
+cGAA-AAA|Glu455Lys|c.1363G>A|p.E455K|Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN CpG 
+CTG-CCG|Leu462Pro|c.1385T>C|p.L462P|Cardiomyopathy, dilated|Arimura (2011) Hum Mutat 32,1481|DM GEN 
+aGTG-ATG|Val468Met|c.1402G>A|p.V468M|Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN 
+CGT-CAT|Arg477His|c.1430G>A|p.R477H|Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN CpG 
+GCG-GTG|Ala558Val|c.1673C>T|p.A558V|Myofibrillar myopathy|Sato (2011) Neuromuscul Disord 21740|DM GEN CpG dbSNP FREQ
+AGAAC^216GTTACcCGGCCAGCAG||c.652delC||Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM GEN 
+CACAAG^250ATCCaGGGGGATGAC||c.752delA||Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN 
+CCGGCCC^260CTGcgggcggcatccccgTTCAGGTCAT||c.781_795del15||Myofibrillar myopathy|Sato (2011) Neuromuscul Disord 21740|DM GEN 
+TGCTGTC^384CCCtcttccccCAAGAGTGTG||c.1153_1160delTCTTCCCC||Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN 
+GGCTACA^393GAAgaGAGGGCAGCC||c.1183_1184delAG||Cardiomyopathy, dilated|Villard (2011) Eur Heart J 32,1065|DM GEN 
+gDNA||8733 bp incl ex. 4||Cardiomyopathy, dilated|Norton (2011) Am J Hum Genet 88,273|DM 

@@ -1,0 +1,15 @@
+Wie läuft es ab, wenn man Userverwaltung drin hat?
+
+- Aufruf Webseite Upload (andere Seiten kann man so nutzen. Für die Adminseite msus man sich allerdings auch anmelden)
+- Webseite prüft ob der Aufrufende angemeldet ist (z.B. isUserLoggedIn = true / false, loggedInUser = detlev etc.)
+- Falls nein:
+	- Aufruf Pop-Up mit bitte um Anmeldung 
+	- Überprüfung Nutzername und Passwort in der DB
+	- Falls positiv:
+		- isUserLoggedIn = true, loggedInUser = {current:user}
+		- Aufbau der Webseite wie sie der angemeldete sehen darf
+	- Falls negativ:
+		- erneute Eingabe Name & Passwort (bis zu 3mal, dann Sperrung für 10 Minuten)
+- Falls ja, angeforderte Seite aufrufen und anzeigen
+- Begrüßung des Users mit Namen
+- Ausloggen nach 10 Minuten inaktivität (eventuell mit laufender Counteranzeige, freut er sich bestimmt)
