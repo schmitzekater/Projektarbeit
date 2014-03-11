@@ -1,28 +1,34 @@
 <?php
-$server = "localhost";
-$user = "dbuser";
-$password = "dbuser";
-$dbase = "genbank";
-$sep = "|";
-$mutTable = "mutdat";
-$genTable = "genname";
-$debug = 1;
+// $server = "localhost";
+// $user = "dbuser";
+// $password = "dbuser";
+// $dbase = "genbank";
+// $sep = "|";
+// $mutTable = "mutdat";
+// $genTable = "genname";
+require_once('C:\Users\schmitza\workspace\Projektarbeit\php\zugang.php');
+//require_once('./php/zugang.php');
+$gen = "";
+$debug = 0;
 $fileRows = 0;
-static $dbRows = 0;
+$dbRows = 0;
 $headerExists = false;
 /*
  * Debug:
  */
 $datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\BAG3.csv';
+//$datei = $_POST['filename'];
 
 main ();
 function main() {
 	$array = array ();
-	$content = openFile ( $GLOBALS ['datei'], $array);
-	$changes = writeToDb($content[0], $content[1]);
-	generateSumary ();
+	$content = openFile ( $GLOBALS ['datei'], $array ); //Datei öffnen
+	$changes = writeToDb ( $content [0], $content [1] );//Elemente in die Datenbank schreiben
+	generateSummary ();									//Zusammenfassung erstellen, wie viele Datensätze geschrieben wurden.
 }
 function openFile($file, $array) {
+	global $gen;
+	global $headerExists;
 	try {
 		$handle = fopen ( $file, "r" );
 	} catch ( Exception $e ) {
@@ -35,10 +41,10 @@ function openFile($file, $array) {
 		// Filename = Genname
 		$filename = $fileInfo ['basename'];
 		$fileExtension = $fileInfo ['extension'];
-		$GLOBALS ['gen'] = $fileInfo ['filename'];
+		$gen = $fileInfo ['filename'];
 		setStatus ( "Full filename:" . $filename . "\n" );
 		setStatus ( "Extension:" . $fileExtension . "\n" );
-		setStatus ( "Filename:" . $GLOBALS ['gen'] . "\n" );
+		setStatus ( "Filename:" . $gen . "\n" );
 	} catch ( Exception $e ) {
 		setStatus ( "Fehler in Dateinamenerkennung.\n" . $e->getMessage () );
 		// return;
@@ -62,55 +68,68 @@ function openFile($file, $array) {
 	fclose ( $handle );
 	// Datei schlieÃŸen
 	$header = stripLinefeed ( array_shift ( $array ) );
-	if (! empty ( $header ) && (strpos (  $header, "Change" )!==false)) 	// Schauen ob der Header passt.
+	if (! empty ( $header ) && (strpos ( $header, "Change" ) !== false)) 	// Schauen ob der Header passt.
 	{
 		$headerExists = true;
-		setStatus("Header gefunden: ".$header."\n");
+		setStatus ( "Header gefunden: " . $header . "\n" );
 	} else {
 		/*
 		 * TODO: Abbruch, da der Header fehlt.
 		 */
-		setStatus ( "Header nicht korrekt: " .$header."\n");
+		setStatus ( "Header nicht korrekt: " . $header . "\n" );
 	}
-	return [$header, $array];
+	return [
+			$header,
+			$array
+	];
 }
 // Zeilenumbruch entfernen und erste Zeile aus Datei als Ãœberschrift
 function writeToDB($header, $array) {
-	$header = explode ( $GLOBALS['sep'], $header );
+	global $sep, $fileRows, $server, $user, $password, $dbase, $gen, $genTable, $mutTable;
+	$header = explode ( $sep, $header );
 	// Header aus erster Zeile erstellen
+	$mysqli = connectDB ( $server, $user, $password, $dbase );
+	if ($mysqli->ping ()) { // Verbindung noch aktiv?
+		$genId = checkGen ( $mysqli, $gen, $genTable );
+		// PrÃ¼fe, ob das Gen bereits in der Datenbank ist.
+	} else {
+		setStatus ( "Verbindung zur Datenbank unterbrochen.\n" . $mysqli->error );
+		// return -1, Grund;
+	}
+	// Verbindung zur DB aufbauen
 	foreach ( $array as $line ) 	// Aufteilen des Arrays in Zeilen
 	{
-		$elements = stripLinefeed ( explode ( $GLOBALS['sep'], $line ) );
+		$elements = stripLinefeed ( explode ( $sep, $line ) );
 		// Aufteilen der Zeile in Elemente die durch | getrennt sind.
-		$GLOBALS ['fileRows'] ++;
+		$fileRows ++;
 		for($i = 0; $i < count ( $elements ); ++ $i) {
 			setStatus ( $header [$i] . ": " . $elements [$i] . "\n" );
 			// Ausgabe Ãœberschrift: Element
 		}
-		$mysqli = connectDB ( $GLOBALS['server'], $GLOBALS['user'], $GLOBALS['password'], $GLOBALS['dbase'] );
-		// Verbindung zur DB aufbauen
 		if ($mysqli->ping ()) { // Verbindung noch aktiv?
-			$genId = checkGen ( $mysqli, $GLOBALS['gen'], $GLOBALS['genTable'] );
-			// PrÃ¼fe, ob das Gen bereits in der Datenbank ist.
-			writeMutToDB ( $mysqli, $elements, $GLOBALS['mutTable'], $genId );
-			// Mutation in die DB schreiben
+			writeMutToDB ( $mysqli, $elements, $mutTable, $genId );
+		// Mutation in die DB schreiben
 		} else {
 			setStatus ( "Verbindung zur Datenbank unterbrochen.\n" . $mysqli->error );
 			// return -1, Grund;
 		}
-		try {
-			$mysqli->close ();
-		} catch ( Exception $e ) {
-			setStatus ( "Fehler beim Beenden der Datenbankverbindung.\n" . $e->getMessage . "\n" );
-		}
-		return; //Anzahl Elemente zurückgeben;
+		
 	}
+	try {
+		$mysqli->close ();
+	} catch ( Exception $e ) {
+		setStatus ( "Fehler beim Beenden der Datenbankverbindung.\n" . $e->getMessage . "\n" );
+	}
+	; // Anzahl Elemente zurückgeben;
 }
 function generateSummary() {
-	if ($GLOBALS ['headerExists'] && ($GLOBALS ['dbRows'] == $GLOBALS ['fileRows'])) {
-		setStatus ( "Import erfolgreich. " . $GLOBALS ['dbRows'] . " Einträge in die Datenbank kopiert" );
+	global $dbRows, $fileRows, $headerExists, $debug;
+	$debug = 1;
+	if ($headerExists && ($dbRows == $fileRows)) {
+		setStatus ( "Import erfolgreich. " . $dbRows . " Einträge in die Datenbank kopiert");
 	} else {
-		setStatus ( "Import nicht erfolgreich.\n" . $GLOBALS ['fileRows'] . " wurden gefunden und " . $GLOBALS ['dbRows'] . " importiert.\n" );
+		setStatus ( "Import nicht erfolgreich.\n" . $fileRows . " wurden gefunden und " . $dbRows . " importiert.\n");
+		setStatus ( "Header exists: " . $headerExists . "\n");
 	}
 	/*
 	 * TODO: Rückgabewert einrichten für Aufrufeseite.
@@ -163,18 +182,19 @@ function writeMutToDb($mysqli, $elements, $table, $genId) {
 	/*
 	 * This functions inserts mutation values to the database. @param $mysqli @param $elements @param $table @param $genId
 	 */
+	global $dbRows;
 	$query = "insert into $table values( 0, '$elements[0]','$elements[1]','$elements[2]','$elements[3]','$elements[4]','$elements[5]', '$elements[6]',$genId )";
 	if ($result = $mysqli->query ( $query )) {
 		$count = $mysqli->affected_rows;
 		setStatus ( "Ge&auml;nderte Zeilen: " . $count . "\n" );
-		$GLOBALS ['$dbRows'] += $count;
-		setStatus ( "Anzahl Zeilen in der DB: " . $GLOBALS ['$dbRows'] . "\n\n" );
+		$dbRows += $count;
+		setStatus ( "Anzahl Zeilen in der DB: " . $dbRows . "\n\n" );
 	} else {
 		setStatus ( "Fehler in der Abfrage.\nQuery: " . $query . "\n" . $mysqli->error . "\n" );
 	}
 }
 function setStatus($msg) {
-	if ($GLOBALS ['debug'] = 1) {
+	if ($GLOBALS ['debug'] == 1) {
 		echo ("Status:" . $msg);
 	} else
 		;
@@ -182,10 +202,8 @@ function setStatus($msg) {
 function stripLinefeed($text) {
 	/**
 	 * @@ Funktion die Zeilenumbruch am Ende der CSV-Datei entfernt.
-	 *
-	 * @param
-	 *        	text String der als Eingabe dient.
+	 * @param text String der als Eingabe dient.
 	 */
-	return preg_replace ( '#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text );
+	return str_replace(array("\n","\r\n"), '',$text);
 }
 ?>
