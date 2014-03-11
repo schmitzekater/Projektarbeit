@@ -2,6 +2,8 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
+CREATE SCHEMA IF NOT EXISTS `genbank` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `genbank` ;
 
 -- -----------------------------------------------------
 -- Table `genbank`.`pat`
@@ -28,8 +30,8 @@ CREATE TABLE IF NOT EXISTS `genbank`.`mutp` (
   `AA Change` VARCHAR(45) NULL,
   `Condition` VARCHAR(45) NULL,
   `Hint` VARCHAR(45) NULL,
-  `web Ref` VARCHAR(45) NULL,
-  `HGVS nomenclatur` VARCHAR(45) NULL,
+  `web Ref.` VARCHAR(45) NULL,
+  `HGVS nomenclature` VARCHAR(45) NULL,
   `mut Entry` VARCHAR(45) NULL,
   `mut Effect` VARCHAR(45) NULL,
   `TValidation` VARCHAR(45) NULL,

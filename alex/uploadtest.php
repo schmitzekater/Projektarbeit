@@ -10,7 +10,8 @@ $debug 		= 1;
 /*
  * Debug:
  */
-$datei =  '/Users/carolindressel/Desktop/Projekt/CVS Dateien/BAG3.csv';
+//$datei =  '/Users/carolindressel/Desktop/Projekt/CVS Dateien/BAG3.csv';
+$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\BAG3.csv';
 
 
 $array = array();
@@ -18,7 +19,7 @@ try {
 	$handle = fopen($datei, "r");
 
 } catch(Exception $e) {
-	setStatus("Fehler beim Ã–ffnen der Datei.\n" . $e -> getMessage());
+	setStatus("Fehler beim Öffnen der Datei.\n" . $e -> getMessage());
 	//return;
 }
 

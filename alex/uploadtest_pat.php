@@ -10,7 +10,7 @@ $debug = 1;
 /*
  * Debug:
  */
-$datei = '.\Datenbank\Projekt\CSV\patient1.csv';
+$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\Patient1.csv';
 
 $array = array();
 try {
@@ -53,6 +53,7 @@ if (strcasecmp($fileExtension, 'csv') != 0) {
 fclose($handle);
 // Datei schließen
 $firstLine = stripLinefeed(array_shift($array));
+
 // Zeilenumbruch entfernen und erste Zeile aus Datei als Überschrift
 $header = explode($sep, $firstLine);
 // Header aus erster Zeile erstellen
@@ -69,7 +70,7 @@ foreach ($array as $line)// Aufteilen des Arrays in Zeilen
 	if ($mysqli -> ping()) {//Verbindung noch aktiv?
 		$patId = checkpat($mysqli, $name, $patTable);
 		//Prüfe, ob der Patient bereits in der Datenbank ist.
-		writePatToDB($mysqli, $header, $elements, $patTable, $patId);
+		writePatToDB($mysqli, $header, $elements, $mutTable, $patId);
 		//Patienten in die DB schreiben
 	} else {
 		setStatus("Verbindung zur Datenbank unterbrochen.\n" . $mysqli -> error);
@@ -135,16 +136,19 @@ function connectDB($server, $user, $password, $dbase) {
 	}
 	return $sql;
 }
-function arrayToString($array)
+function arrayToString($array, $sign)
 {
 	 $werte = "";
 		 foreach($array as $u)
 	 {
-	 	$werte = $werte.",`".$u."`";
+	 	setStatus("Gefundenes u: ".$u." - ");
+	 	$werte = $werte.",".$sign.$u.$sign;
+	 	//$werte = $werte.",".$u;
 	 }
 	 unset($u);
-	 $cut = substr($werte,1);	//erstes Komma und ' abschneiden
-	 setStatus("Cut: ".$cut."\n");
+	 $cut = substr($werte,1);	//erstes Komma und ' abschneiden hinten ' anf�gen
+	// $cut = substr($werte, 1, -1); //erstes und letztes Komma abschneiden
+	 setStatus("\nCut: ".$cut."\n");
 	 return $cut;
 }
 function writePatToDb($mysqli, $header, $elements, $table, $patId) {
@@ -155,10 +159,11 @@ function writePatToDb($mysqli, $header, $elements, $table, $patId) {
 	 * @param $table
 	 * @param $patId
 	 */
-	 $columns = arrayToString($header);
-	 $values  = arrayToString($elements);	 	
+	 $columns = arrayToString($header, '`'); 	//Spaltennamen mit ` umgeben
+	 $values  = arrayToString($elements, "'");  //Werte mit ' umgeben
 
-	$query = "insert into $table (`idMP`, $columns, `Pat_idPat`) values( 0, $values,$patId )";
+	$query = "insert into `$table` (`idMP`, $columns, `Pat_idPat`) values( 0, $values,$patId )";
+	 //$query = "insert into $table (idMP, $columns, Pat_idPat) values( 0, $values,$patId )";
 	if ($result = $mysqli -> query($query)) {
 		setStatus("Geänderte Zeilen: " . $mysqli -> affected_rows . "\n");
 	} else {
@@ -179,6 +184,7 @@ function stripLinefeed($text) {
 	 * @@ Funktion die Zeilenumbruch am Ende der CSV-Datei entfernt.
 	 * @param text String der als Eingabe dient.
 	 */
-	return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
+	//return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
+	return str_replace(array("\n","\r\n"), '',$text); //Obiger Ausdruck entfernt das singul�re LF nicht.
 }
 ?>
