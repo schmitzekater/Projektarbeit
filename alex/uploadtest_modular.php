@@ -6,7 +6,8 @@
 // $sep = "|";
 // $mutTable = "mutdat";
 // $genTable = "genname";
-require_once('C:\Users\schmitza\workspace\Projektarbeit\php\zugang.php');
+//require_once('C:\Users\schmitza\workspace\Projektarbeit\php\zugang.php');
+require_once('/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/php/zugang.php');
 //require_once('./php/zugang.php');
 $gen = "";
 $debug = 0;
@@ -16,15 +17,16 @@ $headerExists = false;
 /*
  * Debug:
  */
-$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\BAG3.csv';
+//$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\BAG3.csv';
+$datei = '/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/Datenbank/Projekt/CVS Dateien/BAG3.csv';
 //$datei = $_POST['filename'];
 
 main ();
 function main() {
 	$array = array ();
-	$content = openFile ( $GLOBALS ['datei'], $array ); //Datei öffnen
+	$content = openFile ( $GLOBALS ['datei'], $array ); //Datei ï¿½ffnen
 	$changes = writeToDb ( $content [0], $content [1] );//Elemente in die Datenbank schreiben
-	generateSummary ();									//Zusammenfassung erstellen, wie viele Datensätze geschrieben wurden.
+	generateSummary ();									//Zusammenfassung erstellen, wie viele Datensï¿½tze geschrieben wurden.
 }
 function openFile($file, $array) {
 	global $gen;
@@ -66,7 +68,7 @@ function openFile($file, $array) {
 		}
 	}
 	fclose ( $handle );
-	// Datei schlieÃŸen
+	// Datei schlieï¿½ï¿½en
 	$header = stripLinefeed ( array_shift ( $array ) );
 	if (! empty ( $header ) && (strpos ( $header, "Change" ) !== false)) 	// Schauen ob der Header passt.
 	{
@@ -78,12 +80,12 @@ function openFile($file, $array) {
 		 */
 		setStatus ( "Header nicht korrekt: " . $header . "\n" );
 	}
-	return [
-			$header,
-			$array
-	];
+	$values = array();
+	$values[0] = $header;
+	$values[1] = $array;
+	return $values;
 }
-// Zeilenumbruch entfernen und erste Zeile aus Datei als Ãœberschrift
+// Zeilenumbruch entfernen und erste Zeile aus Datei als ï¿½ï¿½berschrift
 function writeToDB($header, $array) {
 	global $sep, $fileRows, $server, $user, $password, $dbase, $gen, $genTable, $mutTable;
 	$header = explode ( $sep, $header );
@@ -91,7 +93,7 @@ function writeToDB($header, $array) {
 	$mysqli = connectDB ( $server, $user, $password, $dbase );
 	if ($mysqli->ping ()) { // Verbindung noch aktiv?
 		$genId = checkGen ( $mysqli, $gen, $genTable );
-		// PrÃ¼fe, ob das Gen bereits in der Datenbank ist.
+		// Prï¿½ï¿½fe, ob das Gen bereits in der Datenbank ist.
 	} else {
 		setStatus ( "Verbindung zur Datenbank unterbrochen.\n" . $mysqli->error );
 		// return -1, Grund;
@@ -104,7 +106,7 @@ function writeToDB($header, $array) {
 		$fileRows ++;
 		for($i = 0; $i < count ( $elements ); ++ $i) {
 			setStatus ( $header [$i] . ": " . $elements [$i] . "\n" );
-			// Ausgabe Ãœberschrift: Element
+			// Ausgabe ï¿½ï¿½berschrift: Element
 		}
 		if ($mysqli->ping ()) { // Verbindung noch aktiv?
 			writeMutToDB ( $mysqli, $elements, $mutTable, $genId );
@@ -120,19 +122,19 @@ function writeToDB($header, $array) {
 	} catch ( Exception $e ) {
 		setStatus ( "Fehler beim Beenden der Datenbankverbindung.\n" . $e->getMessage . "\n" );
 	}
-	; // Anzahl Elemente zurückgeben;
+	; // Anzahl Elemente zurï¿½ckgeben;
 }
 function generateSummary() {
 	global $dbRows, $fileRows, $headerExists, $debug;
 	$debug = 1;
 	if ($headerExists && ($dbRows == $fileRows)) {
-		setStatus ( "Import erfolgreich. " . $dbRows . " Einträge in die Datenbank kopiert");
+		setStatus ( "Import erfolgreich. " . $dbRows . " Eintrï¿½ge in die Datenbank kopiert");
 	} else {
 		setStatus ( "Import nicht erfolgreich.\n" . $fileRows . " wurden gefunden und " . $dbRows . " importiert.\n");
 		setStatus ( "Header exists: " . $headerExists . "\n");
 	}
 	/*
-	 * TODO: Rückgabewert einrichten für Aufrufeseite.
+	 * TODO: Rï¿½ckgabewert einrichten fï¿½r Aufrufeseite.
 	 */
 }
 function writeGenToDb($mysqli, $gen, $genTable) {
@@ -145,7 +147,7 @@ function writeGenToDb($mysqli, $gen, $genTable) {
 		$id = $mysqli->insert_id;
 		setStatus ( "Neue ID: " . $id . "\n" );
 	} else {
-		setStatus ( "Fehler beim EinfÃ¼gen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli->error . "\n" );
+		setStatus ( "Fehler beim Einfï¿½ï¿½gen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli->error . "\n" );
 	}
 	$mysqli->close ();
 	return $id;

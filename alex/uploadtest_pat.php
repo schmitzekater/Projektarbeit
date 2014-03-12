@@ -10,14 +10,15 @@ $debug = 1;
 /*
  * Debug:
  */
-$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\Patient1.csv';
+//$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\Patient1.csv';
+$datei =  '/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/Datenbank/Projekt/CVS Dateien/Patient1.csv';
 
 $array = array();
 try {
 	$handle = fopen($datei, "r");
 
 } catch(Exception $e) {
-	setStatus("Fehler beim Öffnen der Datei.\n" . $e -> getMessage());
+	setStatus("Fehler beim ��ffnen der Datei.\n" . $e -> getMessage());
 	//return;
 }
 
@@ -51,10 +52,10 @@ if (strcasecmp($fileExtension, 'csv') != 0) {
 	}
 }
 fclose($handle);
-// Datei schließen
+// Datei schlie��en
 $firstLine = stripLinefeed(array_shift($array));
 
-// Zeilenumbruch entfernen und erste Zeile aus Datei als Überschrift
+// Zeilenumbruch entfernen und erste Zeile aus Datei als ��berschrift
 $header = explode($sep, $firstLine);
 // Header aus erster Zeile erstellen
 foreach ($array as $line)// Aufteilen des Arrays in Zeilen
@@ -63,13 +64,13 @@ foreach ($array as $line)// Aufteilen des Arrays in Zeilen
 	// Aufteilen der Zeile in Elemente die durch | getrennt sind.
 	for ($i = 0; $i < count($elements); ++$i) {
 		setStatus($header[$i]. ": ". $elements[$i]. "\n");
-		// Ausgabe Überschrift: Element
+		// Ausgabe ��berschrift: Element
 	}
 	$mysqli = connectDB($server, $user, $password, $dbase);
 	//Verbindung zur DB aufbauen
 	if ($mysqli -> ping()) {//Verbindung noch aktiv?
 		$patId = checkpat($mysqli, $name, $patTable);
-		//Prüfe, ob der Patient bereits in der Datenbank ist.
+		//Pr��fe, ob der Patient bereits in der Datenbank ist.
 		writePatToDB($mysqli, $header, $elements, $mutTable, $patId);
 		//Patienten in die DB schreiben
 	} else {
@@ -96,7 +97,7 @@ function addPatToDb($mysqli, $pat, $patTable) {
 		$id = $mysqli -> insert_id;
 		setStatus("Neue ID: " . $id . "\n");
 	} else {
-		setStatus("Fehler beim Einfügen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli -> error . "\n");
+		setStatus("Fehler beim Einf��gen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli -> error . "\n");
 		$id = -1;
 	}
 	$mysqli -> close();
@@ -146,7 +147,7 @@ function arrayToString($array, $sign)
 	 	//$werte = $werte.",".$u;
 	 }
 	 unset($u);
-	 $cut = substr($werte,1);	//erstes Komma und ' abschneiden hinten ' anf�gen
+	 $cut = substr($werte,1);	//erstes Komma und ' abschneiden hinten ' anf�gen
 	// $cut = substr($werte, 1, -1); //erstes und letztes Komma abschneiden
 	 setStatus("\nCut: ".$cut."\n");
 	 return $cut;
@@ -165,7 +166,7 @@ function writePatToDb($mysqli, $header, $elements, $table, $patId) {
 	$query = "insert into `$table` (`idMP`, $columns, `Pat_idPat`) values( 0, $values,$patId )";
 	 //$query = "insert into $table (idMP, $columns, Pat_idPat) values( 0, $values,$patId )";
 	if ($result = $mysqli -> query($query)) {
-		setStatus("Geänderte Zeilen: " . $mysqli -> affected_rows . "\n");
+		setStatus("Ge��nderte Zeilen: " . $mysqli -> affected_rows . "\n");
 	} else {
 		setStatus("Fehler in der Abfrage.\nQuery: " . $query . "\n" . $mysqli -> error . "\n");
 	}
@@ -185,6 +186,6 @@ function stripLinefeed($text) {
 	 * @param text String der als Eingabe dient.
 	 */
 	//return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
-	return str_replace(array("\n","\r\n"), '',$text); //Obiger Ausdruck entfernt das singul�re LF nicht.
+	return str_replace(array("\n","\r\n"), '',$text); //Obiger Ausdruck entfernt das singul�re LF nicht.
 }
 ?>

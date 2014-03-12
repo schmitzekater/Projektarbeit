@@ -54,10 +54,10 @@
 					$code = rand(100000, 999999); 
 					$code1 = rand(100000, 999999); 
 				
-					$sql = "INSERT INTO nutzer (nutzername, email, passwort, anmeldedatum, aktivierungscode, aktiviert, vergessen) VALUES ('$nutzername', '$email', SHA('$passwort'), NOW(), $code, 1, $code1)";
+					$sql = "INSERT INTO nutzer (nutzername, email, passwort, anmeldedatum, aktivierungscode, aktiviert, vergessen) VALUES ('$nutzername', '$email', SHA('$passwort'), NOW(), $code, 0, $code1)";
 					mysqli_query($db, $sql);
         
-					$absender = 'admin@neispiel.de';
+					$absender = 'carolinschwerdtfeger@freenet.de';
 					$betreff = "Beispiel - Aktivieren Sie Ihr Konto";
 					$msg = "Hallo $nutzername,\n" .
 					"Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������tig.\n" .

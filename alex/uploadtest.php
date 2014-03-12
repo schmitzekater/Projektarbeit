@@ -11,7 +11,7 @@ $debug 		= 1;
  * Debug:
  */
 //$datei =  '/Users/carolindressel/Desktop/Projekt/CVS Dateien/BAG3.csv';
-$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\BAG3.csv';
+$datei = '/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/Datenbank/Projekt/CVS Dateien/BAG3.csv';
 
 
 $array = array();
@@ -19,7 +19,7 @@ try {
 	$handle = fopen($datei, "r");
 
 } catch(Exception $e) {
-	setStatus("Fehler beim �ffnen der Datei.\n" . $e -> getMessage());
+	setStatus("Fehler beim �ffnen der Datei.\n" . $e -> getMessage());
 	//return;
 }
 
@@ -53,9 +53,9 @@ if (strcasecmp($fileExtension, 'csv') != 0) {
 	}
 }
 fclose($handle);
-// Datei schließen
+// Datei schlie��en
 $firstLine = stripLinefeed(array_shift($array));
-// Zeilenumbruch entfernen und erste Zeile aus Datei als Überschrift
+// Zeilenumbruch entfernen und erste Zeile aus Datei als ��berschrift
 $header = explode($sep, $firstLine);
 // Header aus erster Zeile erstellen
 foreach ($array as $line)// Aufteilen des Arrays in Zeilen
@@ -64,13 +64,13 @@ foreach ($array as $line)// Aufteilen des Arrays in Zeilen
 	// Aufteilen der Zeile in Elemente die durch | getrennt sind.
 	for ($i = 0; $i < count($elements); ++$i) {
 		setStatus($header[$i]. ": ". $elements[$i]. "\n");
-		// Ausgabe Überschrift: Element
+		// Ausgabe ��berschrift: Element
 	}
 	$mysqli = connectDB($server, $user, $password, $dbase);
 	//Verbindung zur DB aufbauen
 	if ($mysqli -> ping()) {//Verbindung noch aktiv?
 		$genId = checkGen($mysqli, $gen, $genTable);
-		//Prüfe, ob das Gen bereits in der Datenbank ist.
+		//Pr��fe, ob das Gen bereits in der Datenbank ist.
 		writeMutToDB($mysqli, $elements, $mutTable, $genId);
 		//Mutation in die DB schreiben
 	} else {
@@ -97,7 +97,7 @@ function writeGenToDb($mysqli, $gen, $genTable) {
 		$id = $mysqli -> insert_id;
 		setStatus("Neue ID: " . $id . "\n");
 	} else {
-		setStatus("Fehler beim Einfügen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli -> error . "\n");
+		setStatus("Fehler beim Einf��gen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli -> error . "\n");
 	}
 	$mysqli -> close();
 	return $id;
@@ -148,7 +148,7 @@ function writeMutToDb($mysqli, $elements, $table, $genId) {
 
 	$query = "insert into $table values( 0, '$elements[0]','$elements[1]','$elements[2]','$elements[3]','$elements[4]','$elements[5]', '$elements[6]',$genId )";
 	if ($result = $mysqli -> query($query)) {
-		setStatus("Geänderte Zeilen: " . $mysqli -> affected_rows . "\n");
+		setStatus("Ge��nderte Zeilen: " . $mysqli -> affected_rows . "\n");
 	} else {
 		setStatus("Fehler in der Abfrage.\nQuery: " . $query . "\n" . $mysqli -> error . "\n");
 	}
@@ -167,6 +167,7 @@ function stripLinefeed($text) {
 	 * @@ Funktion die Zeilenumbruch am Ende der CSV-Datei entfernt.
 	 * @param text String der als Eingabe dient.
 	 */
-	return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
+	//return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
+	return str_replace(array("\n","\r\n"), '',$text);
 }
 ?>
