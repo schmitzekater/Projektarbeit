@@ -12,6 +12,33 @@
 
 </head>
 
+<?php
+
+	require_once('./php/sitzungsstart.php');
+	$seitentitel = 'memberarea';
+	require_once('./php/zugang.php');
+		
+	if(isset($_SESSION['nutzername'])) {
+		$user = $_SESSION['nutzername'];
+
+		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
+			mysqli_set_charset($db, "utf8");
+
+		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
+		$daten = mysqli_query($db, $sql);
+		$zeile = mysqli_fetch_array($daten);
+
+		if ($zeile['aktiviert'] == 0) {
+
+			$aktivierungsseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivierung.php';
+				header('Location:' . $aktivierungsseite);
+
+			mysqli_close($db);
+
+		}		
+	}
+?>
+
 <body>
 <?php include "./php/nav.php"; ?>
 
@@ -29,14 +56,15 @@
 				Link: <a href="imprint.html">Impressum </a>
 			</p>
 			<p> Beschreibung:
-				Um diese Seite nutzen zu k��nnen ist es notwendig, sich als Nutzer zu authorisieren.
+				Um diese Seite nutzen zu k&ouml;nnen ist es notwendig, sich als Nutzer zu authorisieren.
 				Hierzu nutzen Sie bitte die Eingabemaske an der rechten Seite.
-				Anschlie��end k��nnen Sie unter der Uploadseite eine Liste der gew��nschten / gefundenen Mutationen hochladen.
-				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver��nderungen
+				Anschlie&szlig;end k&ouml;nnen Sie unter der Uploadseite eine Liste der gew&uuml;nschten / gefundenen Mutationen hochladen.
+				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver&auml;nderungen
 				gefunden wird, wird diese ausgegeben.</p>
 				
-			<p>Bei Problemen oder Fragen bez��glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>	
-				
+			<p>Bei Problemen oder Fragen bez&uuml;glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>	
+			
+			<iframe width="640" height="360" src="//www.youtube.com/embed/kp0esidDr-c?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>	
 				
 			
 		</div>

@@ -57,20 +57,20 @@
 					$sql = "INSERT INTO nutzer (nutzername, email, passwort, anmeldedatum, aktivierungscode, aktiviert, vergessen) VALUES ('$nutzername', '$email', SHA('$passwort'), NOW(), $code, 0, $code1)";
 					mysqli_query($db, $sql);
         
-					$absender = 'carolinschwerdtfeger@freenet.de';
-					$betreff = "Beispiel - Aktivieren Sie Ihr Konto";
+					$absender = 'admin@Projekt.de';
+					$betreff = "Bitte aktivieren Sie Ihren Account";
 					$msg = "Hallo $nutzername,\n" .
-					"Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������tig.\n" .
-					"Besuchen sie http://beispiel.de/aktivierung.php und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" .
-					"Mit freundlichen Gr������������en\n" .
-					"Beispielseite";
+					"Nur noch ein Schritt bis zu Ihrer Aktivierung ist...\n" .
+					"Besuchen sie die Projektseite und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" .
+					"Mit freundlichen Gruß\n" .
+					"Das Projektteam Neu-Ulm";
 
 					mail($email, $betreff, $msg, 'From:' . $absender);
 		
 					mysqli_close($db);
 				
 					echo '<p class="pass">Ihr Konto wurde erstellt. Sie k&ouml;nnen sich jetzt einloggen und die Seite ' .
-					'<a href="memberarea.php">Memberarea</a> besuchen</p>';
+					'<a href="uploadmitMenu.php">Patientenupload</a> besuchen</p>';
 					exit();
 				}      
 				else {
