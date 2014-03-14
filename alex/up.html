@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form id="my_form" name="form" action="up.php" method="POST" enctype="multipart/form-data" >
+
+			<div id="main">
+				<input name="my_files" id="my_file" size="27" type="file" />
+				<input type="button" name="action" value="Upload" onclick="redirect()"/>
+				<iframe id='my_iframe' name='my_iframe' src=""></iframe>
+			</div>
+		</form>
+		<script type="text/javascript">
+			function redirect() {
+				document.getElementById('my_form').target = 'my_iframe';
+				//'my_iframe' is the name of the iframe
+				document.getElementById('my_form').submit();
+			}
+		</script>
+		<!-- See more at: http://hungred.com/how-to/tutorial-easiest-asynchronous-upload-file-ajax-upload/#sthash.8P9ORXkb.dpuf-->
+	</body>
+</html>

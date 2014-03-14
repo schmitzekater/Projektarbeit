@@ -7,8 +7,8 @@
 // $mutTable = "mutdat";
 // $genTable = "genname";
 //require_once('C:\Users\schmitza\workspace\Projektarbeit\php\zugang.php');
-require_once('/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/php/zugang.php');
-//require_once('./php/zugang.php');
+//require_once('/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/php/zugang.php');
+require_once('./php/zugang.php');
 $gen = "";
 $debug = 0;
 $fileRows = 0;
@@ -18,7 +18,7 @@ $headerExists = false;
  * Debug:
  */
 //$datei = 'C:\Users\schmitza\workspace\Projektarbeit\Datenbank\Projekt\CVS Dateien\BAG3.csv';
-$datei = '/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/Datenbank/Projekt/CVS Dateien/BAG3.csv';
+//$datei = '/Users/carolindressel/Desktop/Eclipse Workspace/Projektarbeit/Datenbank/Projekt/CVS Dateien/BAG3.csv';
 //$datei = $_POST['filename'];
 
 main ();

@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//alex/js_file_upload/jquery/jquery.php=UTF-8
 encoding//alex/uploadtest.php=UTF-8
 encoding//alex/uploadtest_modular.php=UTF-8
 encoding//alex/uploadtest_pat.php=UTF-8
@@ -11,6 +12,7 @@ encoding/aktivierung.php=UTF-8
 encoding/login.php=UTF-8
 encoding/profiledit.php=UTF-8
 encoding/registrieren.php=UTF-8
+encoding/upload_handler.php=UTF-8
 encoding/uploadmitMenu.php=UTF-8
 encoding/vergessen.php=UTF-8
 encoding/zuruecksetzen.php=UTF-8

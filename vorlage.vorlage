@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>GenBank</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+
+
+</head>
+
+<body>
+	<!-- div container -->
+		<?php include "./php/nav.php"; ?>
+
+			<section id="content">
+				<article>
+					
+					<div id="main">
+						
+					</div>
+
+				</article>
+			</section>
+			<aside>
+				<?php include "./php/aside.php"; ?>
+			</aside>
+			<footer>
+				<?php include "./php/footer_Seite.php"; ?>
+			</footer>
+		</div>	<!-- End Container -->
+	</body>
+</html>

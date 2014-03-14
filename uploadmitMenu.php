@@ -1,9 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-
 	<head>
-
 		<title>Genetikum - GenetikumDb</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="./css/menu.css" />
@@ -42,7 +39,7 @@
 
 	</head>
 
-	<body>			
+	<body>
 		
 <?php include "./php/nav.php"; ?>
 
@@ -74,7 +71,7 @@
 
 			mysqli_close($db);
 
-		}		
+		}
 	}
 ?>
 

@@ -1,7 +1,7 @@
 <div id="container">
 
 <header>
-<img src ="Bilder/bg_header_start_01.jpg" 
+<img src ="Bilder/bg_header_start_01.jpg"
 	header id="headerpicture">
 
 </header>
@@ -12,9 +12,9 @@
 		<li><a href="index.php" class="first">Home</a></li>
 		<li><a href="#">Services &raquo;</a>
 			<ul>
-				<li><a href="uploadmitMenu.php">Patentendatenupload</a></li>
-				<li><a href="#">MutDatenbankupload</a></li>
-				<li><a href="#">Ergebnisse speichern &raquo;</a>			
+				<li><a href="upload_pat.php">Patentendatenupload</a></li>
+				<li><a href="upload_mut.php">MutDatenbankupload</a></li>
+				<li><a href="#">Ergebnisse speichern &raquo;</a>
 				
 			</ul>
 		</li>
@@ -26,7 +26,7 @@
 				
 				
 				
-			</ul>				
+			</ul>
 		</li>
 		<li><a href="login.php" class="last">Login</a></li>
 		<li><a href="Kontakt.php" class="last">Kontakt</a></li>

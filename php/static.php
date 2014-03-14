@@ -8,6 +8,6 @@
 
 
 <!-- Der Footer gef��llt mir grade nicht -->
-<!--  
-<footer> Hier unser Footer, tolles Ding! Quasi ein Quantensprung. </footer> 
+<!--
+<footer> Hier unser Footer, tolles Ding! Quasi ein Quantensprung. </footer>
 -->
