@@ -20,15 +20,15 @@
 		</li>
 		<li><a href="#">Weiterf��hrende Links &raquo;</a>
 			<ul>
-				<li><a href="http://genome.ucsc.edu/">UCSC</a></li>
-				<li><a href="http://www.ncbi.nlm.nih.gov/">NCBI</a></li>
-				<li><a href="http://www.genenames.org/">HGNC</a></li>
+				<li><a href="http://genome.ucsc.edu/" target="_blank">UCSC</a></li>
+				<li><a href="http://www.ncbi.nlm.nih.gov/"target="_blank">NCBI</a></li>
+				<li><a href="http://www.genenames.org/"target="_blank">HGNC</a></li>
 				
 				
 				
 			</ul>
 		</li>
-		<li><a href="login.php" class="last">Login</a></li>
+		<li><a href="login-index.php" class="last">Login</a></li>
 		<li><a href="Kontakt.php" class="last">Kontakt</a></li>
 		<li><a href="Impressum.php" class="last">Impressum</a></li>
 	</ul>

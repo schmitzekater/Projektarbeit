@@ -1,11 +1,11 @@
 <hr class="linie">
-<div id="a7">Copyright	@Carolin Schwerdtfeger & Alexander Schmitz</div>
+<div id="a7">Copyright	Alexander Schmitz & Carolin Schwerdtfeger</div>
 <hr class="linie">
 <p></p>
 <hr class="linie">
-<div id="a7">Für weitere Sequenzinformationen....</div>
+<div id="a7">F&uuml;r weitere Sequenzinformationen....</div>
 <hr class="linie">
 <p></p>
 <hr class="linie">
-<div id="a7">erzähl mir was neues...</div>
+<div id="a7">erz&äuml;hl mir was neues...</div>
 <hr class="linie">

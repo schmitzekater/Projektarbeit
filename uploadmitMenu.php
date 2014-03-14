@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 	<head>
@@ -48,16 +49,18 @@
 
 <div id="wrapper">
 
+=======
+>>>>>>> 99aa35b9b59b5311af35ee6bea75db19cae25d18
 <?php
 
 	require_once('./php/sitzungsstart.php');
-	$seitentitel = 'Memberarea';
+	$seitentitel = 'uploadmitMenu';
 	require_once('./php/zugang.php');
 		
 	if(isset($_SESSION['nutzername'])) {
 		$user = $_SESSION['nutzername'];
 
-		$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
+		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
 			mysqli_set_charset($db, "utf8");
 
 		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
@@ -75,6 +78,31 @@
 	}
 ?>
 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+<title>GenBank</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+
+
+</head>
+
+<body>
+<?php include "./php/nav.php"; ?>
+
+<section id="content">
+<article>
+<p></p>
+<p></p>
+<h1>&nbsp;</h1>
+				
+
 <div id="wrapper">
 
 <?php
@@ -88,15 +116,15 @@
 			exit();
 		}
 	?>
-<p></p>
+
 <p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
 
-<?php require_once('./php/footer.php'); ?>
-
-</div><!-- #wrapper -->
-<p>Laden Sie bitte die Dateien hoch. Akzeptiert werden ....</p>
-
-<p>Bei fehlerhaften Dateien werden Sie benachrichtigt.</p>
+<p>
+						Laden Sie bitte die Dateien hoch. Akzeptiert werden ....
+					</p>
+					<p>
+						Bei fehlerhaften Dateien werden Sie benachrichtigt.
+					</p>
 
 					<div id="main">
 						<p>
@@ -128,20 +156,20 @@
 					
 				</article>
 			</section>
-		<aside>
-				<div id="subside">
-					<h1>Quellen</h1>
-					<!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
-				</div>
-				<?php include "./php/aside.php"; ?>
 
-		</aside>
 
-		<footer>
-		<?php include "./php/footer_Seite.php"; ?>
-			
-		</footer>
-		</div>
+<aside>
+<?php include "./php/aside.php"; ?>
+</aside>
 
-	</body>
+
+<footer>		
+
+
+<?php include "./php/footer_Seite.php"; ?>
+
+</footer>
+</div>
+</body>
 </html>
+

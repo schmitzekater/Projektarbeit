@@ -21,10 +21,14 @@
 		  <p></p>
 <h1>&nbsp;</h1>
 <div id="main">
-			<?php
+
+
+<?php
+		require_once('./php/sitzungsstart.php');	
 		$seitentitel = 'Login';
 		require_once('./php/zugang.php');
-  
+		
+		
 		$fehlermldg = "";
   
 		if (!isset($_SESSION['id'])) {
@@ -35,6 +39,8 @@
       
 				$nutzername = mysqli_real_escape_string($db, trim($_POST['nutzername']));
 				$passwort = mysqli_real_escape_string($db, trim($_POST['passwort']));
+				
+				
 
 				if (!empty($nutzername) && !empty($passwort)) {
 
