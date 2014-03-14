@@ -1,9 +1,9 @@
 
 /* Main Navigation */
 #nav {
-	position:absolute;
+	position:inherit;
 	width:80%;
-	padding:18px;
+	padding:10px;
 	
 }
 
