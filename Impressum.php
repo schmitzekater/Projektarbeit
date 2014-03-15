@@ -8,15 +8,26 @@
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
 <link rel="stylesheet" type="text/css" href="./css/nav.css" />
 <link rel="stylesheet" type="text/css" href="./css/footer.css" />
+<<<<<<< HEAD
 	<link rel="shortcut icon" href="Bilder/__favicon.ico">
+=======
+
+>>>>>>> 294c5a1eb724f4808272d11fcab03e580f9696f1
 </head>
 <body>
 	<?php include "./php/nav.php"; ?>
 		<section id="content">
 		<article>
+<<<<<<< HEAD
 		<h1>Impressum</h1>
 		<P>Team Neu-Ulm</P>
 				<hr />
+=======
+			
+			<div id="main">
+				<h1>Impressum</h1>
+				<P>Team Neu-Ulm</P>
+>>>>>>> 294c5a1eb724f4808272d11fcab03e580f9696f1
 				<p>
 					Carolin Schwerdtfeger <br> Alexander Schmitz
 				</p>

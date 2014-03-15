@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
 
 
 </head>
@@ -19,10 +20,7 @@
 
 
 <section id="content">
-		  <article>
-		  <p></p>
-		  <p></p>
-<h1>&nbsp;</h1>
+		 
 <div id="main">
 	
 	<?php
@@ -33,7 +31,7 @@
 <div id="wrapper">
 	
 	<?php
-		require_once('./php/header.php');
+		
 		require_once('./php/menu.php');
 
 		// Mit Datenbank verbinden
@@ -53,7 +51,7 @@
    
 					if (mysqli_num_rows($daten) == 1) {
 					
-						echo '<p class="pass">Ihr Account wurde erfolgreich aktiviert. <a href="uploadmitMenu.php">Patientanupload</a></p>';
+						echo '<p class="pass">Ihr Account wurde erfolgreich aktiviert. <a href="/uploadmitMenu.php">Patientanupload</a></p>';
 		 
 						mysqli_query($db, "UPDATE nutzer SET aktiviert = '1' WHERE nutzername = '$nutzername'")
 							or die(mysqli_error());

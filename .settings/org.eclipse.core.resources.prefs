@@ -1,8 +1,13 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=294c5a1eb724f4808272d11fcab03e580f9696f1
 eclipse.preferences.version=1
 encoding//alex/js_file_upload/jquery/jquery.php=UTF-8
 encoding//alex/uploadmitMenu.php=UTF-8
 encoding//alex/uploadtest.php=UTF-8
 encoding//alex/uploadtest_modular.php=UTF-8
+encoding//alex/uploadtest_pat.php=UTF-8
+encoding//css/main.css=UTF-8
 encoding//php/aside.php=UTF-8
 encoding//php/footer_Seite.php=UTF-8
 encoding//php/menu.php=UTF-8
@@ -11,8 +16,8 @@ encoding//php/upload_script_mut.php=UTF-8
 encoding//php/upload_script_pat.php=UTF-8
 encoding/Impressum.php=UTF-8
 encoding/Kontakt.php=UTF-8
-encoding/_Index.php=UTF-8
 encoding/aktivierung.php=UTF-8
+encoding/index.php=UTF-8
 encoding/login.php=UTF-8
 encoding/logout.php=UTF-8
 encoding/profiledit.php=UTF-8

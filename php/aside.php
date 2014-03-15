@@ -3,12 +3,11 @@
   if (isset($_SESSION['nutzername'])) {
   	
   	echo '<p></p>
+  		  <p></p>	<div id="menu"><ul><li>Hallo (' . $_SESSION['nutzername'] . ')</a></li></ul></div>
+  	
   	<p></p>
-  	<p></p>
-  	<p></p>
-  	<p></p><div id="menu"><ul><li>Hallo (' . $_SESSION['nutzername'] . ')</a></li></ul>
-  	<p></p>
-  							  <li><a href="logout.php">Ausloggen (' . $_SESSION['nutzername'] . ')</a></li></ul></div>';
+  	<p></p>	
+  	<div id="menu"><ul><li><a href="logout.php">Ausloggen</a></li></ul></div>';
   }
   else{
   echo
