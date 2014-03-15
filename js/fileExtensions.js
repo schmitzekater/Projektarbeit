@@ -60,7 +60,7 @@ function clearUploadList() {
      * This function clears the Upload List. It deactivates the Upload-Button on empty list.
      */
     files = null;
-    document.getElementById('files').value = '';
+    document.getElementById('fileselect').value = '';
     document.getElementById('list').innerHTML = '';
-    document.getElementById('upload').disabled = true;
+    document.getElementById('upload-button').disabled = true;
 }

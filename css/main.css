@@ -54,6 +54,7 @@ img {
 	margin: 10px auto;
 	background-color: #F5F5F5;
 }
+/* ---------------- Hier werden die Files abgelegt --------*/
 #filedrag {
 	max-width: 90%;
 	min-width: 10%;
@@ -80,7 +81,30 @@ img {
 	align-content: center;
 	cursor: crosshair;
 }
-
+/* ---------------- Fuer Datenbank-Output --------------------- */
+#dbOutput {
+	min-height: 10%;
+	 min-width: 20%;
+	max-height: 50%;
+	max-width: 75%;
+	width: 75%;
+	height: 20%;
+	position: inherit;
+	margin-top: 0.5em;
+	background-color: lightgrey;
+	font-size: larger;
+}
+#textOutput {
+	min-height: inherit;
+	min-width: inherit; 
+	max-height: 100%;
+	max-width: 100%;
+	font-family: monospace;
+	font-variant: normal;
+	text-indent: 5px;
+	background-color: black;
+	color: darkturquoise;
+}
 /* ----------header fÜr Logo-------------- */
 header {
 

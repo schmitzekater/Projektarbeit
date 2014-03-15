@@ -11,6 +11,7 @@
 		<!-- <link rel="stylesheet" type="text/css" href="./css/style.css" 	media="screen"> -->
 		<script src="./js/jquery.js" type="text/javascript"></script>
 		<script src="./js/loadLinks.js" type="text/javascript"></script>
+		<script src="./js/fileExtensions.js" type = "text/javascript"></script>
 	</head>
 	<body>
 		<!-- div container -->
@@ -20,21 +21,24 @@
 			<section id="content">
 				<article>
 					<div id="main">
-						<form id="upload" action="upload_handler.php" method="POST"	enctype="multipart/form-data">
+						<form id="upload" action="upload_mut2.php" method="POST"	enctype="multipart/form-data">
 							<fieldset>
 								<legend>HTML File Upload</legend>
 								<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
 								<div>
 									<label for="fileselect">Files to upload:</label>
 									<input	type="file" id="fileselect" name="fileselect[]"	multiple="multiple" />
+									<span id="ListWrapper" name="UploadListe"><output id="list"></output></span>
+									
+									<div id="submitbutton">
+									<button type="submit" id="upload-button">Upload Files</button>
+								</div>
 								<div id="filedrag">
 									<span id="dropspan"><p></p>
 									or drop files here</span>
 								</div>
 								</div>
-								<div id="submitbutton">
-									<button type="submit">Upload Files</button>
-								</div>
+								
 							</fieldset>
 							<iframe id='my_iframe' name='my_iframe' src=""></iframe>
 						</form>
@@ -44,7 +48,7 @@
 				
 							// cancel event and hover styling
 							FileDragHover(e);
-							document.getElementById('upload').target = 'my_iframe';
+							document.getElementById('upload-button').target = 'my_iframe';
 							//'my_iframe' is the name of the iframe
 							//document.getElementById('my_form').submit();
 				
@@ -57,7 +61,6 @@
 								UploadFile(f);
 							}
 						}
-						// upload JPEG files
 						function UploadFile(file) {
 				
 							var xhr = new XMLHttpRequest();

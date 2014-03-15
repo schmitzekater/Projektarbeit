@@ -12,5 +12,5 @@
 	$sep = "|";
 	$mutTable = "mutdat";
 	$genTable = "genname";
-	$uploadDir = "../Datenbank/uploads/"
+	$uploadDir = "Datenbank/uploads/"
 ?>
