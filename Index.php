@@ -35,7 +35,7 @@
 
 			mysqli_close($db);
 
-		}		
+		}
 	}
 ?>
 
@@ -50,10 +50,10 @@
 <div id="main">
 			<h1>Herzlich willkommen beim Mutfinder</h1>
 			<p>Diese Seite bietet ein Tool zur Identifizierung von beschriebenen Mutationen
-			   in der Molekulargenetik.	
+			   in der Molekulargenetik.
 			</p>
 			<p>
-				Link: <a href="imprint.html">Impressum </a>
+				Link: <a href="Impressum.php">Impressum </a>
 			</p>
 			<p> Beschreibung:
 				Um diese Seite nutzen zu k&ouml;nnen ist es notwendig, sich als Nutzer zu authorisieren.
@@ -62,9 +62,9 @@
 				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver&auml;nderungen
 				gefunden wird, wird diese ausgegeben.</p>
 				
-			<p>Bei Problemen oder Fragen bez&uuml;glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>	
+			<p>Bei Problemen oder Fragen bez&uuml;glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>
 			
-			<iframe width="640" height="360" src="//www.youtube.com/embed/kp0esidDr-c?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>	
+			<iframe width="640" height="360" src="//www.youtube.com/embed/kp0esidDr-c?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 				
 			
 		</div>
@@ -77,7 +77,7 @@
 </aside>
 
 
-<footer>		
+<footer>
 
 
 <?php include "./php/footer_Seite.php"; ?>
