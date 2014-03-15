@@ -21,15 +21,15 @@
 		<section id="content">
 		<article>
 			<div id="_main">
-					<h1>Upload von Mutationsdaten</h1>
+					<h1>Upload von Patientendaten</h1>
 							<fieldset>
-								<legend>HTML File Upload - Mutationsdaten</legend>
-								<input type="button" onclick="window.location.href='upload_mut.php'" value="Weitere Datei importieren." />
+								<legend>Database actions</legend>
+								<input type="button" onclick="window.location.href='upload_pat.php'" value="Weitere Datei importieren." />
 								<input type="button" onclick="window.location.href='index.php'" value="Home." />
 								<div id="dbOutput">
 									<textarea id="textOutput" rows="10" cols="60">
 <?php
-			include"php/upload_script_mut.php";
+			include"php/upload_script_pat.php";
 					
 					?>
 							</textarea>
@@ -53,4 +53,3 @@
 	<!-- End Container -->
 </body>
 </html>
-

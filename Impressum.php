@@ -3,27 +3,27 @@
 
 <head>
 <meta charset="utf-8" />
-<title>Imprint</title>
+<title>Genetikum - GenetikumDb - Impressum</title>
 <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
 <link rel="stylesheet" type="text/css" href="./css/nav.css" />
 <link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="shortcut icon" href="Bilder/__favicon.ico">
 </head>
 <body>
 	<?php include "./php/nav.php"; ?>
 		<section id="content">
 		<article>
-			<p></p>
-			<p></p>
-			<h1>&nbsp;</h1>
-			<div id="main">
-				<h1>Impressum</h1>
-				<P>Team Neu-Ulm</P>
+		<h1>Impressum</h1>
+		<P>Team Neu-Ulm</P>
+				<hr />
 				<p>
 					Carolin Schwerdtfeger <br> Alexander Schmitz
 				</p>
 				<p>Eine Projektarbeit im Rahmen des Studiums der Medizinischen
 					Informatik an der Beuth-Hochschule f&uuml;r Technik, Berlin.</p>
+			<div id="main">
+				
 				<h1>Disclaimer - rechtliche Hinweise</h1>
 				<h3>1. Haftungsbeschr&auml;nkung</h3>
 				Die Inhalte dieser Website werden mit gr&ouml;&szlig;tm&ouml;glicher

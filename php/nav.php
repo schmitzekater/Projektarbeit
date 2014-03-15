@@ -12,13 +12,13 @@
 		<li><a href="index.php" class="first">Home</a></li>
 		<li><a href="#">Services &raquo;</a>
 			<ul>
-				<li><a href="upload_pat.php">Patentendatenupload</a></li>
+				<li><a href="upload_pat.php">Patientendatenupload</a></li>
 				<li><a href="upload_mut.php">MutDatenbankupload</a></li>
 				<li><a href="#">Ergebnisse speichern &raquo;</a>
 				
 			</ul>
 		</li>
-		<li><a href="#">Weiterf��hrende Links &raquo;</a>
+		<li><a href="#">Weiterf&uuml;hrende Links &raquo;</a>
 			<ul>
 				<li><a href="http://genome.ucsc.edu/" target="_blank">UCSC</a></li>
 				<li><a href="http://www.ncbi.nlm.nih.gov/"target="_blank">NCBI</a></li>

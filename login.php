@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="shortcut icon" href="Bilder/__favicon.ico">
 
 
 </head>
@@ -24,7 +25,7 @@
 
 
 <?php
-		require_once('./php/sitzungsstart.php');	
+		require_once('./php/sitzungsstart.php');
 		$seitentitel = 'Login';
 		require_once('./php/zugang.php');
 		
@@ -74,7 +75,7 @@
 	<div id="wrapper">
 	
 		<?php
-			require_once('./php/header.php');  
+			require_once('./php/header.php');
 			require_once('./php/menu.php');
 
 				if($fehlermldg != "") {
@@ -107,7 +108,7 @@
 </aside>
 
 
-<footer>		
+<footer>
 <?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>

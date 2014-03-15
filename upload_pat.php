@@ -2,7 +2,7 @@
 <!-- Der HTML5-Doctype ist wirklich so simpel. ;) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Genetikum - GenetikumDb - Gendaten-Upload</title>
+		<title>Genetikum - GenetikumDb - Patientenupload</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="./css/main.css" />
@@ -22,10 +22,10 @@
 			<section id="content">
 				<article>
 					<div id="_main">
-					<h1>Upload von Mutationsdaten</h1>
-						<form id="upload" action="upload_mut2.php" method="POST"	enctype="multipart/form-data">
+					<h1>Upload von Patientendaten</h1>
+						<form id="upload" action="upload_pat2.php" method="POST"	enctype="multipart/form-data">
 							<fieldset>
-								<legend><b>HTML File Upload - Mutationsdaten</b></legend>
+								<legend><b>HTML File Upload - Patientendaten</b></legend>
 								<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
 								<div>
 									<label for="fileselect">Files to upload:</label>
