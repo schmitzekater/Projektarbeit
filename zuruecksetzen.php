@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
 
 
 </head>
@@ -20,9 +21,7 @@
 
 <section id="content">
 		  <article>
-		  <p></p>
-		  <p></p>
-<h1>&nbsp;</h1>
+		  
 <div id="main">
 	
 		<?php
@@ -35,7 +34,7 @@
 	
 	<?php
 	
-		require_once('./php/header.php');
+		
 		require_once('./php/menu.php');
  
 		if (isset($_POST['submit'])) {
@@ -101,8 +100,6 @@
 		<input type="submit" value="Passwort &auml;ndern" name="submit" />
 	</form>
   
-	<?php require_once('./php/footer.php'); ?>
-
 </div><!-- #wrapper -->
   </article>
   </section>

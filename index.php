@@ -44,9 +44,7 @@
 
 <section id="content">
 		  <article>
-		  <p></p>
-		  <p></p>
-<h1>&nbsp;</h1>
+		  
 <div id="main">
 			<h1>Herzlich willkommen beim Mutfinder</h1>
 			<p>Diese Seite bietet ein Tool zur Identifizierung von beschriebenen Mutationen

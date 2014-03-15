@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
 
 
 </head>
@@ -16,10 +17,7 @@
 <?php include "./php/nav.php"; ?>
 
 <section id="content">
-		  <article>
-		  <p></p>
-		  <p></p>
-<h1>&nbsp;</h1>
+		  
 <div id="main">
 
 
@@ -74,7 +72,7 @@
 	<div id="wrapper">
 	
 		<?php
-			require_once('./php/header.php');  
+			
 			require_once('./php/menu.php');
 
 				if($fehlermldg != "") {
@@ -96,7 +94,6 @@
 		
 		</form>
 
-		<?php require_once('./php/footer.php'); ?>
 
 	</div><!-- #wrapper -->
   </article>

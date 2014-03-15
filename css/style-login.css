@@ -47,7 +47,8 @@ h1 {
 
 #wrapper {
 	width: 80%;
-	margin: 700px auto 0 auto;
+	float:left;
+	margin: 0 auto 0 auto;
 }
 
 #menu {

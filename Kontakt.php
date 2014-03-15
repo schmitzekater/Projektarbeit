@@ -20,9 +20,7 @@
 
 <section id="content">
 		  <article>
-		  <p></p>
-		  <p></p>
-<h1>&nbsp;</h1>
+		  
 <div id="main">
 	
 	<H1>Kontakt</H1>

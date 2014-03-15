@@ -1,3 +1,4 @@
+
 <hr class="linie">
 <div id="a7">Copyright	Alexander Schmitz & Carolin Schwerdtfeger</div>
 <hr class="linie">
@@ -7,5 +8,5 @@
 <hr class="linie">
 <p></p>
 <hr class="linie">
-<div id="a7">erz&äuml;hl mir was neues...</div>
+<div id="a7">erz&auml;hl mir was neues...</div>
 <hr class="linie">

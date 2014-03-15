@@ -1,19 +1,24 @@
 
 .linie {
-	width:60%;
+	width:59%;
 	border :none;
 	border-top:  1px dotted #000000;
 	background-color:#FFFFFF;
 	height: 1px;
-	margin: 0px 80px 0px 80px;
+	margin: 0px 80px 0px 200px;
 }
 
 #a7 { 	 position:relative;
 		 padding:10px;
-		 width:60%;
+		 width:59%;
 		 bottom:0px; 
-		 left:80px;  ;
+		 left:200px;  ;
       	 background-color:#D3D3D3;
       	 }
 
 
+.Logo {
+	float: left;
+	margin: 0px 15px 15px 15px;
+	border: 1px solid #666666;
+	padding: 2px;
