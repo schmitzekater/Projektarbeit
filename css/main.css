@@ -86,7 +86,7 @@ img {
 	align-content: center;
 	cursor: crosshair;
 }
-<<<<<<< HEAD
+
 /* ---------------- Fuer Datenbank-Output --------------------- */
 #dbOutput {
 	min-height: 10%;
@@ -115,10 +115,7 @@ img {
 	border: none;
 }
 /* ----------header fÜr Logo-------------- */
-=======
 
-/* ----------header f��r Logo-------------- */
->>>>>>> 294c5a1eb724f4808272d11fcab03e580f9696f1
 header {
 
 	padding: 10px;

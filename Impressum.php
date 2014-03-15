@@ -8,33 +8,22 @@
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
 <link rel="stylesheet" type="text/css" href="./css/nav.css" />
 <link rel="stylesheet" type="text/css" href="./css/footer.css" />
-<<<<<<< HEAD
-	<link rel="shortcut icon" href="Bilder/__favicon.ico">
-=======
-
->>>>>>> 294c5a1eb724f4808272d11fcab03e580f9696f1
+<link rel="shortcut icon" href="Bilder/__favicon.ico">
 </head>
 <body>
 	<?php include "./php/nav.php"; ?>
 		<section id="content">
 		<article>
-<<<<<<< HEAD
-		<h1>Impressum</h1>
-		<P>Team Neu-Ulm</P>
-				<hr />
-=======
-			
+			<h1>Impressum</h1>
+			<P>Team Neu-Ulm</P>
+			<hr />
+			<p>
+				Carolin Schwerdtfeger <br> Alexander Schmitz
+			</p>
+			<p>Eine Projektarbeit im Rahmen des Studiums der Medizinischen
+				Informatik an der Beuth-Hochschule f&uuml;r Technik, Berlin.</p>
 			<div id="main">
-				<h1>Impressum</h1>
-				<P>Team Neu-Ulm</P>
->>>>>>> 294c5a1eb724f4808272d11fcab03e580f9696f1
-				<p>
-					Carolin Schwerdtfeger <br> Alexander Schmitz
-				</p>
-				<p>Eine Projektarbeit im Rahmen des Studiums der Medizinischen
-					Informatik an der Beuth-Hochschule f&uuml;r Technik, Berlin.</p>
-			<div id="main">
-				
+
 				<h1>Disclaimer - rechtliche Hinweise</h1>
 				<h3>1. Haftungsbeschr&auml;nkung</h3>
 				Die Inhalte dieser Website werden mit gr&ouml;&szlig;tm&ouml;glicher
@@ -77,9 +66,8 @@
 				oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich
 				die Herstellung von Kopien und Downloads f&uuml;r den
 				pers&ouml;nlichen, privaten und nicht kommerziellen Gebrauch ist
-				erlaubt.<br>
-				<br>Die Darstellung dieser Website in fremden Frames ist nur mit
-				schriftlicher Erlaubnis zul&auml;&szlig;ig.
+				erlaubt.<br> <br>Die Darstellung dieser Website in fremden Frames
+				ist nur mit schriftlicher Erlaubnis zul&auml;&szlig;ig.
 				<h3>4. Datenschutz</h3>
 				Durch den Besuch der Website des Anbieters k&ouml;nnen Informationen
 				&uuml;ber den Zugriff (Datum, Uhrzeit, betrachtete Seite)
@@ -87,29 +75,27 @@
 				personenbezogenen Daten, sondern sind anonymisiert. Sie werden
 				au&szlig;chlie&szlig;lich zu statistischen Zwecken ausgewertet. Eine
 				Weitergabe an Dritte, zu kommerziellen oder nichtkommerziellen
-				Zwecken, findet nicht statt.<br>
-				<br>Der Anbieter weist ausdr&uuml;cklich darauf hin, da&szlig; die
-				Daten&uuml;bertragung im Internet (z.B. bei der Kommunikation per
-				E-Mail) Sicherheitsl&uuml;cken aufweisen und nicht l&uuml;ckenlos
-				vor dem Zugriff durch Dritte gesch&uuml;tzt werden kann.<br>
-				<br>Die Verwendung der Kontaktdaten des Impre&szlig;ums zur
-				gewerblichen Werbung ist ausdr&uuml;cklich nicht erw&uuml;nscht, es
-				sei denn der Anbieter hatte zuvor seine schriftliche Einwilligung
-				erteilt oder es besteht bereits eine Gesch&auml;ftsbeziehung. Der
-				Anbieter und alle auf dieser Website genannten Personen
-				widersprechen hiermit jeder kommerziellen Verwendung und Weitergabe
-				ihrer Daten.<br>
-				<br>
-				<strong>Personenbezogene Daten</strong><br>Sie k&ouml;nnen unsere
-				Webseite ohne Angabe personenbezogener Daten besuchen. Soweit auf
-				unseren Seiten personenbezogene Daten (wie Name, Anschrift oder
-				E-Mail Adre&szlig;e) erhoben werden, erfolgt dies, soweit
-				m&ouml;glich, auf freiwilliger Basis. Diese Daten werden ohne Ihre
-				ausdr&uuml;ckliche Zustimmung nicht an Dritte weitergegeben. Sofern
-				zwischen Ihnen und uns ein Vertragsverh&auml;ltnis begr&uuml;ndet,
-				inhaltlich ausgestaltet oder ge&auml;ndert werden soll oder Sie an
-				uns eine Anfrage stellen, erheben und verwenden wir personenbezogene
-				Daten von Ihnen, soweit dies zu diesen Zwecken erforderlich ist
+				Zwecken, findet nicht statt.<br> <br>Der Anbieter weist
+				ausdr&uuml;cklich darauf hin, da&szlig; die Daten&uuml;bertragung im
+				Internet (z.B. bei der Kommunikation per E-Mail)
+				Sicherheitsl&uuml;cken aufweisen und nicht l&uuml;ckenlos vor dem
+				Zugriff durch Dritte gesch&uuml;tzt werden kann.<br> <br>Die
+				Verwendung der Kontaktdaten des Impre&szlig;ums zur gewerblichen
+				Werbung ist ausdr&uuml;cklich nicht erw&uuml;nscht, es sei denn der
+				Anbieter hatte zuvor seine schriftliche Einwilligung erteilt oder es
+				besteht bereits eine Gesch&auml;ftsbeziehung. Der Anbieter und alle
+				auf dieser Website genannten Personen widersprechen hiermit jeder
+				kommerziellen Verwendung und Weitergabe ihrer Daten.<br> <br> <strong>Personenbezogene
+					Daten</strong><br>Sie k&ouml;nnen unsere Webseite ohne Angabe
+				personenbezogener Daten besuchen. Soweit auf unseren Seiten
+				personenbezogene Daten (wie Name, Anschrift oder E-Mail
+				Adre&szlig;e) erhoben werden, erfolgt dies, soweit m&ouml;glich, auf
+				freiwilliger Basis. Diese Daten werden ohne Ihre ausdr&uuml;ckliche
+				Zustimmung nicht an Dritte weitergegeben. Sofern zwischen Ihnen und
+				uns ein Vertragsverh&auml;ltnis begr&uuml;ndet, inhaltlich
+				ausgestaltet oder ge&auml;ndert werden soll oder Sie an uns eine
+				Anfrage stellen, erheben und verwenden wir personenbezogene Daten
+				von Ihnen, soweit dies zu diesen Zwecken erforderlich ist
 				(Bestandsdaten). Wir erheben, verarbeiten und nutzen
 				personenbezogene Daten soweit dies erforderlich ist, um Ihnen die
 				Inanspruchnahme des Webangebots zu erm&ouml;glichen (Nutzungsdaten).
@@ -255,8 +241,8 @@
 					der Datenerhebung und die weitere Verarbeitung und Nutzung der
 					Daten durch Google sowie Ihre diesbez&uuml;glichen Rechte und
 					Einstellungsm&ouml;glichkeiten zum Schutz Ihrer Privatsph&auml;re
-					entnehmen Sie bitte Googles Datenschutzhinweisen:<br>
-					<a href="https://www.google.com/intl/de/policies/privacy/"
+					entnehmen Sie bitte Googles Datenschutzhinweisen:<br> <a
+						href="https://www.google.com/intl/de/policies/privacy/"
 						rel="nofollow">https://www.google.com/intl/de/policies/privacy/</a>
 				</p>
 				<p>

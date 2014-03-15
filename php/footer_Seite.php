@@ -1,6 +1,5 @@
 
 <hr class="linie">
-<<<<<<< HEAD
 <div id="a7">
 	<table border="0">
 		<tr>
@@ -27,16 +26,6 @@
 		</tr>
 	</table>
 </div>
-=======
-<div id="a7">Copyright	Alexander Schmitz & Carolin Schwerdtfeger</div>
-<hr class="linie">
-<p></p>
-<hr class="linie">
-<div id="a7">F&uuml;r weitere Sequenzinformationen....</div>
-<hr class="linie">
-<p></p>
-<hr class="linie">
-<div id="a7">erz&auml;hl mir was neues...</div>
->>>>>>> 294c5a1eb724f4808272d11fcab03e580f9696f1
+
 <hr class="linie">
 
