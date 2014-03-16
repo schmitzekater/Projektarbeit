@@ -10,7 +10,10 @@
 	$password = "dbuser";
 	$dbase = "genbank";
 	$sep = "|";
-	$mutTable = "mutdat";
-	$genTable = "genname";
-	$uploadDir = "../Datenbank/uploads/"
+	$mutTable = "mutdat";	//Liste der Mutationen
+	$genTable = "genname";	//Liste der Gene
+	$patTable = "pat";		//Patientenliste
+	$patMutTable = "mutp";	//Liste der Mutationen pro Patient
+	$uploadDir = "Datenbank/uploads/"
+	
 ?>

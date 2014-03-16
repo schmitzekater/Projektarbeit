@@ -17,6 +17,11 @@ body {
 	font-family: Arial, SunSans-Regular, Sans-Serif;
 	color: #000000;
 }
+div#main {
+	overflow: scroll;
+	height: inherit;
+	max-height: 600px;
+}
 pre, code {
 	font-size: 1.3em;
 }
@@ -54,6 +59,7 @@ img {
 	margin: 10px auto;
 	background-color: #F5F5F5;
 }
+/* ---------------- Hier werden die Files abgelegt --------*/
 #filedrag {
 	max-width: 90%;
 	min-width: 10%;
@@ -81,7 +87,35 @@ img {
 	cursor: crosshair;
 }
 
-/* ----------header f��r Logo-------------- */
+/* ---------------- Fuer Datenbank-Output --------------------- */
+#dbOutput {
+	min-height: 10%;
+	min-width: 20%;
+	max-height: 50%;
+	max-width: 75%;
+	width: 75%;
+	height: 20%;
+	position: inherit;
+	margin-top: 0.5em;
+	background-color: lightgrey;
+	font-size: larger;
+}
+#textOutput {
+	min-height: inherit;
+	min-width: inherit;
+	max-height: 100%;
+	max-width: 100%;
+	font-family: monospace;
+	font-variant: normal;
+	text-indent: 5px;
+	background-color: black;
+	color: darkturquoise;
+}
+#my_iframe {
+	border: none;
+}
+/* ----------header fÜr Logo-------------- */
+
 header {
 
 	padding: 10px;
@@ -93,8 +127,8 @@ header p {
 	font-size: 11px;
 }
 header img {
-	width: 100%;
-	padding: 0 0 20px;
+	/*width: 100%;*/
+	padding: 0 0 10px;
 }
 
 /* -------------- Navigavtion------------- */
@@ -114,7 +148,14 @@ section#content {
 	width: 75%;
 	padding: 60px;
 	background-color: #fff;
-	min-height: 600px;
+	min-height: 30%;
+	max-height: 800px;
+}
+form#upload {
+	min-height: 20%;
+	min-width: 20%;
+	max-height: 280px;
+	max-width: 100%;
 }
 p, pre {
 	padding: 0 0 20px;
@@ -126,7 +167,7 @@ p, pre {
 aside {
 
 	background-color: #F5F5F5;
-	padding: 20px;
+	padding: 10px;
 	float: right;
 	width: 25%;
 }
@@ -134,7 +175,7 @@ aside {
 /* -----------footer--------------------------- */
 footer {
 	margin: 0, 0, 50, 60;
-	padding: 20px;
+	padding: 10px;
 	clear: both;
 	background-color: #F5F5F5;
 	color: #000000;

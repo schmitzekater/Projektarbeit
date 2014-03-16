@@ -23,7 +23,7 @@
 
 <?php
 		require_once('./php/sitzungsstart.php');	
-		$seitentitel = 'Login';
+		$seitentitel = 'fail';
 		require_once('./php/zugang.php');
 		
 		
@@ -110,7 +110,3 @@
 </div>
 </body>
 </html>
-
-
-
-

@@ -8,8 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
-	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
 	<link rel="shortcut icon" href="Bilder/__favicon.ico">
+
 
 </head>
 
@@ -47,45 +47,21 @@
 		  <article>
 		 
 <div id="main">
-
+			<h1>Herzlich willkommen beim <em>Mutfinder</em></h1>
+			<p>Diese Seite bietet ein Tool zur Identifizierung von beschriebenen Mutationen
+			   in der Molekulargenetik.
+			</p>
+			<h2>Beschreibung:</h2>
+				<p>Um diese Seite nutzen zu k&ouml;nnen ist es notwendig, sich als Nutzer zu authorisieren.
+				Hierzu nutzen Sie bitte die Eingabemaske an der rechten Seite.
+				Anschlie&szlig;end k&ouml;nnen Sie unter der Uploadseite eine Liste der gew&uuml;nschten / gefundenen Mutationen hochladen.
+				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver&auml;nderungen
+				gefunden wird, wird diese ausgegeben.</p>
+				
+			<p>Bei Problemen oder Fragen bez&uuml;glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>
 			
-			<p>Hallo Max...ich seh hier was...</p>
-			 	
-			<?php
-			
- 
-			// Neues Datenbank-Objekt erzeugen
-			$db = @new mysqli( 'localhost', 'dbuser', 'dbuser', 'genbank' );
-			// Pruefen ob die Datenbankverbindung hergestellt werden konnte
-			if (mysqli_connect_errno() == 0)
-					{
-					 $idPat=$_POST['Pat_idPat'];	
-   					 $sql = 'SELECT mutp.Gene,mutp.HGVSnomenclature
-							 from mutp,mutdat
-							  where mutp.HGVSnomenclature=mutdat.nucleotide
-							  and mutp.Pat_idPat=1';
-    				// Statement vorbereiten
-   					$ergebnis = $db->prepare( $sql );
-    				// an die DB schicken
-   					 $ergebnis->execute();
-    				// Ergebnis an Variablen binden
-    				$ergebnis->bind_result( $Gene, $nomenclature );
-    				// Ergebnisse ausgeben
-   					 while ($ergebnis->fetch())
-    					{
-    					echo "Die Ver��nderung" .$nomenclature. " in dem Gen " .$Gene. "wurde in der Datenbank gefunden <br />";	
-        				 
-   						 }
-							}
-						else
-						{
-   							 // Es konnte keine Datenbankverbindung aufgebaut werden
-   						 echo 'Die Datenbank konnte nicht erreicht werden. Folgender Fehler trat auf: <span class="hinweis">' .mysqli_connect_errno(). ' : ' .mysqli_connect_error(). '</span>';
-							}
-						// Datenbankverbindung schliessen
-						$db->close();
- 
-?>
+			<iframe width="640" height="360" src="//www.youtube.com/embed/kp0esidDr-c?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+				
 			
 		</div>
 
