@@ -95,8 +95,6 @@
 	
 	</form>
   
-	<?php require_once('./php/footer.php'); ?>
-  
 </div> <!-- #wrapper -->
   </article>
   </section>
