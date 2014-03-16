@@ -1,3 +1,31 @@
+<?php
+
+	require_once('./php/sitzungsstart.php');
+	$seitentitel = 'Memberarea';
+	require_once('./php/zugang.php');
+		
+	if(isset($_SESSION['nutzername'])) {
+		$user = $_SESSION['nutzername'];
+
+		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
+			mysqli_set_charset($db, "utf8");
+
+		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
+		$daten = mysqli_query($db, $sql);
+		$zeile = mysqli_fetch_array($daten);
+
+		if ($zeile['aktiviert'] == 0) {
+
+			$aktivierungsseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivierung.php';
+				header('Location:' . $aktivierungsseite);
+
+			mysqli_close($db);
+
+		}		
+	}
+?>
+
+
 <!DOCTYPE html>
 <!-- Der HTML5-Doctype ist wirklich so simpel. ;) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -28,33 +56,7 @@
 				
 					<div id="_main">
 					
-	<?php
-
-	require_once('./php/sitzungsstart.php');
-	$seitentitel = 'Memberarea';
-	require_once('./php/zugang.php');
-		
-	if(isset($_SESSION['nutzername'])) {
-		$user = $_SESSION['nutzername'];
-
-		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
-			mysqli_set_charset($db, "utf8");
-
-		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
-		$daten = mysqli_query($db, $sql);
-		$zeile = mysqli_fetch_array($daten);
-
-		if ($zeile['aktiviert'] == 0) {
-
-			$aktivierungsseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivierung.php';
-				header('Location:' . $aktivierungsseite);
-
-			mysqli_close($db);
-
-		}		
-	}
-?>
-
+	
 <div id="wrapper">
 
 <?php

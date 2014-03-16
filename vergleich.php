@@ -51,9 +51,17 @@
 			
 			<p>Hallo Max...ich seh hier was...</p>
 			 	
+			<form action="vergleich.php" method="post">
+ 			<p>Geben Sie den Patientenindex ein, nach dem gesucht werden soll:</p>
+ 			<input type="text" name="Pat_idPat" /></p>
+ 			<p><input type="submit" /></p>
+			</form>	
+			
+			
+			
 			<?php
 			
- 
+ 			 $idPat=$_POST['Pat_idPat'];
 			// Neues Datenbank-Objekt erzeugen
 			$db = @new mysqli( 'localhost', 'dbuser', 'dbuser', 'genbank' );
 			// Pruefen ob die Datenbankverbindung hergestellt werden konnte
@@ -63,7 +71,7 @@
    					 $sql = 'SELECT mutp.Gene,mutp.HGVSnomenclature
 							 from mutp,mutdat
 							  where mutp.HGVSnomenclature=mutdat.nucleotide
-							  and mutp.Pat_idPat=1';
+							  and mutp.Pat_idPat=".$idPat"';
     				// Statement vorbereiten
    					$ergebnis = $db->prepare( $sql );
     				// an die DB schicken

@@ -68,8 +68,8 @@
 		
 					mysqli_close($db);
 				
-					echo '<p class="pass">Ihr Konto wurde erstellt. Sie k&ouml;nnen sich jetzt einloggen und die Seite ' .
-					'<a href="uploadmitMenu.php">Patientenupload</a> besuchen</p>';
+					echo '<p class="pass">Ihr Konto wurde erstellt. Sie k&ouml;nnen sich jetzt einloggen und die Seiten ' .
+					'<a href="upload_mut.php">Mutationsdaten laden</a> oder</p>';'<a href="upload_pat.php">Patientendaten laden</a> oder</p>';'<a href="vergleich.php">Mutationen vergleichen</a> besuchen</p>';
 					exit();
 				}      
 				else {
