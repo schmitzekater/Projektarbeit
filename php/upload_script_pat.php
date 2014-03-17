@@ -73,10 +73,9 @@ if (strcasecmp ( $fileExtension, 'csv' ) != 0) {
 }
 fclose ( $handle );
 // Datei schliessen
-$firstLine = stripLinefeed ( array_shift ( $array ) );
-
-// Zeilenumbruch entfernen und erste Zeile aus Datei als ��berschrift
+$firstLine = array_shift ( $array ) ; //Array um erste Zeile verschieben
 $header = explode ( $sep, $firstLine ); // Header aus erster Zeile erstellen
+$header = stripLinefeed ( $header);// Zeilenumbruch entfernen und erste Zeile aus Datei als ��berschrift
 if (! empty ( $header ) && (strpos ( $header [0], "Index" ) !== false)) // Schauen ob der Header passt.
 {
 	$headerExists = true;
@@ -94,22 +93,11 @@ foreach ( $array as $line ) // Aufteilen des Arrays in Zeilen
 		setStatus ( $header [$i] . ": " . $elements [$i] . "\n" );
 		// Ausgabe ��berschrift: Element
 	}
-	$mysqli = connectDB ( $server, $user, $password, $dbase );
-	// Verbindung zur DB aufbauen
-	if ($mysqli->ping ()) { // Verbindung noch aktiv?
-		$patId = checkpat ( $mysqli, $name, $patTable );
-		// Pr��fe, ob der Patient bereits in der Datenbank ist.
-		writePatMutToDB ( $mysqli, $header, $elements, $patMutTable, $patId );
-		// Patienten in die DB schreiben
-	} else {
-		setStatus ( "Verbindung zur Datenbank unterbrochen.\n" . $mysqli->error, true );
-		// return;
-	}
-	try {
-		$mysqli->close ();
-	} catch ( Exception $e ) {
-		setStatus ( "Fehler beim Beenden der Datenbankverbindung.\n" . $e->getMessage . "\n", true );
-	}
+	
+	$patId = checkpat ($name, $patTable );
+	// Pr��fe, ob der Patient bereits in der Datenbank ist.
+	writePatMutToDB ( $header, $elements, $patMutTable, $patId );
+	// Patienten in die DB schreiben
 }
 generateSummary();
 
@@ -132,10 +120,13 @@ function generateSummary() {
 	closeHtml();
 	exit();
 }
-function addPatToDb($mysqli, $pat, $patTable) {
+function addPatToDb( $pat, $patTable) {
 	/*
 	 * This function inserts a new patient to the patient table. The new created id is returned to the calling function. @param $mysqli @param $pat @param $patTable
 	 */
+	global $server, $user, $password, $dbase ;
+	$mysqli = connectDB ( $server, $user, $password, $dbase );
+	// Verbindung zur DB aufbauen
 	$query = "insert into $patTable ( `Name`) values( '$pat' )";
 	// Auto-Inkrement ist an.
 	if ($result = $mysqli->query ( $query )) {
@@ -145,26 +136,36 @@ function addPatToDb($mysqli, $pat, $patTable) {
 		setStatus ( "Fehler beim Einf&uuml;gen in die Datenbank.\nQuery: " . $query . "\n" . $mysqli->error . "\n", true );
 		$id = - 1;
 	}
-	$mysqli->close ();
+	try {
+		$mysqli->close ();
+	} catch (Exception $e) {
+	}
 	return $id;
 }
-function checkPat($mysqli, $pat, $patTable) {
+function checkPat( $pat, $patTable) {
 	/*
 	 * This function tries to retrieve the id of a unique patient. If the patient is not present in the database, a new ID will be generated. @param $mysqli @param $pat @param $patTable
 	 */
+	global $server, $user, $password, $dbase ;
+	$mysqli = connectDB ( $server, $user, $password, $dbase );
+	// Verbindung zur DB aufbauen
 	$query = 'select idPat from ' . $patTable . ' where Name = "' . $pat . '";';
 	if (($result = $mysqli->query ( $query )) && ($result2 = $mysqli->affected_rows) == 1) 	// ID war bereits vorhanden
 	{
 		$row = $result->fetch_assoc ();
 		$id = $row ['idPat'];
 	} else {
-		$id = addPatToDb ( $mysqli, $pat, $patTable );
+		$id = addPatToDb ( $pat, $patTable );
 		// Patient in die Datenbank schreiben
+	}
+	try {
+		$mysqli->close ();
+	} catch (Exception $e) {
 	}
 	return $id;
 }
 function connectDB($server, $user, $password, $dbase) {
-	global $hostPost;
+	global $hostPost, $server, $user, $password, $dbase ;
 	try {
 		$sql = new mysqli ( $server, $user, $password, $dbase );
 		if ($sql->connect_errno) {
@@ -191,11 +192,13 @@ function arrayToString($array, $sign) {
 	setStatus ( "\nCut: " . $cut . "\n" );
 	return $cut;
 }
-function writePatMutToDb($mysqli, $header, $elements, $table, $patId) {
+function writePatMutToDb( $header, $elements, $table, $patId) {
 	/*
 	 * This functions inserts mutation values to the database. @param $mysqli @param $elements @param $table @param $patId
 	 */
-	global $dbRows;
+	global $dbRows, $server, $user, $password, $dbase ;
+	$mysqli = connectDB ( $server, $user, $password, $dbase );
+	// Verbindung zur DB aufbauen
 	$columns = arrayToString ( $header, '`' ); // Spaltennamen mit ` umgeben
 	$values = arrayToString ( $elements, "'" ); // Werte mit ' umgeben
 	
@@ -207,6 +210,10 @@ function writePatMutToDb($mysqli, $header, $elements, $table, $patId) {
 		setStatus ( "Ge&auml;nderte Zeilen: " . $mysqli->affected_rows . "\n" );
 	} else {
 		setStatus ( "Fehler in der Abfrage.\nQuery: " . $query . "\n" . $mysqli->error . "\n", true );
+	}
+	try {
+		$mysqli->close ();
+	} catch (Exception $e) {
 	}
 }
 function setStatus($msg, $enforce = false) {
@@ -224,8 +231,8 @@ function stripLinefeed($text) {
 	 */
 	// return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
 	$text = str_replace("'","\\'", $text); 					// Patientendatei enthält ein ' in einer Zeile, dies muss maskiert werden.
-	return str_replace ( array ("\n","\r\n"	), '', $text ); // Obiger Ausdruck entfernt das singulaere LF nicht.
-	
+	//return str_replace ( array ("\n","\r\n"	), '', $text ); // Obiger Ausdruck entfernt das singulaere LF nicht.
+	return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', '', $text);
 }
 function closeHtml() {
 	print ('</textarea></div></fieldset></div><!-- End main --></article></section><aside><div id="subside"><h1>Quellen</h1><!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->

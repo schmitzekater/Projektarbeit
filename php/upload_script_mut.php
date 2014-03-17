@@ -6,6 +6,7 @@ $debug = 0;
 $fileRows = 0;
 $dbRows = 0;
 $headerExists = false;
+$hostPost = false;
 if ($fn) {
 	
 	ChromePhp::log ( 'fn ist da' );
@@ -88,19 +89,9 @@ foreach ( $array as $line ) // Aufteilen des Arrays in Zeilen
 	for($i = 0; $i < count ( $elements ); ++ $i) {
 		setStatus ( $header [$i] . ": " . $elements [$i] . "\n" ); // Ausgabe Ueberschrift: Element
 	}
-	$mysqli = connectDB ( $server, $user, $password, $dbase ); // Verbindung zur DB aufbauen
-	if ($mysqli->ping ()) { // Verbindung noch aktiv?
-		$genId = checkGen ( $mysqli, $gen, $genTable ); // Pruefe, ob das Gen bereits in der Datenbank ist.
-		writeMutToDB ( $mysqli, $elements, $mutTable, $genId ); // Mutation in die DB schreiben
-	} else {
-		setStatus ( "Verbindung zur Datenbank unterbrochen.\n" . $mysqli->error . "\n", true );
-		// return;
-	}
-	try {
-		$mysqli->close ();
-	} catch ( Exception $e ) {
-		setStatus ( "Fehler beim Beenden der Datenbankverbindung.\n" . $e->getMessage . "\n", true );
-	}
+
+	$genId = checkGen ($gen, $genTable ); // Pruefe, ob das Gen bereits in der Datenbank ist.
+	writeMutToDB ( $elements, $mutTable, $genId ); // Mutation in die DB schreiben
 }
 generateSummary (); // Abschliessende Zusammenfassung erstellen
 /*
@@ -120,10 +111,12 @@ function generateSummary() {
 	closeHtml ();
 	exit ();
 }
-function writeGenToDb($mysqli, $gen, $genTable) {
+function writeGenToDb( $gen, $genTable) {
 	/*
 	 * This function inserts a new gen to the gen table. The new created id is returned to the calling function. @param $mysqli @param $gen @param $genTable
 	 */
+	global $server, $user, $password, $dbase;
+	$mysqli = connectDB ( $server, $user, $password, $dbase ); // Verbindung zur DB aufbauen
 	$query = "insert into $genTable ( `Name`) values( '$gen' )"; // Auto-Inkrement ist an.
 	if ($result = $mysqli->query ( $query )) {
 		$id = $mysqli->insert_id;
@@ -134,38 +127,43 @@ function writeGenToDb($mysqli, $gen, $genTable) {
 	$mysqli->close ();
 	return $id;
 }
-function checkGen($mysqli, $gen, $genTable) {
+function checkGen( $gen, $genTable) {
 	/*
 	 * This function tries to retrieve the id of a unique gen. If the Gen is not present in the database, a new ID will be generated. @param $mysqli @param $gen @param $genTable
 	 */
+	global $server, $user, $password, $dbase;
+	$mysqli = connectDB ( $server, $user, $password, $dbase ); // Verbindung zur DB aufbauen
 	$query = 'select idG from ' . $genTable . ' where Name = "' . $gen . '";';
 	if (($result = $mysqli->query ( $query )) && ($result2 = $mysqli->affected_rows) == 1) 	// ID war bereits vorhanden
 	{
 		$row = $result->fetch_assoc ();
 		$id = $row ['idG'];
 	} else {
-		$id = writeGenToDb ( $mysqli, $gen, $genTable ); // Gen in die Datenbank schreiben
+		$id = writeGenToDb (  $gen, $genTable ); // Gen in die Datenbank schreiben
 	}
 	return $id;
 }
 function connectDB($server, $user, $password, $dbase) {
+	global $hostPost;
 	try {
 		$sql = new mysqli ( $server, $user, $password, $dbase );
 		if ($sql->connect_errno) {
-			setStatus ( "Keine Verbindung zum Server: $server ! \nINFO: " . $sql->connect_error . "\n", true );
-		} else {
-			setStatus ( "Verbindung zum Server $server ok. \nINFO: " . $sql->host_info . "\n", true );
+			setStatus ( "Keine Verbindung zum Server: $server ! \n> INFO: " . $sql->connect_error . "\n", true );
+		} else if(!$hostPost){
+			setStatus ( "Verbindung zum Server $server ok. \n> INFO: " . $sql->host_info . "\n", true );
+			$hostPost = true;
 		}
 	} catch ( Exception $e ) {
 		setStatus ( "Fehler beim Verbinden mit der Datenbank.\n" . $e->getMessage () . "\n", true );
 	}
 	return $sql;
 }
-function writeMutToDb($mysqli, $elements, $table, $genId) {
+function writeMutToDb( $elements, $table, $genId) {
 	/*
 	 * This functions inserts mutation values to the database. @param $mysqli @param $elements @param $table @param $genId
 	 */
-	global $dbRows;
+	global $server, $user, $password, $dbase, $dbRows;
+	$mysqli = connectDB ( $server, $user, $password, $dbase ); // Verbindung zur DB aufbauen
 	$query = "insert into $table values( 0, '$elements[0]','$elements[1]','$elements[2]','$elements[3]','$elements[4]','$elements[5]', '$elements[6]',$genId )";
 	if ($result = $mysqli->query ( $query )) {
 		$count = $mysqli->affected_rows; // Wie viele Zeilen wurden eingefuegt?
