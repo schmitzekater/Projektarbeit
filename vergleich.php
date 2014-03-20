@@ -61,17 +61,18 @@
 			
 			<?php
 			
- 			 $idPat=$_POST['Pat_idPat'];
+ 			 $idPat=(int)$_POST["Pat_idPat"];
+ 			echo '<p>Ich bins...</p>'.$idPat;
 			// Neues Datenbank-Objekt erzeugen
 			$db = @new mysqli( 'localhost', 'dbuser', 'dbuser', 'genbank' );
 			// Pruefen ob die Datenbankverbindung hergestellt werden konnte
 			if (mysqli_connect_errno() == 0)
 					{
-					 $idPat=$_POST['Pat_idPat'];	
-   					 $sql = 'SELECT mutp.Gene,mutp.HGVSnomenclature
+					 
+   					 $sql = "SELECT mutp.Gene,mutp.HGVSnomenclature
 							 from mutp,mutdat
 							  where mutp.HGVSnomenclature=mutdat.nucleotide
-							  and mutp.Pat_idPat=".$idPat"';
+							  and mutp.Pat_idPat=$idPat";
     				// Statement vorbereiten
    					$ergebnis = $db->prepare( $sql );
     				// an die DB schicken

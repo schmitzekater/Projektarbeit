@@ -231,7 +231,7 @@ function stripLinefeed($text) {
 	 */
 	// return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
 	$text = str_replace("'","\\'", $text); 					// Patientendatei enthält ein ' in einer Zeile, dies muss maskiert werden.
-	//return str_replace ( array ("\n","\r\n"	), '', $text ); // Obiger Ausdruck entfernt das singulaere LF nicht.
+	$text = str_replace ( array ("\n","\r\n"	), '', $text ); // Obiger Ausdruck entfernt das singulaere LF nicht.
 	return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', '', $text);
 }
 function closeHtml() {

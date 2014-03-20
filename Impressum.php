@@ -1,28 +1,63 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-<title>Genetikum - GenetikumDb - Impressum</title>
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="./css/main.css" />
-<link rel="stylesheet" type="text/css" href="./css/nav.css" />
-<link rel="stylesheet" type="text/css" href="./css/footer.css" />
-<link rel="shortcut icon" href="Bilder/__favicon.ico">
+	<meta charset="utf-8" />
+<title>Genetikum - GenetikumDb - GenBank</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
+	<link rel="shortcut icon" href="Bilder/__favicon.ico">
+
 </head>
+
+<?php
+
+	require_once('./php/sitzungsstart.php');
+	$seitentitel = 'memberarea';
+	require_once('./php/zugang.php');
+		
+	if(isset($_SESSION['nutzername'])) {
+		$user = $_SESSION['nutzername'];
+
+		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
+			mysqli_set_charset($db, "utf8");
+
+		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
+		$daten = mysqli_query($db, $sql);
+		$zeile = mysqli_fetch_array($daten);
+
+		if ($zeile['aktiviert'] == 0) {
+
+			$aktivierungsseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivierung.php';
+				header('Location:' . $aktivierungsseite);
+
+			mysqli_close($db);
+
+		}
+	}
+?>
+
 <body>
-	<?php include "./php/nav.php"; ?>
-		<section id="content">
-		<article>
-			<h1>Impressum</h1>
-			<P>Team Neu-Ulm</P>
-			<hr />
-			<p>
-				Carolin Schwerdtfeger <br> Alexander Schmitz
-			</p>
+<?php include "./php/nav.php"; ?>
+
+<section id="content">
+		  <article>
+		 
+<div id="main">
+
+			<H1>Impressum</H1>
+			
+			<p>Carolin Schwerdtfeger <br> Alexander Schmitz</p>
+			
+			<hr class="linie2">
+			
 			<p>Eine Projektarbeit im Rahmen des Studiums der Medizinischen
 				Informatik an der Beuth-Hochschule f&uuml;r Technik, Berlin.</p>
-			<div id="main">
+			
 
 				<h1>Disclaimer - rechtliche Hinweise</h1>
 				<h3>1. Haftungsbeschr&auml;nkung</h3>
@@ -283,23 +318,27 @@
 					Nutzungsbedingungen.</p>
 				Quelle: <a href="http://www.juraforum.de/disclaimer_muster/"
 					title="disclaimer">Disclaimer</a> von Juraforum.de.
+				
+			
+		</div>
 
-			</div>
-		</article>
-	</section>
-	<aside>
- 		<?php include "./php/aside.php"; ?>
-	</aside>
-	<footer>
-		<?php include "./php/footer_Seite.php"; ?>
- 	</footer>
-	</div>
-	<!-- End Container -->
+  </article>
+  </section>
+
+<aside>
+<?php include "./php/aside.php"; ?>
+</aside>
+
+
+<footer>
+
+
+<?php include "./php/footer_Seite.php"; ?>
+
+</footer>
+</div>
 </body>
 </html>
-
-
-
 
 
 

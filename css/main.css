@@ -44,13 +44,6 @@ h1, h2 {
 	margin: 0 0 20px;
 }
 
-img.download {
-	vertical-align: middle;
-}
-img {
-	border: none;
-}
-
 /* ----------container zentriert das layout-------------- */
 
 #container {
@@ -127,7 +120,7 @@ header p {
 	font-size: 11px;
 }
 header img {
-	/*width: 100%;*/
+	width: 100%;
 	padding: 0 0 10px;
 }
 
@@ -162,7 +155,7 @@ p, pre {
 	line-height: 1.5em;
 }
 
-/* -------------- side infos ------------- */
+/* -------------- aside ------------- */
 
 aside {
 
@@ -182,6 +175,48 @@ footer {
 }
 
 
-}
 /* -----------footer--------------------------- */
 
+.linie2 {
+	width:87%;
+	padding:20px;
+	border :none;
+	border-top:  1px dotted #000000;
+	background-color:#FFFFFF;
+	height: 1px;
+	margin: 0px 80px 0px 50px;
+}	
+
+.linie3 {
+	width:60%;
+	padding:20px;
+	border :none;
+	border-top:  1px dotted #000000;
+	height: 1px;
+	margin: 0px 80px 0px 50px;
+}	
+
+/*----------------aside------------------*/
+
+#side {
+	background: #F5F5F5;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-width:1px;
+	border-color:#000000;
+}
+
+#side li {
+	display: inline;
+	margin-left: 10px;
+	color: #000000;
+}
+
+#side a {
+	color: #000000;
+	text-decoration: none;
+}
+
+#side a:hover {
+	text-decoration: underline;
+}

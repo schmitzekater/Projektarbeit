@@ -48,12 +48,11 @@
 		 
 <div id="main">
 			<h1>Herzlich willkommen beim <em>Mutfinder</em></h1>
-			<p>Diese Seite bietet ein Tool zur Identifizierung von beschriebenen Mutationen
-			   in der Molekulargenetik.
-			</p>
+			<p>Diese Seite bietet ein Tool, welches zur Auswertung von NGS (Next-Generation-Sequenzing) Projekten genutzt werden kann.</p>
+			<p>Als registrierter User haben Sie die M&ouml;glichkeit, Mutationsdatenbanken und Patientendaten hochzuladen und diese im Bereich Vergleich auswerten zu lassen.</p>
 			<h2>Beschreibung:</h2>
 				<p>Um diese Seite nutzen zu k&ouml;nnen ist es notwendig, sich als Nutzer zu authorisieren.
-				Hierzu nutzen Sie bitte die Eingabemaske an der rechten Seite.
+				Hierzu nutzen Sie bitte den Login an der rechten Seite.
 				Anschlie&szlig;end k&ouml;nnen Sie unter der Uploadseite eine Liste der gew&uuml;nschten / gefundenen Mutationen hochladen.
 				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver&auml;nderungen
 				gefunden wird, wird diese ausgegeben.</p>
