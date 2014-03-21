@@ -10,6 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
 	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
 	<link rel="shortcut icon" href="Bilder/__favicon.ico">
+	<!-- jQuery and jQuery UI -->
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+    
 
 </head>
 
@@ -47,22 +51,18 @@
 		  <article>
 		 
 <div id="main">
-			<h1>Herzlich willkommen beim <em>Mutfinder</em></h1>
-			<p>Diese Seite bietet ein Tool, welches zur Auswertung von NGS (Next-Generation-Sequenzing) Projekten genutzt werden kann.</p>
-			<p>Als registrierter User haben Sie die M&ouml;glichkeit, Mutationsdatenbanken und Patientendaten hochzuladen und diese im Bereich Vergleich auswerten zu lassen.</p>
-			<h2>Beschreibung:</h2>
-				<p>Um diese Seite nutzen zu k&ouml;nnen ist es notwendig, sich als Nutzer zu authorisieren.
-				Hierzu nutzen Sie bitte den Login an der rechten Seite.
-				Anschlie&szlig;end k&ouml;nnen Sie unter der Uploadseite eine Liste der gew&uuml;nschten / gefundenen Mutationen hochladen.
-				Diese Liste wird dann mit einer internen Datenbank verglichen und falls eine Referenz zu den angegebenen Ver&auml;nderungen
-				gefunden wird, wird diese ausgegeben.</p>
-				
-			<p>Bei Problemen oder Fragen bez&uuml;glich dieses Tools wenden Sie sich bitte an den Administrator. Die Angaben finden Sie im Impressum.</p>
+
+			<span id="statusWrapper" class="ui-state-highlight">Status: <span id="status">Ready</span></span>
+        
+        <br />
+        <progress value="0" max="100" id="pgrStatus"></progress>
+        <hr />
+      
+        <form action="getPatList.php" method="post" id="listLoad" enctype="multipart/form-data">
+          <input type="submit" id="listLoad" value="Hole Patientenliste" />
+        </form>
 			
-			<iframe width="640" height="360" src="//www.youtube.com/embed/kp0esidDr-c?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-				
-			
-		</div>
+	</div>
 
   </article>
   </section>

@@ -22,7 +22,7 @@
 
 
 <?php
-		require_once('./php/sitzungsstart.php');	
+		require_once('./php/sitzungsstart.php');
 		$seitentitel = 'Login';
 		require_once('./php/zugang.php');
 		
@@ -53,7 +53,7 @@
 						$_SESSION['nutzername'] = $zeile['nutzername'];
 						setcookie('id', $zeile['id'], time() + (60 * 60 * 24 * 30));    // Verf������llt in 30 Tagen
 						setcookie('nutzername', $zeile['nutzername'], time() + (60 * 60 * 24 * 30));  // Verf������llt in 30 Tagen
-						$hauptseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/uploadmitMenu.php';
+						$hauptseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/index.php';
 							header('Location: ' . $hauptseite);
 							
 						mysqli_close($db);
@@ -104,7 +104,7 @@
 </aside>
 
 
-<footer>		
+<footer>
 <?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>
