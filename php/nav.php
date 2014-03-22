@@ -1,4 +1,3 @@
-<div id="container">
 
 <header>
 <img src ="Bilder/bg_header_start_01.jpg"

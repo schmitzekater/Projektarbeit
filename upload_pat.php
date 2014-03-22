@@ -46,6 +46,7 @@
 	</head>
 	<body>
 		<!-- div container -->
+		<div id="container">
 				<?php
 				include "./php/nav.php"; // Nav beinhaltet auch den Header
 				?>

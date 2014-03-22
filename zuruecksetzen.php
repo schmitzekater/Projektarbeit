@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 
@@ -62,7 +62,7 @@
 					$betreff = "Beispiel - Haben Sie Ihr Passwort vergessen?";
 					$msg = "Hallo $nutzername,\n" .
 					"wenn Sie ihr Passwort vergessen haben besuchen Sie bitte http://localhost/zuruecksetzen.php und ���������ndern Sie ihr vergessenes Passwort in ein neues gew���������nschtes Passwort um.\n" .
-					"Dazu ben���������tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl���������ssel ( $vergessencode ). \n" .
+					"Dazu ben&ouml;tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl���������ssel ( $vergessencode ). \n" .
 					"Falls Sie Ihr Passwort nicht vergessen haben ignorieren Sie diese E-Mail bitte einfach. \n" . 
 					"Mit freundlichen Gr������������������en\n" .
 					"Beispielseite";

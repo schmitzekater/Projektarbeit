@@ -13,6 +13,7 @@
 </head>
 <body>
 	<!-- div container -->
+	<div id="container">
 		<?php
 		include "php/nav.php";
 		include "php/zugang.php";
