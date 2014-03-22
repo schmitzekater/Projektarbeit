@@ -92,7 +92,7 @@
     				// Ergebnisse ausgeben
    					 while ($ergebnis->fetch())
     					{
-    					echo "Die Ver&auml;nderung" .$nomenclature. " in dem Gen " .$Gene. "wurde in der Datenbank gefunden <br />";	
+    					echo " Die Ver&auml;nderung " .$nomenclature. " in dem Gen " .$Gene. " wurde in der Datenbank gefunden <br />";	
         				 
    						 }
 							}
