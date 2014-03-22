@@ -1,4 +1,4 @@
-//Folgender Code stammt von : http://think2loud.com/224-reading-xml-with-jquery/
+//Folgender Code stammt in Teilen von : http://think2loud.com/224-reading-xml-with-jquery/
 /**
  * Dieses Script liest eine XML-Datei ein, und baut aus dem Inhalt die
  * Link-Liste. Trennung von Darstellung und Inhalt.

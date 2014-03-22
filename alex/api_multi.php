@@ -1,45 +1,56 @@
 <?php
 
-  //--------------------------------------------------------------------------
-  // Example php script for fetching data from mysql database
-  //--------------------------------------------------------------------------
-  $host = "localhost";
-  $user = "dbuser";
-  $pass = "dbuser";
+// --------------------------------------------------------------------------
+// Example php script for fetching data from mysql database
+// --------------------------------------------------------------------------
 
-  $databaseName = "genbank";
-  $tableName = "mutdat";
+$host = "localhost";
+$user = "dbuser";
+$pass = "dbuser";
 
-  //--------------------------------------------------------------------------
-  // 1) Connect to mysql database
-  //--------------------------------------------------------------------------
- 
-  $con = mysql_connect($host,$user,$pass);
-  $dbs = mysql_select_db($databaseName, $con);
+$databaseName = "genbank";
+$tableName = "mutdat";
+// Get POST variables
+$rows = (is_numeric($_GET["rows"]) ? (int)$_GET["rows"] : 13);
+static $startRow = 0;
 
-  //--------------------------------------------------------------------------
-  // 2) Query database for data
-  //--------------------------------------------------------------------------
-  $sql = mysql_query("SELECT * FROM $tableName");          //query
-  $results = array();
-  while($row = mysql_fetch_assoc($sql))
-  {
-  	$results[] = array(
-  			'id' => $row['idMDat'],
-  			'aa' => $row['AA change'],
-  			'change' => $row['Change'],
-  			'extra' => $row['extraInfo'],
-  			'genId' => $row['Genname_idG'],
-  			'pheno' => $row['Phenotype'],
-  			'protein' => $row['protein'],
-  			'nuc' => $row['nucleotide'],
-  			'ref' => $row['Reference']
-  	);
-  }
-  
-  //--------------------------------------------------------------------------
-  // 3) echo result as json
-  //--------------------------------------------------------------------------
-  //echo("Teil1: ".$array[0]."\nTeil 2: ".$array[1]);
-  echo json_encode($results);
- ?>
+// --------------------------------------------------------------------------
+// 1) Connect to mysql database
+// --------------------------------------------------------------------------
+
+$con = mysql_connect ( $host, $user, $pass );
+$dbs = mysql_select_db ( $databaseName, $con );
+
+// --------------------------------------------------------------------------
+// 2) Query database for data
+// --------------------------------------------------------------------------
+
+$query = "SELECT * FROM $tableName ";
+
+if ($rows > 1) {
+	$query = $query." LIMIT $startRow , $rows";
+	$startRow+=$rows;
+}
+$sql = mysql_query ( $query ); // query
+$results = array ();
+while ( $row = mysql_fetch_assoc ( $sql ) ) {
+	// Build entries (lines) for the JSon
+	$results [] = array (
+			'id' => $row ['idMDat'],
+			'aa' => $row ['AA change'],
+			'change' => $row ['Change'],
+			'extra' => $row ['extraInfo'],
+			'genId' => $row ['Genname_idG'],
+			'pheno' => $row ['Phenotype'],
+			'protein' => $row ['protein'],
+			'nuc' => $row ['nucleotide'],
+			'ref' => $row ['Reference']
+	);
+}
+
+// --------------------------------------------------------------------------
+// 3) echo result as json
+// --------------------------------------------------------------------------
+// send
+echo json_encode ( $results );
+?>

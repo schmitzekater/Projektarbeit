@@ -15,6 +15,7 @@ Example client script for JQUERY:AJAX -> PHP:MYSQL example
 	<h3>Output:</h3>
 	<div id="output">this element will be accessed by jquery and this text
 		replaced</div>
+		<div id="gui"><input type="button" id="clickMe" value="Dr&uuml;ck mich!" /></div>
 
 	<script id="source" language="javascript" type="text/javascript">
 
