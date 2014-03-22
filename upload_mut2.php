@@ -12,7 +12,9 @@
 <script src="./js/loadLinks.js" type="text/javascript"></script>
 </head>
 <body>
+
 	<!-- div container -->
+	<div id="container">
 		<?php
 		include "php/nav.php";
 		include "php/zugang.php";

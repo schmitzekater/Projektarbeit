@@ -41,6 +41,7 @@
 ?>
 
 <body>
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 <section id="content">
@@ -49,11 +50,18 @@
 <div id="main">
 
 			
-			<p>Hallo Max...ich seh hier was...</p>
+			
 			 	
 			<form action="vergleich.php" method="post">
- 			<p>Geben Sie den Patientenindex ein, nach dem gesucht werden soll:</p>
- 			<input type="text" name="Pat_idPat" /></p>
+ 			<p>Bitte beachten:</p>
+ 			<p>Der Patient muss vorher als csv Datei hochgeladen worden sein.
+ 			   Der Patientenname entspricht dann dem Dateinamen ohne Erweiterung.</p>
+ 			<p>Als Beispiel: Patient1.csv<p/>
+ 			<p>Der Patientenname wäre dann Patient1.<p/>
+ 			
+ 			<p>Geben Sie nun den Patientennamen ein, nach dem gesucht werden soll:</p>
+ 		
+ 			<input type="text" name="PName" /></p>
  			<p><input type="submit" /></p>
 			</form>	
 			
@@ -61,8 +69,8 @@
 			
 			<?php
 			
- 			 $idPat=(int)$_POST["Pat_idPat"];
- 			echo '<p>Ich bins...</p>'.$idPat;
+ 			 $Name=$_POST["PName"];
+ 			
 			// Neues Datenbank-Objekt erzeugen
 			$db = @new mysqli( 'localhost', 'dbuser', 'dbuser', 'genbank' );
 			// Pruefen ob die Datenbankverbindung hergestellt werden konnte
@@ -70,9 +78,11 @@
 					{
 					 
    					 $sql = "SELECT mutp.Gene,mutp.HGVSnomenclature
-							 from mutp,mutdat
+							 from mutp,mutdat,genname,pat
 							  where mutp.HGVSnomenclature=mutdat.nucleotide
-							  and mutp.Pat_idPat=$idPat";
+                              and mutp.Gene=genname.name
+							  and pat.Name=('$Name')";
+							  
     				// Statement vorbereiten
    					$ergebnis = $db->prepare( $sql );
     				// an die DB schicken
@@ -82,7 +92,7 @@
     				// Ergebnisse ausgeben
    					 while ($ergebnis->fetch())
     					{
-    					echo "Die Ver��nderung" .$nomenclature. " in dem Gen " .$Gene. "wurde in der Datenbank gefunden <br />";	
+    					echo " Die Ver&auml;nderung " .$nomenclature. " in dem Gen " .$Gene. " wurde in der Datenbank gefunden <br />";	
         				 
    						 }
 							}

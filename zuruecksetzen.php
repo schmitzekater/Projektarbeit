@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 
@@ -64,7 +64,7 @@
 						mysqli_query($db, "UPDATE nutzer SET vergessen = '$code' WHERE nutzername = '$nutzername'")
 							or die(mysqli_error());
 		
-						echo '<p class="pass">Passwort wurde erfolgreich ge���������ndert. Sie k���������nnen sich nun mit dem neuen Kennwort <a href="login.php">hier</a> einloggen.</p>';
+						echo '<p class="pass">Passwort wurde erfolgreich ge&auml;ndert. Sie k&ouml;nnen sich nun mit dem neuen Kennwort <a href="login.php">hier</a> einloggen.</p>';
 						
 						mysqli_close($db);
 					}
@@ -78,7 +78,7 @@
 				}
 			}
 			else {
-				echo '<p class="fail">Sie m���������ssen Daten eingeben.</p>';
+				echo '<p class="fail">Sie m&uuml;ssen Daten eingeben.</p>';
 			}
 		}
  ?>

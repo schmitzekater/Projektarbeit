@@ -40,14 +40,17 @@
 	}
 ?>
 
+
 <body>
+<div id="container">
+
 <?php include "./php/nav.php"; ?>
 
 <section id="content">
 		  <article>
 		 
 <div id="main">
-			<h1>Herzlich willkommen beim <em>Mutfinder</em></h1>
+			<h1>Herzlich willkommen beim <em>MUTATIONFINDER</em></h1>
 			<p>Diese Seite bietet ein Tool, welches zur Auswertung von NGS (Next-Generation-Sequenzing) Projekten genutzt werden kann.</p>
 			<p>Als registrierter User haben Sie die M&ouml;glichkeit, Mutationsdatenbanken und Patientendaten hochzuladen und diese im Bereich Vergleich auswerten zu lassen.</p>
 			<h2>Beschreibung:</h2>

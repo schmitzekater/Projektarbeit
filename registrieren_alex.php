@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 <section id="content">
@@ -77,7 +78,7 @@
 				
 				$absender = 'admin@neispiel.de';
 				$betreff = "Beispiel - Aktivieren Sie Ihr Konto";
-				$msg = "Hallo $nutzername,\n" . "Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������tig.\n" . "Besuchen sie http://beispiel.de/aktivierung.php und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" . "Mit freundlichen Gr������������en\n" . "Beispielseite";
+				$msg = "Hallo $nutzername,\n" . "Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������������������tig.\n" . "Besuchen sie http://beispiel.de/aktivierung.php und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" . "Mit freundlichen Gr������������������������������������en\n" . "Beispielseite";
 				
 				mail ( $email, $betreff, $msg, 'From:' . $absender );
 				
@@ -142,6 +143,7 @@
 </head>
 
 <body>
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 <section id="content">
@@ -206,7 +208,7 @@
 				
 				$absender = 'admin@neispiel.de';
 				$betreff = "Beispiel - Aktivieren Sie Ihr Konto";
-				$msg = "Hallo $nutzername,\n" . "Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������tig.\n" . "Besuchen sie http://beispiel.de/aktivierung.php und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" . "Mit freundlichen Gr������������en\n" . "Beispielseite";
+				$msg = "Hallo $nutzername,\n" . "Nur noch ein Schritt bis zu Ihrer Aktivierung ist n������������������tig.\n" . "Besuchen sie http://beispiel.de/aktivierung.php und geben Sie Ihren Nutzernamen ( $nutzername ) und den Aktivierungscode ( $code ) ein.\n" . "Mit freundlichen Gr������������������������������������en\n" . "Beispielseite";
 				
 				mail ( $email, $betreff, $msg, 'From:' . $absender );
 				

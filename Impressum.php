@@ -1,23 +1,7 @@
-
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-<title>Genetikum - GenetikumDb - GenBank</title>
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="./css/main.css" />
-	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
-	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
-	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
-	<link rel="shortcut icon" href="Bilder/__favicon.ico">
-
-</head>
-
 <?php
 
 	require_once('./php/sitzungsstart.php');
-	$seitentitel = 'memberarea';
+	$seitentitel = 'Memberarea';
 	require_once('./php/zugang.php');
 		
 	if(isset($_SESSION['nutzername'])) {
@@ -37,11 +21,28 @@
 
 			mysqli_close($db);
 
-		}
+		}		
 	}
+	
 ?>
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+<title>Genetikum - GenetikumDb - GenBank</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
+	<link rel="shortcut icon" href="Bilder/__favicon.ico">
+
+</head>
+
 
 <body>
+<div id="container">
 <?php include "./php/nav.php"; ?>
 
 <section id="content">

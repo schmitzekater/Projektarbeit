@@ -1,4 +1,4 @@
-Index|Gene|Name|Location|Pos.|Type|Nuc Change|Coverage|AA Change|Condition|Hint|web Ref.|HGVS nomenclature|mut Entry|mut Effect|TValidation|MValidation
+Index2|Gene|Name|Location|Pos.|Type|Nuc Change|Coverage2|AA Change|Condition2|Hint|web Ref.|HGVSnomenclature|mut Entry|mut Effect|TValidation|MValidation
 1|AGL|AGL-E01|E1|59   [chr1:g.100316589 (hg19)]|C|A -> G (homo)|97% (59)   [98% (40) / 95% (19)]|5' UTR|SV||rs2307130|c.-10A>G|21/37 of 64||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
 2|AGL|AGL-E07|E7|-18   [chr1:g.100340225 (hg19)]|C|G -> A (homo)|100% (53)   [100% (6) / 100% (47)]||SV||rs634880|c.959-18G>A|39/19 of 65||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
 3|AGL|AGL-E14|E14|+8   [chr1:g.100346741 (hg19)]|C|T -> C (homo)|100% (25)   [0% (0) / 100% (25)]||SV||rs3736296|c.2001+8T>C|16/34 of 55||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
@@ -241,3 +241,4 @@ Index|Gene|Name|Location|Pos.|Type|Nuc Change|Coverage|AA Change|Condition|Hint|
 240|VCP|VCP-E07|E7|+3   [chr9:g.35062972 (hg19)]|C|G -> A (homo)|99% (413)   [98% (225) / 100% (188)]||SV||rs514492|c.811+3G>A|48/30 of 78||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
 241|VCP|VCP-E10|E10|-7 / 11bp   [chr9:g.35061693 (hg19)]|I (Dup)|TTGTGTACTGT (het)|84% (291)   [84% (213) / 85% (78)]|splicing|SV||rs11272867|c.1082-18_1082-8dupTTGTGTACTGT|0/48 of 48 (c.1082-8_1082-7insTTGTGTACTGT)||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
 242|VCP|VCP-E13|E13|+8   [chr9:g.35060302 (hg19)]|C|A -> G (homo)|99% (242)   [99% (75) / 99% (167)]||SV||rs684562|c.1695+8A>G|40/34 of 75||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
+243|BAG3|BAG3-E02|E2|387 (1296)   [chr10:g.121436362 (hg19)]|C|A -> G (homo)|100% (390)   [100% (130) / 100% (260)]|V -> V (432)|SV||rs196295|c.268C>T|47/33 of 80||ku [06/25/2013 12:59:58]|ku [06/25/2013 13:00:14]
