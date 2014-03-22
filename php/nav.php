@@ -15,6 +15,7 @@
 				<li><a href="upload_pat.php">Patientendatenupload</a></li>
 				<li><a href="upload_mut.php">MutDatenbankupload</a></li>
 				<li><a href="vergleich.php">Vergleich &raquo;</a>
+				<li><a href="pat_liste.php">Patientenliste</a>
 				
 			</ul>
 		</li>

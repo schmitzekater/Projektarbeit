@@ -9,7 +9,7 @@
 	$user = "dbuser";
 	$password = "dbuser";
 	$dbase = "genbank";
-	$sep = "|";
+	$sep = "|";				//CSV-Trenner
 	$mutTable = "mutdat";	//Liste der Mutationen
 	$genTable = "genname";	//Liste der Gene
 	$patTable = "pat";		//Patientenliste

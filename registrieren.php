@@ -50,8 +50,8 @@
 		
 				if (mysqli_num_rows($daten) == 0) {
 	  
-					$code = rand(100000, 999999); 
-					$code1 = rand(100000, 999999); 
+					$code = rand(100000, 999999);
+					$code1 = rand(100000, 999999);
 				
 					$sql = "INSERT INTO nutzer (nutzername, email, passwort, anmeldedatum, aktivierungscode, aktiviert, vergessen) VALUES ('$nutzername', '$email', SHA('$passwort'), NOW(), $code, 0, $code1)";
 					mysqli_query($db, $sql);
@@ -71,7 +71,7 @@
 					echo '<p class="pass">Ihr Konto wurde erstellt. Sie k&ouml;nnen sich jetzt einloggen und die Seiten ' .
 					'<a href="upload_mut.php">Mutationsdaten laden</a> oder</p>';'<a href="upload_pat.php">Patientendaten laden</a> oder</p>';'<a href="vergleich.php">Mutationen vergleichen</a> besuchen</p>';
 					exit();
-				}      
+				}
 				else {
 					echo '<p class="fail">Dieser Benutzername ist bereitsbelegt.</p>';
 					$nutzername = "";
@@ -114,8 +114,8 @@
 </aside>
 
 
-<footer>		
-<?php include "./php/footer.php"; ?>
+<footer>
+<?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>
 </body>
