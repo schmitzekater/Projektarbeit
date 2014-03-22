@@ -69,8 +69,30 @@
 		
 					mysqli_close($db);
 				
-					echo '<p class="pass">Ihr Konto wurde erstellt. Sie k&ouml;nnen sich jetzt einloggen und die Seiten ' .
-					'<a href="upload_mut.php">Mutationsdaten laden</a> oder</p>';'<a href="upload_pat.php">Patientendaten laden</a> oder</p>';'<a href="vergleich.php">Mutationen vergleichen</a> besuchen</p>';
+					echo '<p class="pass">Ihr Konto wurde erstellt. Sie k&ouml;nnen sich jetzt einloggen und die geschützten Seiten verwenden.' ;
+					echo '</div>	<!-- End main -->
+					</article>
+					</section>
+
+					<aside>
+					<div id="subside">
+					<h1>Quellen</h1>
+					<p></p>   <!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
+					</div>
+					</aside>
+					<footer>
+				
+					</footer>
+					</div> <!-- End Container -->
+					</body>
+					</html>
+
+					</div><!-- #wrapper -->	';
+			
+			
+			
+			
+			
 					exit();
 				}
 				else {

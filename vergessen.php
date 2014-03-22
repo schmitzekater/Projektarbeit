@@ -58,23 +58,23 @@
 					mysqli_query($db, "UPDATE nutzer SET vergessen = '$vergessencode' WHERE nutzername = '$nutzername'")
 						or die(mysqli_error());
 		 
-					$absender = 'admin@neispiel.de';
+					$absender = 'admin@Projekt.de';
 					$betreff = "Beispiel - Haben Sie Ihr Passwort vergessen?";
 					$msg = "Hallo $nutzername,\n" .
-					"wenn Sie ihr Passwort vergessen haben besuchen Sie bitte http://localhost/zuruecksetzen.php und ���������ndern Sie ihr vergessenes Passwort in ein neues gew���������nschtes Passwort um.\n" .
-					"Dazu ben&ouml;tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl���������ssel ( $vergessencode ). \n" .
+					"wenn Sie ihr Passwort vergessen haben besuchen Sie bitte http://localhost/zuruecksetzen.php und &auml;ndern Sie ihr vergessenes Passwort in ein neues gew&uuml;nschtes Passwort um.\n" .
+					"Dazu ben&ouml;tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl$uuml;ssel ( $vergessencode ). \n" .
 					"Falls Sie Ihr Passwort nicht vergessen haben ignorieren Sie diese E-Mail bitte einfach. \n" . 
-					"Mit freundlichen Gr������������������en\n" .
-					"Beispielseite";
+					"Mit freundlichen Gr&uuml;&szlig;en\n" .
+					"Ihr Projektteam Neu-Ulm";
 
 					mail($email, $betreff, $msg, 'From:' . $absender);
 		
-					echo '<p class="pass">Sie haben einen entsprechenden Sicherheitscode an Ihre E-Mail Adresse erhalten. Sie k���������nnen <a href="zuruecksetzen.php">hier</a> Ihr Passwort zur���������cksetzen.</p>';
+					echo '<p class="pass">Sie haben einen entsprechenden Sicherheitscode an Ihre E-Mail Adresse erhalten. Sie k&ouml;nnen <a href="zuruecksetzen.php">hier</a> Ihr Passwort zur&uuml;cksetzen.</p>';
 					
 					mysqli_close($db);
 				}
 				else {
-					echo '<p class="fail">E-Mail und Nutzername stimmen nicht ���������berein.</p>';
+					echo '<p class="fail">E-Mail und Nutzername stimmen nicht &uuml;berein.</p>';
 				}
 			}
 			else {
@@ -83,7 +83,7 @@
 		}
 	?>
 	
-	<h2>Passwort���������nderung anfordern</h2>
+	<h2>Passwort&auml;nderung anfordern</h2>
 
 	<form method="post" action="vergessen.php">
 
