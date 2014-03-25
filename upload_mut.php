@@ -59,18 +59,12 @@
 					
 	
 <div id="wrapper">
-
-<?php
-	require_once('./php/menu.php');
-?>
-
 	<?php
 		if (!isset($_SESSION['id'])) {
 			echo '<p class="fail">Um auf diese Seite zugreifen, m&uuml;ssen Sie sich <a href="login.php">einloggen</a>.</p>';
 			echo '</div>	<!-- End main -->
 					</article>
 					</section>
-
 					<aside>
 					<div id="subside">
 					<h1>Quellen</h1>
@@ -78,24 +72,14 @@
 					</div>
 					</aside>
 					<footer>
-				
 					</footer>
 					</div> <!-- End Container -->
 					</body>
 					</html>
-
 					</div><!-- #wrapper -->	';
-			
-			
-			
-			
 			exit();
 		}
 	?>
-	
-
-		<p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
-
 		<h1>Upload von Mutationsdaten</h1>
 						<form id="upload" action="upload_mut2.php" method="POST"	enctype="multipart/form-data">
 							<fieldset>
@@ -125,12 +109,8 @@
 							// cancel event and hover styling
 							FileDragHover(e);
 							document.getElementById('upload-button').target = 'my_iframe';
-							//'my_iframe' is the name of the iframe
-							//document.getElementById('my_form').submit();
-				
 							// fetch FileList object
 							var files = e.target.files || e.dataTransfer.files;
-				
 							// process all File objects
 							for (var i = 0, f; f = files[i]; i++) {
 								ParseFile(f);
@@ -154,11 +134,12 @@
 			</section>
 
 			<aside>
+			<?php include "php/aside.php"; ?>
 				<div id="subside">
 					<h1>Quellen</h1>
 					<!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
 				</div>
-					<?php include "php/aside.php"; ?>
+					
 			</aside>
 			<footer>
 				<?php include "php/footer_Seite.php"; ?>

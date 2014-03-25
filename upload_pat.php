@@ -58,7 +58,6 @@
 <div id="wrapper">
 
 <?php
-	require_once('./php/menu.php');
 		if (!isset($_SESSION['id'])) {
 			echo '<p class="fail">Um auf diese Seite zugreifen, m&uuml;ssen Sie sich <a href="login.php">einloggen</a>.</p>';
 			echo '</div>	<!-- End main -->
@@ -86,11 +85,7 @@
 			exit();
 		}
 	?>
-	
-
-		<p class="info">Upload aktiviert, sie sind eingeloggt.</p>
-		
-					<h1>Upload von Patientendaten</h1>
+	<h1>Upload von Patientendaten</h1>
 						<form id="upload" action="upload_pat2.php" method="POST"	enctype="multipart/form-data">
 							<fieldset>
 								<legend><b>HTML File Upload - Patientendaten</b></legend>
@@ -144,10 +139,11 @@
 			</section>
 			<aside>
 				<div id="subside">
+				<?php include "php/aside.php"; ?>
 					<h1>Quellen</h1>
 					<!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
 				</div>
-					<?php include "php/aside.php"; ?>
+					
 			</aside>
 			<footer>
 				<?php include "php/footer_Seite.php"; ?>

@@ -1,11 +1,12 @@
  <?php
  
   if (isset($_SESSION['nutzername'])) {
-  	echo '<div id="side"><ul>';
-  	echo '<li>Hallo (' . $_SESSION['nutzername'] . ')</a></li>';
+  	echo '<div id="side"><h1>Session</h1>';
+  	echo '<div class="info"><ul>';
+  	echo '<li>Hallo <b>' . $_SESSION['nutzername'] . '</b></a></li></br>';
   	echo '<li><a href="profiledit.php">Passwort &auml;ndern</a></li>';
   	echo '<li><a href="logout.php">Ausloggen</a></li>';
-  	echo '</ul></div>';
+  	echo '</ul></div></div>';
   }
   else{
   	echo '<H2>Information</H2>';

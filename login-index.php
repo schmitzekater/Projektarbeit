@@ -47,20 +47,11 @@
 
 				mysqli_close($db);
 
-			}		
+			}
 		}
 	?>
 	
 	<div id="wrapper">
-	
-		<?php
-			  
-			require_once('./php/menu.php');
-		?>
-
-   <!-- ==================
-     	=======Login======
-		================== -->
 		
 		<h2>Login</h2>
 
@@ -108,7 +99,7 @@
 </aside>
 
 
-<footer>		
+<footer>
 <?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>

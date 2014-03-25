@@ -49,7 +49,7 @@ if (isset ( $_SESSION ['nutzername'] )) {
 			<article>
 
 				<div id="main">
-					<hr />
+					<h1>Anzeige von Mutationen pro Patient</h1>
 					<span id="inputWrapper"> Zeilen anzeigen:
 					<input type="text"	id="rows" cols="2" />
 					<!--TODO: Hidden input field einbauen, dass die "ab" Zeile-Funktionalität hat. -->
