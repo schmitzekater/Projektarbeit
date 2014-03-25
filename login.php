@@ -73,9 +73,6 @@
 	<div id="wrapper">
 	
 		<?php
-			
-			require_once('./php/menu.php');
-
 				if($fehlermldg != "") {
 					echo '<p class="fail">' . $fehlermldg . '</p>';
 				}

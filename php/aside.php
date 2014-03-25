@@ -5,6 +5,7 @@
   	echo '<div class="info"><ul>';
   	echo '<li>Hallo <b>' . $_SESSION['nutzername'] . '</b></a></li></br>';
   	echo '<li><a href="profiledit.php">Passwort &auml;ndern</a></li>';
+  	echo '<li><a href="vergessen.php">Passwort vergessen</a></li>';
   	echo '<li><a href="logout.php">Ausloggen</a></li>';
   	echo '</ul></div></div>';
   }

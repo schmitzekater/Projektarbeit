@@ -31,9 +31,6 @@
 	
 	<?php
 	
-		
-		require_once('./php/menu.php');
-
 		$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
 			mysqli_set_charset($db, "utf8");
   
@@ -76,8 +73,7 @@
 
 					<aside>
 					<div id="subside">
-					<h1>Quellen</h1>
-					<p></p>   <!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->
+					
 					</div>
 					</aside>
 					<footer>

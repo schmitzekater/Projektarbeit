@@ -211,7 +211,7 @@ footer {
 }
 
 #side li {
-	display: inline;
+	list-style-type: none;
 	margin-left: 10px;
 	color: #000000;
 }

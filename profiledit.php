@@ -24,17 +24,13 @@
 			<?php
 		require_once('./php/sitzungsstart.php');
         $seitentitel = 'Profil bearbeiten';
-		require_once('./php/zugang.php');  
+		require_once('./php/zugang.php');
   
     ?>
 	
 <div id="wrapper">
 	
 	<?php
-	
-		
-		require_once('./php/menu.php');
-				
 		if (!isset($_SESSION['id'])) {
 			echo '<p class="fail">Um auf diese Seite zugreifen zu k&ouml;nnen, m&uuml;ssen Sie sich <a href="login.php">einloggen</a>.</p>';
 			exit();
@@ -50,7 +46,7 @@
 			$wdhnewpw = mysqli_real_escape_string($db, trim($_POST['wdhnewpw']));
 			$nutzername = $_SESSION['nutzername'];
   
-			if(!empty($passwort) && !empty($newpw) && !empty($wdhnewpw)) { 
+			if(!empty($passwort) && !empty($newpw) && !empty($wdhnewpw)) {
 
 				$sql = "SELECT nutzername, passwort FROM nutzer WHERE nutzername = '$nutzername' AND passwort = SHA('$passwort')";
    
@@ -77,10 +73,10 @@
 			}
 			else {
 				echo '<p class="fail">Sie haben die ben���������tigten Felder nicht ausgef���������llt.</p>';
-			}  
-		}  
+			}
+		}
 	?>
-
+	<h2>Passwort &auml;ndern</h2>
 	<form method="post" action="profiledit.php">
  
 		<label for="nutzername">Aktuelles Passwort:</label>
@@ -105,7 +101,7 @@
 </aside>
 
 
-<footer>		
+<footer>
 <?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>

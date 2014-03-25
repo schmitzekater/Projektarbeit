@@ -12,6 +12,33 @@
 
 
 </head>
+<?php
+
+	require_once('./php/sitzungsstart.php');
+	$seitentitel = 'memberarea';
+	require_once('./php/zugang.php');
+		
+	if(isset($_SESSION['nutzername'])) {
+		$user = $_SESSION['nutzername'];
+
+		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
+			mysqli_set_charset($db, "utf8");
+
+		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
+		$daten = mysqli_query($db, $sql);
+		$zeile = mysqli_fetch_array($daten);
+
+		if ($zeile['aktiviert'] == 0) {
+
+			$aktivierungsseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivierung.php';
+				header('Location:' . $aktivierungsseite);
+
+			mysqli_close($db);
+
+		}
+	}
+?>
+
 
 <body>
 <div id="container">
@@ -34,8 +61,6 @@
 
 	<?php
         
-        require_once('./php/menu.php');
-
 		if (isset($_POST['submit'])) {
 			// Mit der Datenbank verbinden
 			$db = mysqli_connect("localhost", "dbuser", "dbuser", "genbank");
@@ -52,7 +77,7 @@
 				$zeile = mysqli_fetch_array($daten);
 
 				if (mysqli_num_rows($daten) == 1) {
-				// Abfrage erfolgreich, also Daten an E-Mail senden und Sicherheitscode in die Datenbankspeichern inkl. Code generieren.	  
+				// Abfrage erfolgreich, also Daten an E-Mail senden und Sicherheitscode in die Datenbankspeichern inkl. Code generieren.
 					$vergessencode = rand(100000, 999999);
 		
 					mysqli_query($db, "UPDATE nutzer SET vergessen = '$vergessencode' WHERE nutzername = '$nutzername'")
@@ -63,7 +88,7 @@
 					$msg = "Hallo $nutzername,\n" .
 					"wenn Sie ihr Passwort vergessen haben besuchen Sie bitte http://localhost/zuruecksetzen.php und &auml;ndern Sie ihr vergessenes Passwort in ein neues gew&uuml;nschtes Passwort um.\n" .
 					"Dazu ben&ouml;tigen Sie nur Ihren Benutzernamen ( $nutzername ) und einen generierten Sicherheitsschl$uuml;ssel ( $vergessencode ). \n" .
-					"Falls Sie Ihr Passwort nicht vergessen haben ignorieren Sie diese E-Mail bitte einfach. \n" . 
+					"Falls Sie Ihr Passwort nicht vergessen haben ignorieren Sie diese E-Mail bitte einfach. \n" .
 					"Mit freundlichen Gr&uuml;&szlig;en\n" .
 					"Ihr Projektteam Neu-Ulm";
 
@@ -106,7 +131,7 @@
  <?php include "./php/aside.php"; ?>
 </aside>
 
-<footer>		
+<footer>
 <?php include "./php/footer_Seite.php"; ?>
 </footer>
 </div>
