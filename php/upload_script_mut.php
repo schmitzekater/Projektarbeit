@@ -1,5 +1,4 @@
 <?php
-ChromePhp::log ( 'Php Teil' );
 $fn = (isset ( $_SERVER ['HTTP_X_FILENAME'] ) ? $_SERVER ['HTTP_X_FILENAME'] : false);
 $gen = "";
 $debug = 0;
@@ -8,8 +7,6 @@ $dbRows = 0;
 $headerExists = false;
 $hostPost = false;
 if ($fn) {
-	
-	ChromePhp::log ( 'fn ist da' );
 	/*
 	 * TODO: Check if file is already present on the server
 	 */
@@ -17,20 +14,16 @@ if ($fn) {
 	$fullName = $uploadDir . $fn;
 	file_put_contents ( $fullName, file_get_contents ( 'php://input' ) );
 	setStatus ( "$fn uploaded with Ajax" );
-	ChromePhp::log ( 'Vor main im Ajax' );
-} else {
-	
-	ChromePhp::log ( 'fn kam über form' );
+}
+else {
 	// form submit
 	$files = $_FILES ['fileselect'];
-	
 	foreach ( $files ['error'] as $id => $err ) {
 		if ($err == UPLOAD_ERR_OK) {
 			$fn = $files ['name'] [$id];
 			$fullName = $uploadDir . $fn;
 			move_uploaded_file ( $files ['tmp_name'] [$id], $fullName );
 			setStatus ( "File $fullName uploaded with form." );
-			ChromePhp::log ( 'Vor main im Form' );
 		}
 	}
 }
@@ -71,7 +64,7 @@ if (strcasecmp ( $fileExtension, 'csv' ) != 0) {
 	}
 }
 fclose ( $handle );
-// Datei schlie��en
+// Datei schliessen
 $firstLine = stripLinefeed ( array_shift ( $array ) ); // Zeilenumbruch entfernen und erste Zeile aus Datei als Ueberschrift
 $header = explode ( $sep, $firstLine ); // Header aus erster Zeile erstellen
 if (! empty ( $header ) && (strpos ( $header [0], "Change" ) !== false)) // Schauen ob der Header passt.

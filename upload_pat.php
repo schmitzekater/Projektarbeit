@@ -21,7 +21,7 @@
 
 			mysqli_close($db);
 
-		}		
+		}
 	}
 ?>
 
@@ -59,9 +59,6 @@
 
 <?php
 	require_once('./php/menu.php');
-?>
-
-	<?php
 		if (!isset($_SESSION['id'])) {
 			echo '<p class="fail">Um auf diese Seite zugreifen, m&uuml;ssen Sie sich <a href="login.php">einloggen</a>.</p>';
 			echo '</div>	<!-- End main -->
@@ -91,7 +88,7 @@
 	?>
 	
 
-		<p class="info">Sie k&ouml;nnen dies hier sehen, weil sie eingeloggt sind.</p>
+		<p class="info">Upload aktiviert, sie sind eingeloggt.</p>
 		
 					<h1>Upload von Patientendaten</h1>
 						<form id="upload" action="upload_pat2.php" method="POST"	enctype="multipart/form-data">
@@ -122,9 +119,6 @@
 							// cancel event and hover styling
 							FileDragHover(e);
 							document.getElementById('upload-button').target = 'my_iframe';
-							//'my_iframe' is the name of the iframe
-							//document.getElementById('my_form').submit();
-				
 							// fetch FileList object
 							var files = e.target.files || e.dataTransfer.files;
 				
@@ -161,4 +155,4 @@
 		</div> <!-- End Container -->
 	</body>
 </html>
-</div><!-- #wrapper -->		
+</div><!-- #wrapper -->

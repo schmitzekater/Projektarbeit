@@ -1,5 +1,4 @@
 <?php
-ChromePhp::log ( 'Php Teil' );
 $fn = (isset ( $_SERVER ['HTTP_X_FILENAME'] ) ? $_SERVER ['HTTP_X_FILENAME'] : false);
 $gen = "";
 $debug = 0;
@@ -8,8 +7,6 @@ $dbRows = 0;
 $headerExists = false;
 $hostPost = false;
 if ($fn) {
-	
-	ChromePhp::log ( 'fn ist da' );
 	/*
 	 * TODO: Check if file is already present on the server
 	 */
@@ -17,20 +14,16 @@ if ($fn) {
 	$fullName = $uploadDir . $fn;
 	file_put_contents ( $fullName, file_get_contents ( 'php://input' ) );
 	setStatus ( "$fn uploaded with Ajax" );
-	ChromePhp::log ( 'Vor main im Ajax' );
-} else {
-	
-	ChromePhp::log ( 'fn kam über form' );
+}
+else {
 	// form submit
 	$files = $_FILES ['fileselect'];
-	
 	foreach ( $files ['error'] as $id => $err ) {
 		if ($err == UPLOAD_ERR_OK) {
 			$fn = $files ['name'] [$id];
 			$fullName = $uploadDir . $fn;
 			move_uploaded_file ( $files ['tmp_name'] [$id], $fullName );
 			setStatus ( "File $fullName uploaded with form." );
-			ChromePhp::log ( 'Vor main im Form' );
 		}
 	}
 }
@@ -73,9 +66,8 @@ if (strcasecmp ( $fileExtension, 'csv' ) != 0) {
 }
 fclose ( $handle );
 // Datei schliessen
-$firstLine = array_shift ( $array ) ; //Array um erste Zeile verschieben
+$firstLine = stripLinefeed ( array_shift ( $array ) ); //Array um erste Zeile verschieben und Linefeed entfernen
 $header = explode ( $sep, $firstLine ); // Header aus erster Zeile erstellen
-$header = stripLinefeed ( $header);// Zeilenumbruch entfernen und erste Zeile aus Datei als ��berschrift
 if (! empty ( $header ) && (strpos ( $header [0], "Index" ) !== false)) // Schauen ob der Header passt.
 {
 	$headerExists = true;
@@ -86,7 +78,7 @@ if (! empty ( $header ) && (strpos ( $header [0], "Index" ) !== false)) // Schau
 }
 foreach ( $array as $line ) // Aufteilen des Arrays in Zeilen
 {
-	$elements = stripLinefeed ( explode ( $sep, $line ) );
+	$elements = stripLinefeed ( explode ( $sep, $line ) ); // Aufteilen der Zeile in Elemente die durch | getrennt sind.
 	$fileRows++;
 	// Aufteilen der Zeile in Elemente die durch | getrennt sind.
 	for($i = 0; $i < count ( $elements ); ++ $i) {
@@ -229,10 +221,10 @@ function stripLinefeed($text) {
 	 * @param
 	 *        	text String der als Eingabe dient.
 	 */
-	// return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', ' ', $text);
 	$text = str_replace("'","\\'", $text); 					// Patientendatei enthält ein ' in einer Zeile, dies muss maskiert werden.
-	$text = str_replace ( array ("\n","\r\n"	), '', $text ); // Obiger Ausdruck entfernt das singulaere LF nicht.
-	return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', '', $text);
+	//$text =  str_replace ( array ("\n","\r\n"	), '', $text ); // Etnfernen des LF
+	//return preg_replace('#(?<!\r\n)\r\n(?!\r\n)#', '', $text);  // Nochmaliger Versuch das LF zu entfernen
+	return str_replace ( array ( "\r\n", "\n"), '', $text );
 }
 function closeHtml() {
 	print ('</textarea></div></fieldset></div><!-- End main --></article></section><aside><div id="subside"><h1>Quellen</h1><!-- Die Links hier werden automatisch mit JavaScript eingelesen. -->

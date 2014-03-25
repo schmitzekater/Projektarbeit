@@ -2,83 +2,81 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
+<meta charset="utf-8" />
 <title>Genetikum - GenetikumDb - GenBank</title>
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="./css/main.css" />
-	<link rel="stylesheet" type="text/css" href="./css/nav.css" />
-	<link rel="stylesheet" type="text/css" href="./css/footer.css" />
-	<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
-	<link rel="shortcut icon" href="Bilder/__favicon.ico">
-	<!-- jQuery and jQuery UI -->
-    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
-    
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<link rel="stylesheet" type="text/css" href="./css/nav.css" />
+<link rel="stylesheet" type="text/css" href="./css/footer.css" />
+<link rel="stylesheet" type="text/css" href="./css/style-login.css" />
+<link rel="shortcut icon" href="Bilder/__favicon.ico">
+<!-- jQuery and jQuery UI -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/getPatients.js"></script>
+
 
 </head>
 
 <?php
+require_once ('./php/sitzungsstart.php');
+$seitentitel = 'memberarea';
+require_once ('./php/zugang.php');
 
-	require_once('./php/sitzungsstart.php');
-	$seitentitel = 'memberarea';
-	require_once('./php/zugang.php');
+if (isset ( $_SESSION ['nutzername'] )) {
+	$user = $_SESSION ['nutzername'];
+	
+	$db = mysqli_connect ( "localhost", "dbuser", "dbuser", "genbank" );
+	mysqli_set_charset ( $db, "utf8" );
+	
+	$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
+	$daten = mysqli_query ( $db, $sql );
+	$zeile = mysqli_fetch_array ( $daten );
+	
+	if ($zeile ['aktiviert'] == 0) {
 		
-	if(isset($_SESSION['nutzername'])) {
-		$user = $_SESSION['nutzername'];
-
-		$db = mysqli_connect("localhost","dbuser","dbuser","genbank");
-			mysqli_set_charset($db, "utf8");
-
-		$sql = "SELECT aktiviert, nutzername FROM nutzer WHERE nutzername = '$user' ";
-		$daten = mysqli_query($db, $sql);
-		$zeile = mysqli_fetch_array($daten);
-
-		if ($zeile['aktiviert'] == 0) {
-
-			$aktivierungsseite = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/aktivierung.php';
-				header('Location:' . $aktivierungsseite);
-
-			mysqli_close($db);
-
-		}
+		$aktivierungsseite = 'http://' . $_SERVER ['HTTP_HOST'] . dirname ( $_SERVER ['PHP_SELF'] ) . '/aktivierung.php';
+		header ( 'Location:' . $aktivierungsseite );
+		
+		mysqli_close ( $db );
 	}
+}
 ?>
 
 <body>
-<div id="container">
+	<div id="container">
 <?php include "./php/nav.php"; ?>
 
 <section id="content">
-		  <article>
-		 
-<div id="main">
+			<article>
 
-			<span id="statusWrapper" class="ui-state-highlight">Status: <span id="status">Ready</span></span>
-        
-        <br />
-        <progress value="0" max="100" id="pgrStatus"></progress>
-        <hr />
-      
-        <form action="getPatList.php" method="post" id="listLoad" enctype="multipart/form-data">
-          <input type="submit" id="listLoad" value="Hole Patientenliste" />
-        </form>
-			
-	</div>
+				<div id="main">
+					<hr />
+					<span id="inputWrapper"> Zeilen anzeigen:
+					<input type="text"	id="rows" cols="2" />
+					<!--TODO: Hidden input field einbauen, dass die "ab" Zeile-Funktionalität hat. -->
+					<br />
+					<!-- <input type="button" id="nextRows" value="Next"	onClick="getNextData()" /> -->
+					</span>
+					<input type="button" id="clickMe" value="Daten laden"	onClick="getData()" />
+					<input type="button" id="toggle" value="Tabelle ausblenden" onClick="toggleElement('#output')" />
 
-  </article>
-  </section>
+					<div id="output">Bereit zur Abfrage.</div>
 
-<aside>
+				</div>
+
+			</article>
+		</section>
+
+		<aside>
 <?php include "./php/aside.php"; ?>
 </aside>
 
 
-<footer>
+		<footer>
 
 
 <?php include "./php/footer_Seite.php"; ?>
 
 </footer>
-</div>
+	</div>
 </body>
 </html>

@@ -17,7 +17,6 @@
 		<?php
 		include "php/nav.php";
 		include "php/zugang.php";
-		include 'php/ChromePhp.php';
 		?>
 		<section id="content">
 		<article>
@@ -29,12 +28,8 @@
 								<input type="button" onclick="window.location.href='index.php'" value="Home." />
 								<div id="dbOutput">
 									<textarea id="textOutput" rows="10" cols="60">
-<?php
-			include"php/upload_script_pat.php";
-					
-					?>
+<?php	include"php/upload_script_pat.php";	?> <!-- Der eigentliche Importvorgang liegt ausserhalb -->
 							</textarea>
-							
 						</div>
 					</fieldset>
 				</div>

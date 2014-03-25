@@ -21,7 +21,7 @@
 
 			mysqli_close($db);
 
-		}		
+		}
 	}
 ?>
 
@@ -166,10 +166,4 @@
 		</div> <!-- End Container -->
 	</body>
 </html>
-
-
-<?php require_once('includes/footer.php'); ?>
-
-
-	</div><!-- #wrapper -->				
 					

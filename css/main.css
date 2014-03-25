@@ -154,6 +154,10 @@ p, pre {
 	padding: 0 0 20px;
 	line-height: 1.5em;
 }
+#output > table {
+border: aliceblue;
+border-width: thin;
+}
 
 /* -------------- aside ------------- */
 

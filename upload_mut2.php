@@ -18,7 +18,6 @@
 		<?php
 		include "php/nav.php";
 		include "php/zugang.php";
-		include 'php/ChromePhp.php';
 		?>
 		<section id="content">
 		<article>

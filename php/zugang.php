@@ -1,4 +1,7 @@
 <?php
+/*
+ * Zentrale Datei, die alle Zugangsdaten enthaelt, die fuer die Datenbankoperationen noetig sind.
+ */
 
 	define('DB_HOST', 'localhost');
 	define('DB_BENUTZER', 'dbuser');
@@ -14,6 +17,6 @@
 	$genTable = "genname";	//Liste der Gene
 	$patTable = "pat";		//Patientenliste
 	$patMutTable = "mutp";	//Liste der Mutationen pro Patient
-	$uploadDir = "Datenbank/uploads/"
+	$uploadDir = "Datenbank/uploads/"	//Verzeichnis zum Speichern der CSV-Dateien auf Server-Seite
 	
 ?>
